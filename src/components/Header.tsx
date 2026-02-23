@@ -67,12 +67,12 @@ export default function Header() {
 
           {/* Desktop Navigation — center */}
           <nav aria-label="Nawigacja główna" className="hidden xl:block">
-            <ul className="flex items-center gap-0.5">
+            <ul className="flex items-center gap-1">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="relative px-3 py-2 text-[13px] font-medium text-text-secondary transition-colors hover:text-text-primary"
+                    className="relative px-3.5 py-2 text-sm font-medium text-text-secondary transition-colors hover:text-text-primary"
                   >
                     {link.label}
                   </Link>

@@ -15,7 +15,7 @@ import NewsletterForm from "@/components/NewsletterForm";
 /* ------------------------------------------------------------------ */
 function BenefitsBar() {
   return (
-    <div className="bg-accent">
+    <div className="bg-bg-dark">
       <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-8 px-6 py-5 lg:justify-between lg:px-16">
         <div className="flex items-center gap-5">
           <ShoppingCart size={32} strokeWidth={1.5} className="shrink-0 text-white" />
@@ -88,7 +88,7 @@ function NewsletterSection() {
 /* ------------------------------------------------------------------ */
 function FooterHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="mb-4 font-heading text-xs font-semibold uppercase tracking-wider text-white">
+    <h3 className="mb-4 font-heading text-sm font-bold uppercase tracking-wider text-white">
       {children}
     </h3>
   );
@@ -260,7 +260,7 @@ export default function Footer() {
 
             {/* Column 4 - Etcetera + Socials */}
             <div>
-              <FooterHeading>Etcetera</FooterHeading>
+              <FooterHeading>Pomoc</FooterHeading>
               <ul className="space-y-2">
                 <FooterLink href="/faq">FAQ</FooterLink>
                 <FooterLink href="/reklamacja">Reklamacja</FooterLink>

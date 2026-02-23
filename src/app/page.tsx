@@ -113,69 +113,46 @@ export default async function HomePage() {
       {/* 1. HERO SECTION — Figma: main image left + 2x2 thumbnails right  */}
       {/* ================================================================== */}
       <section className="relative w-full overflow-hidden">
-        <div className="w-full">
-          <div className="flex h-[500px] lg:h-[800px]">
-            {/* Left — main hero image with text overlay */}
-            <div className="relative flex-1">
-              <img
-                src="/images/hero/hero-bg.jpg"
-                alt="Nowoczesna kuchnia na wymiar TeoHome"
-                className="absolute inset-0 h-full w-full object-cover"
+        <div className="relative h-[500px] lg:h-[560px]">
+          <img
+            src="/images/hero/hero-bg.jpg"
+            alt="Nowoczesna kuchnia na wymiar TeoHome"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+
+          <div className="relative mx-auto flex h-full max-w-[1440px] items-center px-6 lg:px-16">
+            <div className="max-w-lg">
+              <h1 className="font-heading text-3xl leading-tight font-semibold text-white md:text-4xl lg:text-[48px] lg:leading-[1.08]">
+                Kuchnie dopasowane do Twojego stylu
+              </h1>
+              <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/80 md:text-base">
+                Tworzymy funkcjonalne i estetyczne kuchnie na zamówienie, które łączą design oraz jakość.
+              </p>
+              <Link
+                href="/kuchnie"
+                className="mt-7 inline-flex items-center gap-0 rounded-full border border-white/40 py-1.5 pl-6 pr-1.5 transition-colors hover:border-white/70"
+              >
+                <span className="text-sm font-semibold text-white">Zobacz więcej</span>
+                <span className="ml-4 flex h-[44px] w-[44px] items-center justify-center rounded-full bg-accent">
+                  <ArrowRight size={18} strokeWidth={2} className="text-white" />
+                </span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Dot pagination */}
+          <div className="absolute bottom-8 left-6 z-10 flex gap-2 lg:left-[calc((100%-1440px)/2+64px)]">
+            {[0, 1, 2, 3].map((i) => (
+              <button
+                key={i}
+                type="button"
+                className={`h-2.5 w-2.5 rounded-full border border-white/60 transition-colors ${
+                  i === 0 ? "bg-white" : "bg-transparent hover:bg-white/40"
+                }`}
+                aria-label={`Slajd ${i + 1}`}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-
-              <div className="relative flex h-full items-center px-6 lg:px-16">
-                <div className="max-w-lg">
-                  <h1 className="font-heading text-3xl leading-tight font-semibold text-white md:text-4xl lg:text-[46px] lg:leading-[1.08]">
-                    Kuchnie dopasowane do Twojego stylu
-                  </h1>
-                  <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/80 md:text-base">
-                    Tworzymy funkcjonalne i estetyczne kuchnie na zamówienie, które łączą design oraz jakość.
-                  </p>
-                  <Link
-                    href="/kuchnie"
-                    className="mt-7 inline-flex items-center gap-4"
-                  >
-                    <span className="text-sm font-semibold text-white">Zobacz więcej</span>
-                    <span className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-accent transition-colors hover:bg-accent/80">
-                      <ArrowRight size={20} strokeWidth={2} className="text-white" />
-                    </span>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Dot pagination */}
-              <div className="absolute bottom-5 left-6 z-10 flex gap-2 lg:left-16">
-                {[0, 1, 2, 3].map((i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    className={`h-2.5 w-2.5 rounded-full border border-white/60 transition-colors ${
-                      i === 0 ? "bg-white" : "bg-transparent hover:bg-white/40"
-                    }`}
-                    aria-label={`Slajd ${i + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Right — 2x2 thumbnail grid (Figma) */}
-            <div className="hidden w-[340px] shrink-0 grid-cols-2 grid-rows-2 gap-[5px] lg:grid xl:w-[380px]">
-              {[
-                { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80", alt: "Nowoczesna kuchnia" },
-                { src: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&q=80", alt: "Salon z TV" },
-                { src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80", alt: "Gotowanie w kuchni" },
-                { src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=80", alt: "Jasne wnętrze" },
-              ].map((thumb, i) => (
-                <div key={i} className="overflow-hidden rounded-[8px]">
-                  <img
-                    src={thumb.src}
-                    alt={thumb.alt}
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -201,7 +178,7 @@ export default async function HomePage() {
           <div className="grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-6">
             {categories.slice(0, 4).map((cat) => (
               <Link key={cat.id} href={`/kategoria/${cat.slug}`} className="group">
-                <div className="aspect-square overflow-hidden rounded-2xl bg-bg-light">
+                <div className="aspect-[4/3] overflow-hidden rounded-[24px] bg-bg-light">
                   {cat.image?.src ? (
                     <Image
                       src={cat.image.src}
@@ -230,53 +207,50 @@ export default async function HomePage() {
       {/* ================================================================== */}
       <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-          <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-14">
-            <div className="lg:w-[55%]">
-              <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[32px]">
-                Witaj w TeoHome!
-              </h2>
-              <p className="mt-5 text-[15px] leading-relaxed text-text-secondary">
-                Teo Home to marka mebli na wymiar dostępnych online. Projektujemy i realizujemy rozwiązania dopasowane do konkretnych przestrzeni, typów szafek, funkcjonalności i indywidualnych potrzeb.
-              </p>
-              <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
-                Wiemy, że wybór mebli na wymiar to decyzja, która wymaga wsparcia. Dlatego zapewniamy pomoc doświadczonych projektantów na każdym etapie od pierwszej konsultacji, przez dobór szafek i materiałów, aż po finalny projekt.
-              </p>
-              <div className="mt-7">
-                <p className="mb-3 text-sm text-text-secondary">
-                  Dowiedz się więcej &mdash; kontaktuj i zamów na stronie, przez:
+          <div className="rounded-2xl border border-border p-6 lg:p-14">
+            <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-14">
+              <div className="lg:w-[55%]">
+                <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[32px]">
+                  Witaj w TeoHome!
+                </h2>
+                <p className="mt-5 text-[15px] leading-relaxed text-text-secondary">
+                  Teo Home to marka mebli na wymiar dostępnych online. Projektujemy i realizujemy rozwiązania dopasowane do konkretnych przestrzeni, typów szafek, funkcjonalności i indywidualnych potrzeb.
                 </p>
-                <div className="flex flex-wrap gap-3">
-                  <Link
-                    href="/kategoria"
-                    className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-text-primary transition-colors hover:border-primary hover:text-primary"
-                  >
-                    Sklep
-                    <ArrowRight size={14} strokeWidth={2} />
-                  </Link>
-                  <Link
-                    href="/strefa-projektowa"
-                    className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-text-primary transition-colors hover:border-primary hover:text-primary"
-                  >
-                    Strefa projektowania
-                    <ArrowRight size={14} strokeWidth={2} />
-                  </Link>
+                <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
+                  Wiemy, że wybór mebli na wymiar to decyzja, która wymaga wsparcia. Dlatego zapewniamy pomoc doświadczonych projektantów na każdym etapie od pierwszej konsultacji, przez dobór szafek i materiałów, aż po finalny projekt.
+                </p>
+                <div className="mt-7">
+                  <p className="mb-3 text-sm text-text-secondary">
+                    Dowiedz się więcej &mdash; kontaktuj i zamów na stronie, przez:
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <Link
+                      href="/o-nas"
+                      className="inline-flex items-center gap-0 rounded-full bg-accent py-1.5 pl-5 pr-1.5 text-sm font-medium text-white transition-colors hover:bg-accent/90"
+                    >
+                      <span>Poznaj nas bliżej</span>
+                      <span className="ml-3 flex h-[36px] w-[36px] items-center justify-center rounded-full bg-white/20">
+                        <ArrowRight size={14} strokeWidth={2} />
+                      </span>
+                    </Link>
+                    <Link
+                      href="/strefa-projektowa"
+                      className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-text-primary transition-colors hover:border-primary hover:text-primary"
+                    >
+                      Strefa projektowania
+                      <ArrowRight size={14} strokeWidth={2} />
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="relative lg:w-[45%]">
-              <div className="aspect-[4/3] overflow-hidden rounded-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
-                  alt="Nowoczesne wnętrze zaprojektowane przez TeoHome"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -left-6 hidden h-[160px] w-[200px] overflow-hidden rounded-xl border-4 border-white shadow-lg lg:block">
-                <img
-                  src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&q=80"
-                  alt="Meble kuchenne TeoHome"
-                  className="h-full w-full object-cover"
-                />
+              <div className="lg:w-[45%]">
+                <div className="aspect-[3/2] overflow-hidden rounded-xl">
+                  <img
+                    src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
+                    alt="Nowoczesne wnętrze zaprojektowane przez TeoHome"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -286,47 +260,55 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 5. DESIGNERS SECTION                                               */}
       {/* ================================================================== */}
-      <section className="bg-[#635552] py-14 lg:py-20">
-        <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-heading text-2xl font-semibold text-white md:text-[32px]">
-              Zaprojektuj wnętrze z pomocą naszych projektantów!
-            </h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-white/70">
-              Nasi doświadczeni projektanci pomogą Ci stworzyć wnętrze marzeń. Od pierwszego szkicu po finalny projekt &mdash; jesteś w dobrych rękach.
-            </p>
-            <Link
-              href="/kontakt"
-              className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary-light transition-colors hover:text-white"
-            >
-              Skontaktuj się ze specjalistą od aranżacji
-              <ArrowRight size={14} strokeWidth={2} />
-            </Link>
-          </div>
+      <section className="relative py-14 lg:py-20">
+        {/* Background image */}
+        <img
+          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&q=80"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
 
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {designers.map((designer) => (
-              <div
-                key={designer.name}
-                className="flex flex-col items-center rounded-[20px] border border-border bg-white px-6 py-8 text-center shadow-[0_2px_8px_rgba(31,29,34,0.06)]"
-              >
-                <div className="h-[80px] w-[80px] overflow-hidden rounded-full border-2 border-primary-light">
-                  <img src={designer.avatar} alt={designer.name} className="h-full w-full object-cover" />
-                </div>
-                <h3 className="mt-4 font-heading text-lg font-semibold text-text-primary">
-                  {designer.name}
-                </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-text-secondary">
-                  {designer.description}
-                </p>
-                <Link
-                  href="/kontakt"
-                  className="mt-auto pt-5 inline-flex items-center gap-2 rounded-full border border-text-primary px-5 py-2.5 text-sm font-medium text-text-primary transition-colors hover:bg-text-primary hover:text-white"
+        <div className="relative mx-auto max-w-[1440px] px-6 lg:px-16">
+          {/* White overlay card */}
+          <div className="mx-auto max-w-5xl rounded-3xl bg-white px-6 py-10 lg:px-16 lg:py-14">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[32px]">
+                Zaprojektuj wnętrze z pomocą naszych projektantów!
+              </h2>
+              <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
+                Nasi doświadczeni projektanci pomogą Ci stworzyć wnętrze marzeń. Od pierwszego szkicu po finalny projekt &mdash; jesteś w dobrych rękach.
+              </p>
+              <p className="mt-4 text-sm font-medium text-text-secondary">
+                Skontaktuj się ze specjalistą od aranżacji:
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {designers.map((designer) => (
+                <div
+                  key={designer.name}
+                  className="flex flex-col items-center px-4 py-6 text-center"
                 >
-                  Zamów projekt
-                </Link>
-              </div>
-            ))}
+                  <div className="h-[80px] w-[80px] overflow-hidden rounded-full border-2 border-primary-light">
+                    <img src={designer.avatar} alt={designer.name} className="h-full w-full object-cover" />
+                  </div>
+                  <h3 className="mt-4 font-heading text-lg font-semibold text-text-primary">
+                    {designer.name}
+                  </h3>
+                  <p className="mt-2.5 text-sm leading-relaxed text-text-secondary">
+                    {designer.description}
+                  </p>
+                  <Link
+                    href="/kontakt"
+                    className="mt-auto pt-5 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent/90"
+                  >
+                    Zamów projekt
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -338,7 +320,7 @@ export default async function HomePage() {
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-6 lg:flex-row">
             {/* Left - dark CTA */}
-            <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-[#312E29] px-7 py-10 lg:w-[220px] lg:shrink-0 lg:px-8 lg:py-14">
+            <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-[#312E29] px-7 py-10 lg:w-[260px] lg:shrink-0 lg:px-8 lg:py-14">
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
                 alt=""
@@ -377,16 +359,16 @@ export default async function HomePage() {
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 1024px) 50vw, 200px"
                       />
-                      <span className="absolute left-2.5 top-2.5 rounded-md bg-badge-new px-2.5 py-0.5 text-[11px] font-semibold tracking-wide text-white uppercase">
+                      <span className="absolute left-2.5 top-2.5 rounded-full bg-badge-new px-3 py-0.5 text-[11px] font-semibold tracking-wide text-white uppercase">
                         Nowość
                       </span>
                     </div>
                     <div className="mt-2.5">
-                      <h3 className="text-sm font-semibold text-text-primary">{product.name}</h3>
+                      <h3 className="text-base font-bold text-text-primary">{product.name}</h3>
                       <p className="mt-0.5 text-xs text-text-secondary line-clamp-1">
                         {product.short_description.replace(/<[^>]*>/g, "")}
                       </p>
-                      <p className="mt-1.5 text-base font-semibold text-text-primary">
+                      <p className="mt-1.5 text-xl font-bold text-text-primary">
                         {formatPrice(product.price)}
                       </p>
                     </div>
@@ -401,68 +383,64 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 7. FEATURED PRODUCT SECTION                                        */}
       {/* ================================================================== */}
-      <section className="bg-[#312E29] py-14 lg:py-20">
+      <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
-            <div className="lg:w-[35%]">
-              <h2 className="font-heading text-2xl font-semibold text-white md:text-[32px]">
-                Polecane produkty
-              </h2>
-              <p className="mt-4 text-[15px] leading-relaxed text-white/60">
-                Poznaj nasze najczęściej wybierane meble. Każdy produkt łączy w sobie staranność wykonania, nowoczesny design i trwałość na lata. Przekonaj się, dlaczego nasi klienci do nas wracają.
-              </p>
-            </div>
+          <h2 className="mb-8 font-heading text-2xl font-semibold text-text-primary md:text-[32px]">
+            Polecane produkty
+          </h2>
+          <p className="mb-8 max-w-2xl text-[15px] leading-relaxed text-text-secondary">
+            Poznaj nasze najczęściej wybierane meble. Każdy produkt łączy w sobie staranność wykonania, nowoczesny design i trwałość na lata. Przekonaj się, dlaczego nasi klienci do nas wracają.
+          </p>
 
-            <div className="lg:w-[65%]">
-              {bestsellerProduct ? (
-                <div className="relative overflow-hidden rounded-2xl">
-                  <Image
-                    src={getProductImage(bestsellerProduct)}
-                    alt={`Polecany produkt - ${bestsellerProduct.name}`}
-                    width={900}
-                    height={500}
-                    className="aspect-[16/9] w-full object-cover"
-                    sizes="(max-width: 1024px) 100vw, 65vw"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-5 lg:p-7">
-                    <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-                      <div>
-                        <span className="inline-block rounded-md bg-badge-bestseller px-2.5 py-0.5 text-[11px] font-semibold tracking-wide text-white uppercase">
-                          Bestseller
-                        </span>
-                        <h3 className="mt-2.5 text-lg font-semibold text-white">{bestsellerProduct.name}</h3>
-                        <p className="mt-1 text-sm text-white/70 line-clamp-1">
-                          {bestsellerProduct.short_description.replace(/<[^>]*>/g, "")}
-                        </p>
-                        <p className="mt-1.5 text-xl font-bold text-white">{formatPrice(bestsellerProduct.price)}</p>
-                        {bestsellerProduct.on_sale && bestsellerProduct.regular_price && (
-                          <p className="mt-0.5 text-xs text-white/50">
-                            Najniższa cena z 30 dni: {formatPrice(bestsellerProduct.regular_price)}
-                          </p>
-                        )}
-                      </div>
-                      <Link
-                        href={`/produkt/${bestsellerProduct.slug}`}
-                        className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-text-primary transition-colors hover:bg-white/90"
-                      >
-                        Zobacz produkt
-                        <ArrowRight size={14} strokeWidth={2} />
-                      </Link>
-                    </div>
-                    <div className="mt-4 flex justify-center gap-2">
-                      {featuredProducts.slice(0, 4).map((_, i) => (
-                        <span key={i} className={`h-1.5 w-1.5 rounded-full ${i === 0 ? "bg-white" : "bg-white/40"}`} />
-                      ))}
-                    </div>
-                  </div>
+          {bestsellerProduct ? (
+            <div className="flex flex-col overflow-hidden rounded-2xl lg:flex-row">
+              {/* Left — lifestyle image */}
+              <div className="relative aspect-[4/3] lg:aspect-auto lg:w-[50%]">
+                <img
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80"
+                  alt="Wnętrze TeoHome"
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute bottom-4 left-4 flex gap-2">
+                  {featuredProducts.slice(0, 4).map((_, i) => (
+                    <span key={i} className={`h-2 w-2 rounded-full ${i === 0 ? "bg-white" : "bg-white/40"}`} />
+                  ))}
                 </div>
-              ) : (
-                <div className="flex aspect-[16/9] items-center justify-center rounded-2xl bg-bg-light text-text-light">
-                  <p>Brak polecanych produktów</p>
-                </div>
-              )}
+              </div>
+
+              {/* Right — product info on light bg */}
+              <div className="flex flex-col justify-center bg-bg-light p-8 lg:w-[50%] lg:p-12">
+                <span className="inline-block w-fit rounded-full bg-badge-bestseller px-3 py-1 text-[11px] font-semibold tracking-wide text-white uppercase">
+                  Bestseller
+                </span>
+                <h3 className="mt-4 font-heading text-xl font-semibold text-text-primary lg:text-2xl">
+                  {bestsellerProduct.name}
+                </h3>
+                <p className="mt-2 text-sm text-text-secondary line-clamp-2">
+                  {bestsellerProduct.short_description.replace(/<[^>]*>/g, "")}
+                </p>
+                <p className="mt-3 text-[22px] font-bold text-text-primary">
+                  {formatPrice(bestsellerProduct.price)}
+                </p>
+                {bestsellerProduct.on_sale && bestsellerProduct.regular_price && (
+                  <p className="mt-1 text-xs text-text-light">
+                    Najniższa cena z 30 dni: {formatPrice(bestsellerProduct.regular_price)}
+                  </p>
+                )}
+                <Link
+                  href={`/produkt/${bestsellerProduct.slug}`}
+                  className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-text-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-text-primary/90"
+                >
+                  Zobacz produkt
+                  <ArrowRight size={14} strokeWidth={2} />
+                </Link>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="flex aspect-[16/9] items-center justify-center rounded-2xl bg-bg-light text-text-light">
+              <p>Brak polecanych produktów</p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -517,8 +495,8 @@ export default async function HomePage() {
                 </div>
                 <div className="flex flex-1 flex-col justify-between bg-[#f4f4f4] px-8 py-6">
                   <h3 className="text-base font-bold leading-snug text-text-primary line-clamp-2">{post.title}</h3>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-text-primary transition-colors group-hover:text-primary">
-                    Przejdź do artykułu
+                  <span className="mt-4 inline-flex items-center gap-1.5 self-end text-sm font-bold text-text-primary transition-colors group-hover:text-primary">
+                    Czytaj
                     <ArrowRight size={15} strokeWidth={2} />
                   </span>
                 </div>
@@ -544,14 +522,14 @@ export default async function HomePage() {
             </h2>
             <div className="hidden items-center gap-2 sm:flex">
               {[0, 1, 2, 3].map((i) => (
-                <span key={i} className={`h-3 w-3 rounded-full ${i === 0 ? "bg-accent" : "bg-[#eaeaea]"}`} />
+                <span key={i} className={`h-3 w-3 rounded-full ${i === 0 ? "bg-text-primary" : "bg-[#eaeaea]"}`} />
               ))}
             </div>
           </div>
 
           <div className="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-4">
             {testimonials.map((t) => (
-              <div key={t.name} className="rounded-xl bg-[#f4f4f4] p-8">
+              <div key={t.name} className="rounded-2xl bg-[#f4f4f4] p-8">
                 <div className="flex items-center gap-5">
                   <div className="h-[77px] w-[77px] shrink-0 overflow-hidden rounded-full bg-accent">
                     <img src={t.avatar} alt={t.name} className="h-full w-full object-cover" />
@@ -575,61 +553,36 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 10. INSPIRATION GALLERY                                            */}
       {/* ================================================================== */}
-      <section className="py-14 lg:py-20">
-        <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-          <div className="flex flex-col gap-5 lg:flex-row">
-            <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-[#312E29] px-7 py-10 lg:w-[45%] lg:px-10 lg:py-14">
-              <img
-                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80"
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 h-full w-full object-cover opacity-25"
-              />
-              <div className="relative z-10">
-                <h2 className="font-heading text-2xl leading-snug font-semibold text-white md:text-[28px]">
-                  Zainspiruj się realizacjami TeoHome
-                </h2>
-                <p className="mt-3 text-[15px] leading-relaxed text-white/70">
-                  Przeglądaj galerię naszych projektów i znajdź inspirację do aranżacji własnego wnętrza. Każda realizacja to unikalna historia naszych klientów.
-                </p>
-                <div className="mt-6 flex items-center gap-4">
-                  <Link
-                    href="/realizacje"
-                    className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-text-primary transition-colors hover:bg-white/90"
-                  >
-                    Zobacz galerię
-                    <ArrowRight size={14} strokeWidth={2} />
-                  </Link>
-                  <div className="flex gap-2">
-                    <button
-                      type="button"
-                      className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white/10"
-                      aria-label="Poprzednia realizacja"
-                    >
-                      <ChevronLeft size={16} strokeWidth={2} />
-                    </button>
-                    <button
-                      type="button"
-                      className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white/10"
-                      aria-label="Następna realizacja"
-                    >
-                      <ChevronRight size={16} strokeWidth={2} />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <section className="relative">
+        {/* Full-width background image */}
+        <div className="relative h-[500px] lg:h-[600px]">
+          <img
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&q=80"
+            alt="Realizacje TeoHome"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/30" />
 
-            <div className="grid flex-1 grid-cols-2 gap-3">
-              {inspirationImages.map((img, i) => (
-                <div key={i} className="aspect-[3/4] overflow-hidden rounded-xl bg-bg-light">
-                  <img
-                    src={img}
-                    alt={`Realizacja TeoHome ${i + 1}`}
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
-              ))}
+          {/* Content overlay */}
+          <div className="relative mx-auto flex h-full max-w-[1440px] items-center px-6 lg:px-16">
+            <div className="max-w-md rounded-2xl bg-white/95 p-8 shadow-lg backdrop-blur-sm lg:p-10">
+              <h2 className="font-heading text-2xl leading-snug font-semibold text-text-primary md:text-[28px]">
+                Zainspiruj się realizacjami TeoHome
+              </h2>
+              <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
+                Przeglądaj galerię naszych projektów i znajdź inspirację do aranżacji własnego wnętrza. Każda realizacja to unikalna historia naszych klientów.
+              </p>
+              <div className="mt-6">
+                <Link
+                  href="/realizacje"
+                  className="inline-flex items-center gap-0 rounded-full bg-accent py-1.5 pl-5 pr-1.5 text-sm font-medium text-white transition-colors hover:bg-accent/90"
+                >
+                  <span>Zobacz galerię realizacji</span>
+                  <span className="ml-3 flex h-[36px] w-[36px] items-center justify-center rounded-full bg-white/20">
+                    <ArrowRight size={14} strokeWidth={2} />
+                  </span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
