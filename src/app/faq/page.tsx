@@ -58,7 +58,7 @@ export default function FaqPage() {
     <>
       {/* Hero Banner */}
       <section className="bg-bg-warm">
-        <div className="mx-auto max-w-[1400px] px-6 py-12 lg:px-8 lg:py-16">
+        <div className="mx-auto max-w-[1440px] px-6 py-12 lg:px-16 lg:py-16">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex items-center gap-2 text-sm text-text-light">
@@ -162,7 +162,7 @@ export default function FaqPage() {
 
           <Link
             href="/kontakt"
-            className="mt-8 inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-accent px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-accent/90"
           >
             Skontaktuj sie z nami
           </Link>

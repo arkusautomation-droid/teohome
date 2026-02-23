@@ -167,7 +167,7 @@ export default function KasaPage() {
     return (
       <div className="min-h-screen bg-white">
         <div className="border-b border-border-light">
-          <div className="mx-auto max-w-[1400px] px-6 py-3 lg:px-8">
+          <div className="mx-auto max-w-[1440px] px-6 py-3 lg:px-16">
             <nav aria-label="Breadcrumb">
               <ol className="flex items-center gap-2 text-sm text-text-light">
                 <li><Link href="/" className="transition-colors hover:text-text-primary">Strona główna</Link></li>
@@ -177,10 +177,10 @@ export default function KasaPage() {
             </nav>
           </div>
         </div>
-        <div className="mx-auto max-w-[1400px] px-6 py-16 lg:px-8 text-center">
-          <h1 className="font-[var(--font-heading)] text-3xl font-semibold text-text-primary">Twój koszyk jest pusty</h1>
+        <div className="mx-auto max-w-[1440px] px-6 py-16 lg:px-16 text-center">
+          <h1 className="font-heading text-3xl font-semibold text-text-primary">Twój koszyk jest pusty</h1>
           <p className="mt-3 text-text-secondary">Dodaj produkty, aby przejść do kasy.</p>
-          <Link href="/" className="mt-8 inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-primary-dark">
+          <Link href="/" className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-accent/90">
             <ArrowLeft size={16} strokeWidth={2} />
             Przejdź do sklepu
           </Link>
@@ -193,7 +193,7 @@ export default function KasaPage() {
     <div className="min-h-screen bg-white">
       {/* Breadcrumb */}
       <div className="border-b border-border-light">
-        <div className="mx-auto max-w-[1400px] px-6 py-3 lg:px-8">
+        <div className="mx-auto max-w-[1440px] px-6 py-3 lg:px-16">
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-2 text-sm text-text-light">
               <li><Link href="/" className="transition-colors hover:text-text-primary">Strona główna</Link></li>
@@ -206,8 +206,8 @@ export default function KasaPage() {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="mx-auto max-w-[1400px] px-6 py-8 lg:px-8 lg:py-12">
-        <h1 className="font-[var(--font-heading)] text-3xl font-semibold text-text-primary md:text-4xl">
+      <form onSubmit={handleSubmit} className="mx-auto max-w-[1440px] px-6 py-8 lg:px-16 lg:py-12">
+        <h1 className="font-heading text-3xl font-semibold text-text-primary md:text-4xl">
           Kasa
         </h1>
 
@@ -216,7 +216,7 @@ export default function KasaPage() {
           <div className="space-y-8">
             {/* Contact */}
             <section>
-              <h2 className="font-[var(--font-heading)] text-xl font-semibold text-text-primary">
+              <h2 className="font-heading text-xl font-semibold text-text-primary">
                 Dane kontaktowe
               </h2>
               <div className="mt-4 space-y-4">
@@ -243,7 +243,7 @@ export default function KasaPage() {
 
             {/* Billing */}
             <section>
-              <h2 className="font-[var(--font-heading)] text-xl font-semibold text-text-primary">
+              <h2 className="font-heading text-xl font-semibold text-text-primary">
                 Adres rozliczeniowy
               </h2>
               <div className="mt-4 space-y-4">
@@ -339,7 +339,7 @@ export default function KasaPage() {
             {/* Shipping address */}
             <section>
               <div className="flex items-center gap-3">
-                <h2 className="font-[var(--font-heading)] text-xl font-semibold text-text-primary">
+                <h2 className="font-heading text-xl font-semibold text-text-primary">
                   Adres dostawy
                 </h2>
               </div>
@@ -407,7 +407,7 @@ export default function KasaPage() {
 
             {/* Payment */}
             <section>
-              <h2 className="font-[var(--font-heading)] text-xl font-semibold text-text-primary">
+              <h2 className="font-heading text-xl font-semibold text-text-primary">
                 Metoda płatności
               </h2>
               <div className="mt-4 space-y-3">
@@ -469,7 +469,7 @@ export default function KasaPage() {
 
             {/* Notes */}
             <section>
-              <h2 className="font-[var(--font-heading)] text-xl font-semibold text-text-primary">
+              <h2 className="font-heading text-xl font-semibold text-text-primary">
                 Uwagi do zamówienia
               </h2>
               <textarea
@@ -485,7 +485,7 @@ export default function KasaPage() {
           {/* RIGHT — Order Summary */}
           <div className="xl:sticky xl:top-[105px] xl:self-start">
             <div className="rounded-2xl bg-bg-light p-6 md:p-8">
-              <h2 className="font-[var(--font-heading)] text-xl font-semibold text-text-primary">
+              <h2 className="font-heading text-xl font-semibold text-text-primary">
                 Twoje zamówienie
               </h2>
 
@@ -543,7 +543,7 @@ export default function KasaPage() {
 
               <div className="flex items-center justify-between">
                 <span className="text-base font-semibold text-text-primary">Razem:</span>
-                <span className="font-[var(--font-heading)] text-xl font-bold text-text-primary md:text-2xl">
+                <span className="font-heading text-xl font-bold text-text-primary md:text-2xl">
                   {formatPrice(total)}
                 </span>
               </div>
@@ -551,7 +551,7 @@ export default function KasaPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="mt-6 flex h-13 w-full items-center justify-center gap-2 rounded-xl bg-bg-dark text-base font-semibold text-white transition-all hover:bg-text-primary active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
+                className="mt-6 flex h-12 w-full items-center justify-center gap-2 rounded-full bg-accent text-sm font-semibold text-white transition-all hover:bg-accent/90 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <span className="flex items-center gap-2">

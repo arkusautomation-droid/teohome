@@ -145,7 +145,7 @@ export default function AboutPage() {
       {/*  OUR STORY                                                    */}
       {/* ============================================================ */}
       <section className="py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto grid max-w-[1400px] items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+        <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16 lg:px-16">
           {/* Image */}
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl lg:aspect-[3/4]">
             <Image
@@ -217,7 +217,7 @@ export default function AboutPage() {
       {/*  VALUES                                                       */}
       {/* ============================================================ */}
       <section className="bg-bg-warm py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
+        <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           {/* Section header */}
           <div className="text-center">
             <p className="text-sm font-medium uppercase tracking-widest text-primary">
@@ -256,7 +256,7 @@ export default function AboutPage() {
       {/*  TEAM                                                         */}
       {/* ============================================================ */}
       <section className="py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
+        <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           {/* Section header */}
           <div className="text-center">
             <p className="text-sm font-medium uppercase tracking-widest text-primary">
@@ -308,7 +308,7 @@ export default function AboutPage() {
       {/*  WHY US                                                       */}
       {/* ============================================================ */}
       <section className="bg-bg-light py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
+        <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           {/* Section header */}
           <div className="text-center">
             <h2 className="font-heading text-3xl font-bold text-text-primary sm:text-4xl">
@@ -345,7 +345,7 @@ export default function AboutPage() {
       {/*  CTA                                                          */}
       {/* ============================================================ */}
       <section className="bg-bg-dark py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto max-w-[1400px] px-6 text-center lg:px-8">
+        <div className="mx-auto max-w-[1440px] px-6 text-center lg:px-16">
           <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
             Zacznij swoja przygode z TeoHome
           </h2>
@@ -355,7 +355,7 @@ export default function AboutPage() {
           </p>
           <Link
             href="/kontakt"
-            className="mt-8 inline-flex items-center justify-center rounded-lg border-2 border-accent px-8 py-3.5 text-base font-medium text-accent transition-colors duration-300 hover:bg-accent hover:text-white sm:text-lg"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-accent px-8 py-3.5 text-base font-medium text-white transition-colors duration-300 hover:bg-accent/90 sm:text-lg"
           >
             Skontaktuj sie z nami
           </Link>

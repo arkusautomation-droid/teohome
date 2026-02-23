@@ -272,7 +272,7 @@ export default function BlogPage() {
       {/*  FEATURED POST                                                */}
       {/* ============================================================ */}
       <section className="bg-white" aria-label="Wyróżniony artykuł">
-        <div className="mx-auto max-w-[1400px] px-6 py-14 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-[1440px] px-6 py-14 lg:px-16 lg:py-20">
           <article className="group overflow-hidden rounded-2xl border border-border bg-white transition-shadow duration-300 hover:shadow-xl">
             <div className="flex flex-col lg:flex-row">
               {/* Image - 60% on desktop */}
@@ -312,7 +312,7 @@ export default function BlogPage() {
                 <div className="mt-6 flex flex-wrap items-center gap-4 lg:mt-8">
                   <Link
                     href={`/blog/${featuredPost.slug}`}
-                    className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
+                    className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent/90"
                   >
                     Czytaj więcej
                     <ArrowRight size={16} strokeWidth={2} />
@@ -336,7 +336,7 @@ export default function BlogPage() {
       {/*  BLOG GRID                                                    */}
       {/* ============================================================ */}
       <section className="bg-bg-light" aria-label="Najnowsze artykuły">
-        <div className="mx-auto max-w-[1400px] px-6 py-14 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-[1440px] px-6 py-14 lg:px-16 lg:py-20">
           {/* Section heading */}
           <div className="mb-10 text-center lg:mb-14">
             <h2 className="font-heading text-3xl font-bold text-text-primary sm:text-4xl">

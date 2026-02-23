@@ -103,7 +103,7 @@ export default function ProductActions({ product }: ProductActionsProps) {
       {/* ============================================================ */}
       <div className="flex flex-col gap-4">
         {/* Main image */}
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-bg-light">
+        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-bg-light">
           <Image
             src={images[activeImageIndex].src}
             alt={images[activeImageIndex].alt || product.name}
@@ -112,6 +112,12 @@ export default function ProductActions({ product }: ProductActionsProps) {
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 60vw, 55vw"
             priority
           />
+          {/* Badge on image */}
+          {product.on_sale && (
+            <span className="absolute left-4 top-4 rounded-full bg-accent px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white">
+              Promocja
+            </span>
+          )}
         </div>
 
         {/* Thumbnails */}
@@ -122,7 +128,7 @@ export default function ProductActions({ product }: ProductActionsProps) {
                 key={img.id || index}
                 type="button"
                 onClick={() => setActiveImageIndex(index)}
-                className={`relative aspect-square overflow-hidden rounded-md bg-bg-light transition-all ${
+                className={`relative aspect-square overflow-hidden rounded-xl bg-bg-light transition-all ${
                   activeImageIndex === index
                     ? "ring-2 ring-primary ring-offset-2"
                     : "ring-1 ring-border hover:ring-text-light"
@@ -147,22 +153,22 @@ export default function ProductActions({ product }: ProductActionsProps) {
       {/*  PRODUCT INFO (right column on desktop)                       */}
       {/* ============================================================ */}
       <div className="flex flex-col">
-        {/* Badge */}
-        {product.on_sale && (
-          <span className="inline-flex w-fit items-center rounded-sm bg-accent/15 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-accent">
-            Promocja
+        {/* Category tag */}
+        {product.categories?.[0] && (
+          <span className="text-xs font-medium uppercase tracking-wider text-text-light">
+            {product.categories[0].name}
           </span>
         )}
 
         {/* Product name */}
-        <h1 className="mt-3 font-heading text-3xl font-semibold text-text-primary md:text-4xl">
+        <h1 className="mt-2 font-heading text-2xl font-bold text-text-primary md:text-[32px] md:leading-tight">
           {product.name}
         </h1>
 
         {/* Short description */}
         {product.short_description && (
           <p
-            className="mt-2 text-base text-text-secondary"
+            className="mt-3 text-sm leading-relaxed text-text-secondary"
             dangerouslySetInnerHTML={{
               __html: product.short_description,
             }}
@@ -170,19 +176,21 @@ export default function ProductActions({ product }: ProductActionsProps) {
         )}
 
         {/* Price section */}
-        <div className="mt-5">
-          <p className="text-3xl font-bold text-text-primary">
+        <div className="mt-6 flex items-baseline gap-3">
+          <p className="text-[28px] font-bold text-text-primary">
             {formatPrice(priceNum)}
           </p>
           {product.on_sale && regularPriceNum > priceNum && (
-            <p className="mt-1 text-sm text-text-light">
-              Najniższa cena z 30 dni:{" "}
-              <span className="line-through">
-                {formatPrice(regularPriceNum)}
-              </span>
+            <p className="text-base text-text-light line-through">
+              {formatPrice(regularPriceNum)}
             </p>
           )}
         </div>
+        {product.on_sale && regularPriceNum > priceNum && (
+          <p className="mt-1 text-xs text-text-light">
+            Najniższa cena z 30 dni: {formatPrice(regularPriceNum)}
+          </p>
+        )}
 
         {/* Divider */}
         <hr className="my-6 border-border" />
@@ -234,7 +242,7 @@ export default function ProductActions({ product }: ProductActionsProps) {
                   key={option}
                   type="button"
                   onClick={() => setSelectedSize(option)}
-                  className={`rounded-md border px-5 py-2.5 text-sm font-medium transition-all ${
+                  className={`rounded-full border px-5 py-2 text-sm font-medium transition-all ${
                     selectedSize === option
                       ? "border-bg-dark bg-bg-dark text-white"
                       : "border-border bg-white text-text-primary hover:border-text-light"
@@ -250,9 +258,9 @@ export default function ProductActions({ product }: ProductActionsProps) {
         )}
 
         {/* Quantity + Add to cart */}
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
           {/* Quantity selector */}
-          <div className="flex h-12 w-fit items-center rounded-md border border-border">
+          <div className="flex h-12 w-fit items-center rounded-full border border-border">
             <button
               type="button"
               onClick={decrementQuantity}
@@ -284,7 +292,7 @@ export default function ProductActions({ product }: ProductActionsProps) {
           <button
             type="button"
             onClick={handleAddToCart}
-            className="flex h-12 flex-1 items-center justify-center gap-2.5 rounded-md bg-bg-dark text-sm font-semibold text-white transition-colors hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2"
+            className="flex h-12 flex-1 items-center justify-center gap-2.5 rounded-full bg-accent text-sm font-semibold text-white transition-colors hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2"
           >
             <ShoppingCart className="h-5 w-5" strokeWidth={1.8} />
             Dodaj do koszyka
@@ -295,7 +303,7 @@ export default function ProductActions({ product }: ProductActionsProps) {
         <button
           type="button"
           onClick={() => setIsFavorite(!isFavorite)}
-          className="mt-3 inline-flex w-fit items-center gap-2 py-1 text-sm text-text-secondary transition-colors hover:text-primary"
+          className="mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-border px-5 py-2 text-sm text-text-secondary transition-colors hover:border-primary hover:text-primary"
         >
           <Heart
             className={`h-4 w-4 ${
@@ -310,30 +318,41 @@ export default function ProductActions({ product }: ProductActionsProps) {
         <hr className="my-6 border-border" />
 
         {/* Product perks */}
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-bg-light text-primary">
-              <Truck className="h-5 w-5" strokeWidth={1.8} />
+        <div className="rounded-2xl bg-bg-light p-5">
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-accent">
+                <Truck className="h-4.5 w-4.5" strokeWidth={1.8} />
+              </div>
+              <div>
+                <span className="text-sm font-medium text-text-primary">
+                  Darmowa dostawa
+                </span>
+                <p className="text-xs text-text-light">od 500 zł</p>
+              </div>
             </div>
-            <span className="text-sm text-text-primary">
-              Darmowa dostawa od 500 zł
-            </span>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-bg-light text-primary">
-              <RotateCcw className="h-5 w-5" strokeWidth={1.8} />
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-accent">
+                <RotateCcw className="h-4.5 w-4.5" strokeWidth={1.8} />
+              </div>
+              <div>
+                <span className="text-sm font-medium text-text-primary">
+                  30 dni na zwrot
+                </span>
+                <p className="text-xs text-text-light">Bezpłatna wymiana</p>
+              </div>
             </div>
-            <span className="text-sm text-text-primary">
-              30 dni na zwrot
-            </span>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-bg-light text-primary">
-              <Shield className="h-5 w-5" strokeWidth={1.8} />
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-accent">
+                <Shield className="h-4.5 w-4.5" strokeWidth={1.8} />
+              </div>
+              <div>
+                <span className="text-sm font-medium text-text-primary">
+                  Gwarancja 24 miesiące
+                </span>
+                <p className="text-xs text-text-light">Pełna ochrona</p>
+              </div>
             </div>
-            <span className="text-sm text-text-primary">
-              Gwarancja 24 miesiące
-            </span>
           </div>
         </div>
       </div>

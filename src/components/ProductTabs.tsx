@@ -36,7 +36,7 @@ export default function ProductTabs({ product }: ProductTabsProps) {
     <section aria-label="Szczegóły produktu">
       {/* Tab navigation */}
       <div
-        className="flex border-b border-border"
+        className="flex gap-2 border-b border-border pb-px"
         role="tablist"
         aria-label="Zakładki opisu produktu"
       >
@@ -49,9 +49,9 @@ export default function ProductTabs({ product }: ProductTabsProps) {
             aria-selected={activeTab === tab.id}
             aria-controls={`panel-${tab.id}`}
             onClick={() => setActiveTab(tab.id)}
-            className={`relative px-5 py-3.5 text-sm font-medium transition-colors sm:px-8 ${
+            className={`relative rounded-t-lg px-6 py-3 text-sm font-medium transition-colors ${
               activeTab === tab.id
-                ? "text-text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-primary"
+                ? "bg-bg-light text-text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-accent"
                 : "text-text-secondary hover:text-text-primary"
             }`}
           >

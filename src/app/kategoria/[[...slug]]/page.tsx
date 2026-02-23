@@ -137,7 +137,7 @@ export default async function KategoriaPage({ params }: PageProps) {
         <div className="absolute inset-0 bg-black/50" />
 
         {/* Content */}
-        <div className="relative z-10 mx-auto flex h-full max-w-[1400px] flex-col items-start justify-end px-6 pb-12 lg:px-8">
+        <div className="relative z-10 mx-auto flex h-full max-w-[1440px] flex-col items-start justify-end px-6 pb-12 lg:px-16">
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex items-center gap-2 text-sm text-white/70">

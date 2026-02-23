@@ -16,7 +16,7 @@ export default function ProductCard({ product, showBadge = true, badgeText }: Pr
 
   return (
     <Link href={`/produkt/${product.slug}`} className="group block">
-      <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100 mb-4">
+      <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-bg-light mb-4">
         <Image
           src={imageUrl}
           alt={product.name}
@@ -25,22 +25,22 @@ export default function ProductCard({ product, showBadge = true, badgeText }: Pr
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
         />
         {showBadge && (
-          <span className="absolute top-3 left-3 bg-[var(--color-badge-new)] text-white text-xs font-semibold px-3 py-1 rounded">
+          <span className="absolute top-3 left-3 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white">
             {badge}
           </span>
         )}
       </div>
-      <h3 className="font-[var(--font-heading)] text-lg font-semibold text-[var(--color-text-primary)] mb-1">
+      <h3 className="font-heading text-base font-bold text-text-primary mb-1">
         {product.name}
       </h3>
-      <p className="text-sm text-[var(--color-text-secondary)] mb-2">
-        {product.short_description.replace(/<[^>]*>/g, "")}
+      <p className="text-sm text-text-secondary mb-2">
+        {product.short_description?.replace(/<[^>]*>/g, "") || ""}
       </p>
-      <p className="text-xl font-bold text-[var(--color-text-primary)]">
+      <p className="text-xl font-bold text-text-primary">
         {formatPrice(product.price)}
       </p>
       {hasLowestPrice && (
-        <p className="text-xs text-[var(--color-text-light)] mt-1">
+        <p className="text-xs text-text-light mt-1">
           Najniższa cena z 30 dni: <span className="line-through">{formatPrice(product.regular_price)}</span>
         </p>
       )}

@@ -196,7 +196,7 @@ export default function InspiracjePage() {
         <div className="absolute inset-0 bg-black/50" />
 
         {/* Content */}
-        <div className="relative z-10 mx-auto flex h-full max-w-[1400px] flex-col items-start justify-end px-6 pb-12 lg:px-8">
+        <div className="relative z-10 mx-auto flex h-full max-w-[1440px] flex-col items-start justify-end px-6 pb-12 lg:px-16">
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex items-center gap-2 text-sm text-white/70">
@@ -227,7 +227,7 @@ export default function InspiracjePage() {
       {/*  FILTER TABS                                                  */}
       {/* ============================================================ */}
       <section className="border-b border-border bg-white">
-        <div className="mx-auto max-w-[1400px] px-6 py-8 lg:px-8">
+        <div className="mx-auto max-w-[1440px] px-6 py-8 lg:px-16">
           <div
             className="flex flex-wrap items-center justify-center gap-3"
             role="tablist"
@@ -257,7 +257,7 @@ export default function InspiracjePage() {
       {/*  MASONRY GALLERY                                              */}
       {/* ============================================================ */}
       <section className="bg-bg-light">
-        <div className="mx-auto max-w-[1400px] px-6 py-12 lg:px-8 lg:py-16">
+        <div className="mx-auto max-w-[1440px] px-6 py-12 lg:px-16 lg:py-16">
           {/* Masonry grid using CSS columns */}
           <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
             {filteredItems.map((item) => (
@@ -293,7 +293,7 @@ export default function InspiracjePage() {
       {/*  CTA SECTION                                                  */}
       {/* ============================================================ */}
       <section className="bg-bg-warm">
-        <div className="mx-auto max-w-[1400px] px-6 py-16 text-center lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-[1440px] px-6 py-16 text-center lg:px-16 lg:py-24">
           <h2 className="font-heading text-3xl font-bold text-text-primary sm:text-4xl">
             Chcesz takie wnetrze?
           </h2>

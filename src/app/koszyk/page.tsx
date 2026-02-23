@@ -15,10 +15,10 @@ export default function KoszykPage() {
   const total = totalPrice + shippingCost;
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-bg-light">
       {/* Breadcrumb */}
-      <div className="border-b border-border-light">
-        <div className="mx-auto max-w-[1400px] px-6 py-3 lg:px-8">
+      <div className="bg-white border-b border-border-light">
+        <div className="mx-auto max-w-[1440px] px-6 py-3 lg:px-16">
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-2 text-sm text-text-light">
               <li>
@@ -26,7 +26,7 @@ export default function KoszykPage() {
                   Strona główna
                 </Link>
               </li>
-              <li aria-hidden="true" className="text-text-light">&gt;</li>
+              <li aria-hidden="true" className="text-text-light">/</li>
               <li>
                 <span className="text-text-primary font-medium">Koszyk</span>
               </li>
@@ -36,39 +36,39 @@ export default function KoszykPage() {
       </div>
 
       {/* Page Content */}
-      <div className="mx-auto max-w-[1400px] px-6 py-8 lg:px-8 lg:py-12">
-        <h1 className="font-[var(--font-heading)] text-3xl font-semibold text-text-primary md:text-4xl">
-          Koszyk
+      <div className="mx-auto max-w-[1440px] px-6 py-8 lg:px-16 lg:py-12">
+        <h1 className="font-heading text-2xl font-bold text-text-primary md:text-3xl">
+          Koszyk ({totalItems})
         </h1>
 
         {items.length === 0 ? (
-          <div className="mt-16 flex flex-col items-center justify-center py-16 text-center">
+          <div className="mt-16 flex flex-col items-center justify-center rounded-2xl bg-white p-12 text-center shadow-sm">
             <div className="flex h-20 w-20 items-center justify-center rounded-full bg-bg-light">
               <ShoppingCart size={32} className="text-text-light" strokeWidth={1.5} />
             </div>
-            <h2 className="mt-6 font-[var(--font-heading)] text-2xl font-semibold text-text-primary">
+            <h2 className="mt-6 font-heading text-2xl font-bold text-text-primary">
               Twój koszyk jest pusty
             </h2>
-            <p className="mt-2 text-text-secondary">
+            <p className="mt-2 text-sm text-text-secondary">
               Dodaj produkty do koszyka, aby kontynuować zakupy.
             </p>
             <Link
               href="/"
-              className="mt-8 inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-accent/90"
             >
               <ArrowLeft size={16} strokeWidth={2} />
               Przejdź do sklepu
             </Link>
           </div>
         ) : (
-          <div className="mt-8 grid grid-cols-1 gap-8 xl:grid-cols-[1fr_420px] xl:gap-12">
+          <div className="mt-8 grid grid-cols-1 gap-8 xl:grid-cols-[1fr_400px] xl:gap-10">
             {/* LEFT - Cart Items */}
-            <div>
+            <div className="rounded-2xl bg-white p-6 shadow-sm md:p-8">
               <div className="hidden border-b border-border pb-3 md:grid md:grid-cols-[2fr_1fr_1fr_1fr_40px] md:gap-4">
-                <span className="text-xs font-semibold uppercase tracking-wider text-text-light">Produkt</span>
-                <span className="text-xs font-semibold uppercase tracking-wider text-text-light text-center">Cena</span>
-                <span className="text-xs font-semibold uppercase tracking-wider text-text-light text-center">Ilość</span>
-                <span className="text-xs font-semibold uppercase tracking-wider text-text-light text-right">Suma</span>
+                <span className="text-xs font-medium uppercase tracking-wider text-text-light">Produkt</span>
+                <span className="text-xs font-medium uppercase tracking-wider text-text-light text-center">Cena</span>
+                <span className="text-xs font-medium uppercase tracking-wider text-text-light text-center">Ilość</span>
+                <span className="text-xs font-medium uppercase tracking-wider text-text-light text-right">Suma</span>
                 <span />
               </div>
 
@@ -88,7 +88,7 @@ export default function KoszykPage() {
                       className="grid grid-cols-[80px_1fr] gap-4 py-6 md:grid-cols-[2fr_1fr_1fr_1fr_40px] md:items-center md:gap-4"
                     >
                       <div className="col-span-2 flex items-start gap-4 md:col-span-1">
-                        <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-bg-light md:h-24 md:w-24">
+                        <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-bg-light md:h-24 md:w-24">
                           <Image
                             src={imageUrl}
                             alt={item.product.name}
@@ -98,16 +98,13 @@ export default function KoszykPage() {
                           />
                         </div>
                         <div className="min-w-0">
-                          <h3 className="text-sm font-semibold text-text-primary md:text-base">
+                          <h3 className="text-sm font-bold text-text-primary md:text-base">
                             {item.product.name}
                           </h3>
-                          <p className="mt-0.5 text-xs text-text-secondary md:text-sm">
-                            {item.product.short_description?.replace(/<[^>]*>/g, "")}
-                          </p>
                           {attrs && (
-                            <p className="mt-0.5 text-xs text-text-secondary md:text-sm">{attrs}</p>
+                            <p className="mt-0.5 text-xs text-text-light">{attrs}</p>
                           )}
-                          <p className="mt-2 text-sm font-semibold text-text-primary md:hidden">
+                          <p className="mt-2 text-sm font-bold text-text-primary md:hidden">
                             {formatPrice(price * item.quantity)}
                           </p>
                         </div>
@@ -118,7 +115,7 @@ export default function KoszykPage() {
                       </div>
 
                       <div className="col-start-2 flex items-center md:col-start-auto md:justify-center">
-                        <div className="inline-flex items-center rounded-lg border border-border">
+                        <div className="inline-flex items-center rounded-full border border-border">
                           <button
                             type="button"
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
@@ -150,7 +147,7 @@ export default function KoszykPage() {
                         </button>
                       </div>
 
-                      <div className="hidden text-right text-sm font-semibold text-text-primary md:block">
+                      <div className="hidden text-right text-sm font-bold text-text-primary md:block">
                         {formatPrice(price * item.quantity)}
                       </div>
 
@@ -172,7 +169,7 @@ export default function KoszykPage() {
               <div className="mt-2 border-t border-border pt-6">
                 <Link
                   href="/"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-text-secondary transition-colors hover:text-primary"
+                  className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2 text-sm font-medium text-text-secondary transition-colors hover:border-primary hover:text-primary"
                 >
                   <ArrowLeft size={16} strokeWidth={2} />
                   Kontynuuj zakupy
@@ -181,26 +178,30 @@ export default function KoszykPage() {
             </div>
 
             {/* RIGHT - Order Summary */}
-            <div className="xl:sticky xl:top-[105px] xl:self-start">
-              <div className="rounded-2xl bg-bg-light p-6 md:p-8">
-                <h2 className="font-[var(--font-heading)] text-xl font-semibold text-text-primary">
-                  Podsumowanie zamówienia
+            <div className="xl:sticky xl:top-[80px] xl:self-start">
+              <div className="rounded-2xl bg-white p-6 shadow-sm md:p-8">
+                <h2 className="font-heading text-lg font-bold text-text-primary">
+                  Podsumowanie
                 </h2>
 
                 <div className="mt-6 space-y-3">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-text-secondary">Wartość produktów:</span>
+                    <span className="text-text-secondary">Produkty ({totalItems}):</span>
                     <span className="font-medium text-text-primary">{formatPrice(totalPrice)}</span>
                   </div>
                   <div className="flex items-start justify-between text-sm">
                     <div>
                       <span className="text-text-secondary">Dostawa:</span>
                       {totalPrice >= 500 && (
-                        <p className="mt-0.5 text-xs text-success">Darmowa dostawa od 500 zł</p>
+                        <p className="mt-0.5 text-xs text-green-600">Darmowa dostawa!</p>
                       )}
                     </div>
                     <span className="font-medium text-text-primary">
-                      {shippingCost === 0 ? "0 zł" : formatPrice(shippingCost)}
+                      {shippingCost === 0 ? (
+                        <span className="text-green-600">Gratis</span>
+                      ) : (
+                        formatPrice(shippingCost)
+                      )}
                     </span>
                   </div>
                 </div>
@@ -208,25 +209,25 @@ export default function KoszykPage() {
                 <div className="my-5 border-t border-border" />
 
                 <div className="flex items-center justify-between">
-                  <span className="text-base font-semibold text-text-primary">Razem:</span>
-                  <span className="font-[var(--font-heading)] text-xl font-bold text-text-primary md:text-2xl">
+                  <span className="text-sm font-medium text-text-secondary">Razem do zapłaty:</span>
+                  <span className="font-heading text-2xl font-bold text-text-primary">
                     {formatPrice(total)}
                   </span>
                 </div>
 
-                <div className="mt-6">
-                  <p className="text-sm text-text-secondary">Masz kod rabatowy?</p>
+                <div className="mt-6 rounded-xl bg-bg-light p-4">
+                  <p className="text-xs font-medium text-text-secondary">Kod rabatowy</p>
                   <div className="mt-2 flex gap-2">
                     <input
                       type="text"
                       value={couponCode}
                       onChange={(e) => setCouponCode(e.target.value)}
                       placeholder="Wpisz kod"
-                      className="h-11 flex-1 rounded-lg border border-border bg-white px-4 text-sm text-text-primary placeholder:text-text-light outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary/30"
+                      className="h-10 flex-1 rounded-full border border-border bg-white px-4 text-sm text-text-primary placeholder:text-text-light outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent/30"
                     />
                     <button
                       type="button"
-                      className="h-11 shrink-0 rounded-lg border border-primary bg-white px-5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-white"
+                      className="h-10 shrink-0 rounded-full bg-bg-dark px-5 text-sm font-medium text-white transition-colors hover:bg-text-primary"
                     >
                       Zastosuj
                     </button>
@@ -235,7 +236,7 @@ export default function KoszykPage() {
 
                 <Link
                   href="/kasa"
-                  className="mt-6 flex h-13 w-full items-center justify-center gap-2 rounded-xl bg-bg-dark text-base font-semibold text-white transition-all hover:bg-text-primary active:scale-[0.98]"
+                  className="mt-6 flex h-12 w-full items-center justify-center gap-2 rounded-full bg-accent text-sm font-semibold text-white transition-all hover:bg-accent/90 active:scale-[0.98]"
                 >
                   Przejdź do kasy
                 </Link>

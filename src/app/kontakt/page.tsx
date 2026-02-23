@@ -375,10 +375,10 @@ function ContactForm() {
         {/* Submit button */}
         <button
           type="submit"
-          className="mt-1 flex w-full items-center justify-center gap-2 rounded-lg bg-bg-dark px-6 py-3.5
+          className="mt-1 flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5
             text-sm font-medium text-white transition-all
-            hover:bg-text-primary active:scale-[0.98]
-            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
+            hover:bg-accent/90 active:scale-[0.98]
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2
             disabled:cursor-not-allowed disabled:opacity-50"
         >
           <Send className="h-4 w-4" strokeWidth={1.8} />
@@ -395,7 +395,7 @@ function ContactForm() {
 function MapSection() {
   return (
     <section className="bg-white" aria-label="Lokalizacja na mapie">
-      <div className="mx-auto max-w-[1400px] px-6 pb-16 lg:px-8 lg:pb-24">
+      <div className="mx-auto max-w-[1440px] px-6 pb-16 lg:px-16 lg:pb-24">
         <h2 className="mb-6 font-heading text-2xl font-semibold text-text-primary sm:text-3xl">
           Nasza lokalizacja
         </h2>
@@ -428,7 +428,7 @@ export default function KontaktPage() {
 
       {/* Main content: Contact info + Form */}
       <section className="bg-white py-16 lg:py-24" aria-label="Formularz kontaktowy">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
+        <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
             {/* Left column - Contact info (~40%) */}
             <div className="lg:col-span-2">

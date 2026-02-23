@@ -99,7 +99,7 @@ function RelatedProductCard({ product }: { product: WooProduct }) {
     <article className="group flex flex-col">
       <Link
         href={`/produkt/${product.slug}`}
-        className="relative aspect-[4/5] overflow-hidden rounded-lg bg-bg-light"
+        className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-bg-light"
       >
         <Image
           src={imageUrl}
@@ -109,21 +109,21 @@ function RelatedProductCard({ product }: { product: WooProduct }) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
         />
         {product.on_sale && (
-          <span className="absolute left-3 top-3 rounded-sm bg-badge-new px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white">
+          <span className="absolute left-3 top-3 rounded-full bg-accent px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white">
             Promocja
           </span>
         )}
       </Link>
-      <div className="mt-3 flex flex-col gap-1">
+      <div className="mt-4 flex flex-col gap-1">
         <Link href={`/produkt/${product.slug}`}>
-          <h3 className="text-sm font-medium text-text-primary transition-colors group-hover:text-primary">
+          <h3 className="text-base font-bold text-text-primary transition-colors group-hover:text-primary">
             {product.name}
           </h3>
         </Link>
         <p className="text-xs text-text-light">
           {product.short_description?.replace(/<[^>]*>/g, "") || ""}
         </p>
-        <p className="mt-1 text-base font-bold text-text-primary">
+        <p className="mt-1 text-xl font-bold text-text-primary">
           {formatPrice(product.price)}
         </p>
         {hasLowestPrice && (
@@ -155,14 +155,14 @@ export default async function ProductPage({ params }: PageProps) {
 
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
+      <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         {/* Breadcrumb */}
         <Breadcrumb product={product} />
 
         {/* Product section - Two column layout */}
         <section
           aria-label="Informacje o produkcie"
-          className="grid grid-cols-1 gap-8 pb-12 lg:grid-cols-[55%_1fr] lg:gap-12 xl:gap-16"
+          className="grid grid-cols-1 gap-8 pb-16 lg:grid-cols-[52%_1fr] lg:gap-14 xl:gap-20"
         >
           {/* ProductActions renders both gallery (left) and info (right) */}
           <ProductActions product={product} />
@@ -181,8 +181,8 @@ export default async function ProductPage({ params }: PageProps) {
           aria-label="Podobne produkty"
           className="border-t border-border bg-bg-light"
         >
-          <div className="mx-auto max-w-[1400px] px-6 py-16 lg:px-8 lg:py-20">
-            <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-3xl">
+          <div className="mx-auto max-w-[1440px] px-6 py-16 lg:px-16 lg:py-20">
+            <h2 className="font-heading text-2xl font-bold text-text-primary md:text-3xl">
               Podobne produkty
             </h2>
             <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
