@@ -123,7 +123,7 @@ export default async function HomePage() {
 
           <div className="relative mx-auto flex h-full max-w-[1440px] items-center px-6 lg:px-16">
             <div className="max-w-lg">
-              <h1 className="font-heading text-3xl leading-tight font-semibold text-white md:text-4xl lg:text-[48px] lg:leading-[1.08]">
+              <h1 className="font-heading text-3xl leading-tight font-bold text-white md:text-4xl lg:text-[48px] lg:leading-[1.08]">
                 Kuchnie dopasowane do Twojego stylu
               </h1>
               <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/80 md:text-base">
@@ -163,7 +163,7 @@ export default async function HomePage() {
       <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="mb-6 flex items-end justify-between">
-            <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[32px]">
+            <h2 className="font-heading text-2xl font-bold text-text-primary md:text-[32px]">
               Wybierz coś dla siebie
             </h2>
             <Link
@@ -206,10 +206,10 @@ export default async function HomePage() {
       {/* ================================================================== */}
       <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-          <div className="rounded-2xl border border-border p-6 lg:p-14">
+          <div className="p-6 lg:p-0">
             <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-14">
               <div className="lg:w-[55%]">
-                <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[32px]">
+                <h2 className="font-heading text-2xl font-bold text-text-primary md:text-[32px]">
                   Witaj w TeoHome!
                 </h2>
                 <p className="mt-5 text-[15px] leading-relaxed text-text-secondary">
@@ -219,9 +219,6 @@ export default async function HomePage() {
                   Wiemy, że wybór mebli na wymiar to decyzja, która wymaga wsparcia. Dlatego zapewniamy pomoc doświadczonych projektantów na każdym etapie od pierwszej konsultacji, przez dobór szafek i materiałów, aż po finalny projekt.
                 </p>
                 <div className="mt-7">
-                  <p className="mb-3 text-sm text-text-secondary">
-                    Dowiedz się więcej &mdash; kontaktuj i zamów na stronie, przez:
-                  </p>
                   <div className="flex flex-wrap gap-3">
                     <Link
                       href="/o-nas"
@@ -234,10 +231,9 @@ export default async function HomePage() {
                     </Link>
                     <Link
                       href="/strefa-projektowa"
-                      className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-text-primary transition-colors hover:border-primary hover:text-primary"
+                      className="inline-flex items-center rounded-full border border-border px-5 py-2.5 text-sm font-medium text-text-primary transition-colors hover:border-primary hover:text-primary"
                     >
                       Strefa projektowania
-                      <ArrowRight size={14} strokeWidth={2} />
                     </Link>
                   </div>
                 </div>
@@ -273,7 +269,7 @@ export default async function HomePage() {
           {/* White overlay card */}
           <div className="mx-auto max-w-5xl rounded-3xl bg-white px-6 py-10 lg:px-16 lg:py-14">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[32px]">
+              <h2 className="font-heading text-2xl font-bold text-text-primary md:text-[32px]">
                 Zaprojektuj wnętrze z pomocą naszych projektantów!
               </h2>
               <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
@@ -290,7 +286,7 @@ export default async function HomePage() {
                   key={designer.name}
                   className="flex flex-col items-center px-4 py-6 text-center"
                 >
-                  <div className="h-[80px] w-[80px] overflow-hidden rounded-full border-2 border-primary-light">
+                  <div className="h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-primary-light">
                     <img src={designer.avatar} alt={designer.name} className="h-full w-full object-cover" />
                   </div>
                   <h3 className="mt-4 font-heading text-lg font-semibold text-text-primary">
@@ -373,11 +369,9 @@ export default async function HomePage() {
                       <p className="mt-1.5 text-xl font-bold text-text-primary">
                         {formatPrice(product.price)}
                       </p>
-                      {product.on_sale && product.regular_price && (
-                        <p className="mt-0.5 text-xs text-text-light">
-                          Najniższa cena z 30 dni: {formatPrice(product.regular_price)}
-                        </p>
-                      )}
+                      <p className="mt-0.5 text-xs text-text-light">
+                        Najniższa cena z 30 dni: {formatPrice(product.regular_price || product.price)}
+                      </p>
                     </div>
                   </Link>
                 ))}
@@ -410,7 +404,7 @@ export default async function HomePage() {
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 flex flex-col justify-between p-8 lg:p-10">
                   <div>
-                    <h2 className="font-heading text-2xl font-semibold text-white md:text-[32px]">
+                    <h2 className="font-heading text-2xl font-bold text-white md:text-[32px]">
                       Polecane produkty
                     </h2>
                     <p className="mt-3 max-w-sm text-[15px] leading-relaxed text-white/80">
@@ -427,6 +421,16 @@ export default async function HomePage() {
 
               {/* Right — product info on light bg */}
               <div className="flex flex-col justify-center bg-bg-light p-8 lg:w-[50%] lg:p-12">
+                {/* Product image */}
+                <div className="mb-4 flex justify-center">
+                  <Image
+                    src={getProductImage(bestsellerProduct)}
+                    alt={bestsellerProduct.name}
+                    width={280}
+                    height={350}
+                    className="max-h-[240px] w-auto object-contain"
+                  />
+                </div>
                 <span className="inline-block w-fit rounded-full bg-badge-bestseller px-3 py-1 text-[11px] font-semibold tracking-wide text-white uppercase">
                   Bestseller
                 </span>
@@ -478,7 +482,7 @@ export default async function HomePage() {
 
           {/* Featured post — image + content side-by-side (Figma: 842+678, rounded-xl, bg #f4f4f4) */}
           <Link href={blogPosts[0].href} className="group mb-8 flex flex-col overflow-hidden rounded-xl lg:flex-row">
-            <div className="aspect-[3/2] overflow-hidden lg:aspect-auto lg:w-[55%] lg:shrink-0">
+            <div className="aspect-[3/2] overflow-hidden lg:aspect-auto lg:w-[50%] lg:shrink-0">
               <img
                 src={blogPosts[0].image}
                 alt={blogPosts[0].title}
@@ -540,7 +544,7 @@ export default async function HomePage() {
       <section className="bg-white py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="mb-8 flex items-end justify-between">
-            <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[32px]">
+            <h2 className="font-heading text-2xl font-bold text-text-primary md:text-[32px]">
               Zobacz, co mówią nasi klienci
             </h2>
             <div className="hidden items-center gap-2 sm:flex">
@@ -591,7 +595,7 @@ export default async function HomePage() {
                 Zainspiruj się realizacjami TeoHome
               </h2>
               <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
-                Przeglądaj galerię naszych projektów i znajdź inspirację do aranżacji własnego wnętrza. Każda realizacja to unikalna historia naszych klientów.
+                Zobacz, jak nasze meble na wymiar sprawdzają się w projektach. Poznaj gotowe aranżacje, detale i rozwiązania, które pomogą Ci znaleźć kierunek i dobrać meble dopasowane do Twojej przestrzeni.
               </p>
               <div className="mt-6">
                 <Link
