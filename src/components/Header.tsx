@@ -115,7 +115,7 @@ export default function Header() {
             {/* CTA button — desktop only */}
             <Link
               href="/kontakt"
-              className="ml-3 hidden rounded-full bg-primary px-6 py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-primary-dark xl:inline-flex"
+              className="ml-3 hidden rounded-full bg-primary px-7 py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-primary-dark xl:inline-flex"
             >
               Umów wizytę w salonie
             </Link>

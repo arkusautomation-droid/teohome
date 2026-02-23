@@ -110,49 +110,72 @@ export default async function HomePage() {
   return (
     <>
       {/* ================================================================== */}
-      {/* 1. HERO SECTION — full-width (Figma pixel-perfect)                */}
+      {/* 1. HERO SECTION — Figma: main image left + 2x2 thumbnails right  */}
       {/* ================================================================== */}
       <section className="relative w-full overflow-hidden">
-        <div className="relative h-[500px] w-full lg:h-[800px]">
-          <img
-            src="/images/hero/hero-bg.jpg"
-            alt="Nowoczesna kuchnia na wymiar TeoHome"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-
-          <div className="relative flex h-full items-center px-6 lg:px-16">
-            <div className="max-w-lg">
-              <h1 className="font-heading text-3xl leading-tight font-semibold text-white md:text-4xl lg:text-[46px] lg:leading-[1.08]">
-                Kuchnie dopasowane do Twojego stylu
-              </h1>
-              <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/80 md:text-base">
-                Tworzymy funkcjonalne i estetyczne kuchnie na zamówienie, które łączą design oraz jakość.
-              </p>
-              <Link
-                href="/kuchnie"
-                className="mt-7 inline-flex items-center gap-4"
-              >
-                <span className="text-sm font-semibold text-text-primary">Zobacz więcej</span>
-                <span className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-accent transition-colors hover:bg-accent/80">
-                  <ArrowRight size={20} strokeWidth={2} className="text-white" />
-                </span>
-              </Link>
-            </div>
-          </div>
-
-          {/* Dot pagination */}
-          <div className="absolute bottom-5 left-6 z-10 flex gap-2 lg:left-16">
-            {[0, 1, 2, 3].map((i) => (
-              <button
-                key={i}
-                type="button"
-                className={`h-2.5 w-2.5 rounded-full border border-white/60 transition-colors ${
-                  i === 0 ? "bg-white" : "bg-transparent hover:bg-white/40"
-                }`}
-                aria-label={`Slajd ${i + 1}`}
+        <div className="w-full">
+          <div className="flex h-[500px] lg:h-[800px]">
+            {/* Left — main hero image with text overlay */}
+            <div className="relative flex-1">
+              <img
+                src="/images/hero/hero-bg.jpg"
+                alt="Nowoczesna kuchnia na wymiar TeoHome"
+                className="absolute inset-0 h-full w-full object-cover"
               />
-            ))}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+
+              <div className="relative flex h-full items-center px-6 lg:px-16">
+                <div className="max-w-lg">
+                  <h1 className="font-heading text-3xl leading-tight font-semibold text-white md:text-4xl lg:text-[46px] lg:leading-[1.08]">
+                    Kuchnie dopasowane do Twojego stylu
+                  </h1>
+                  <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/80 md:text-base">
+                    Tworzymy funkcjonalne i estetyczne kuchnie na zamówienie, które łączą design oraz jakość.
+                  </p>
+                  <Link
+                    href="/kuchnie"
+                    className="mt-7 inline-flex items-center gap-4"
+                  >
+                    <span className="text-sm font-semibold text-white">Zobacz więcej</span>
+                    <span className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-accent transition-colors hover:bg-accent/80">
+                      <ArrowRight size={20} strokeWidth={2} className="text-white" />
+                    </span>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Dot pagination */}
+              <div className="absolute bottom-5 left-6 z-10 flex gap-2 lg:left-16">
+                {[0, 1, 2, 3].map((i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    className={`h-2.5 w-2.5 rounded-full border border-white/60 transition-colors ${
+                      i === 0 ? "bg-white" : "bg-transparent hover:bg-white/40"
+                    }`}
+                    aria-label={`Slajd ${i + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Right — 2x2 thumbnail grid (Figma) */}
+            <div className="hidden w-[340px] shrink-0 grid-cols-2 grid-rows-2 gap-[5px] lg:grid xl:w-[380px]">
+              {[
+                { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80", alt: "Nowoczesna kuchnia" },
+                { src: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&q=80", alt: "Salon z TV" },
+                { src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80", alt: "Gotowanie w kuchni" },
+                { src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=80", alt: "Jasne wnętrze" },
+              ].map((thumb, i) => (
+                <div key={i} className="overflow-hidden rounded-[8px]">
+                  <img
+                    src={thumb.src}
+                    alt={thumb.alt}
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -240,11 +263,18 @@ export default async function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="lg:w-[45%]">
+            <div className="relative lg:w-[45%]">
               <div className="aspect-[4/3] overflow-hidden rounded-xl">
                 <img
                   src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
                   alt="Nowoczesne wnętrze zaprojektowane przez TeoHome"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -left-6 hidden h-[160px] w-[200px] overflow-hidden rounded-xl border-4 border-white shadow-lg lg:block">
+                <img
+                  src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&q=80"
+                  alt="Meble kuchenne TeoHome"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -278,7 +308,7 @@ export default async function HomePage() {
             {designers.map((designer) => (
               <div
                 key={designer.name}
-                className="flex flex-col items-center rounded-2xl border border-border bg-white px-6 py-8 text-center shadow-[0_2px_8px_rgba(31,29,34,0.06)]"
+                className="flex flex-col items-center rounded-[20px] border border-border bg-white px-6 py-8 text-center shadow-[0_2px_8px_rgba(31,29,34,0.06)]"
               >
                 <div className="h-[80px] w-[80px] overflow-hidden rounded-full border-2 border-primary-light">
                   <img src={designer.avatar} alt={designer.name} className="h-full w-full object-cover" />

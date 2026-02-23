@@ -62,8 +62,11 @@ function NewsletterSection() {
             Zapisz si&#281; do newslettera i zyskaj
           </h2>
 
-          <p className="mt-1 font-heading text-[40px] font-bold leading-tight text-accent">
+          <p className="mt-2 font-heading text-[48px] font-bold leading-tight text-accent md:text-[56px]">
             10% rabatu
+          </p>
+          <p className="text-lg font-medium text-text-primary md:text-xl">
+            na pierwsze zakupy!
           </p>
 
           <div className="mt-10">
