@@ -1,22 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #8B6914;
-  --color-primary-light: #C4A35A;
-  --color-primary-dark: #6B5010;
-  --color-secondary: #4A4A4A;
-  --color-accent: #D4A017;
-  --color-bg-light: #F9F6F1;
-  --color-bg-warm: #F5F0E8;
-  --color-bg-dark: #2C2C2C;
-  --color-text-primary: #1A1A1A;
-  --color-text-secondary: #6B6B6B;
-  --color-text-light: #999999;
-  --color-border: #E5E5E5;
-  --color-border-light: #F0F0F0;
+  /* Figma Design System — TeoHome */
+  /* KOLOR MARKI 1: #CCB8B1 (ciepły beż/rose — accent/warm) */
+  /* KOLOR MARKI 2: #9E8984 (ciepły szarobrąz — secondary) */
+  /* KOLOR MARKI 3: #1F1D22 (ciemny grafit — primary dark) */
+
+  --color-primary: #9E8984;
+  --color-primary-light: #CCB8B1;
+  --color-primary-dark: #635552;
+  --color-secondary: #9F8B86;
+  --color-accent: #CCB8B1;
+  --color-accent-gold: #FDBF00;
+  --color-bg-light: #F5F5F5;
+  --color-bg-warm: #F8F8F8;
+  --color-bg-dark: #322F2A;
+  --color-text-primary: #1F1D22;
+  --color-text-secondary: #635552;
+  --color-text-light: #9F8B86;
+  --color-border: #EAEAEA;
+  --color-border-light: #F5F5F5;
   --color-success: #4CAF50;
-  --color-badge-new: #8B6914;
-  --color-badge-bestseller: #C4A35A;
+  --color-badge-new: #9E8984;
+  --color-badge-bestseller: #CCB8B1;
 
   --font-heading: "Playfair Display", Georgia, serif;
   --font-body: "Inter", system-ui, sans-serif;

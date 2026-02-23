@@ -186,30 +186,30 @@ export default async function HomePage() {
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="grid gap-6 sm:grid-cols-3">
             <div className="flex items-center gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
-                <Shield size={22} strokeWidth={1.8} />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-light/30 text-primary">
+                <Shield size={20} strokeWidth={1.8} />
               </div>
               <div>
                 <h3 className="text-sm font-semibold text-text-primary">Bezpieczne zakupy</h3>
-                <p className="mt-0.5 text-xs text-text-secondary">Gwarancja zwrotu i ochrona płatności</p>
+                <p className="mt-0.5 text-xs text-text-light">Gwarancja zwrotu i ochrona płatności</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
-                <CheckCircle size={22} strokeWidth={1.8} />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-light/30 text-primary">
+                <CheckCircle size={20} strokeWidth={1.8} />
               </div>
               <div>
                 <h3 className="text-sm font-semibold text-text-primary">Gwarancja najwyższej jakości</h3>
-                <p className="mt-0.5 text-xs text-text-secondary">Starannie wybrane materiały i wykonanie</p>
+                <p className="mt-0.5 text-xs text-text-light">Starannie wybrane materiały i wykonanie</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
-                <Heart size={22} strokeWidth={1.8} />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-light/30 text-primary">
+                <Heart size={20} strokeWidth={1.8} />
               </div>
               <div>
                 <h3 className="text-sm font-semibold text-text-primary">Z miłością tworzone w TeoHome</h3>
-                <p className="mt-0.5 text-xs text-text-secondary">Polska marka z pasją do meblarstwa</p>
+                <p className="mt-0.5 text-xs text-text-light">Polska marka z pasją do meblarstwa</p>
               </div>
             </div>
           </div>
@@ -315,7 +315,7 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 5. DESIGNERS SECTION                                               */}
       {/* ================================================================== */}
-      <section className="bg-bg-warm py-10 lg:py-14">
+      <section className="bg-bg-light py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[26px]">
@@ -337,9 +337,9 @@ export default async function HomePage() {
             {designers.map((designer) => (
               <div
                 key={designer.name}
-                className="flex flex-col items-center rounded-2xl border border-border bg-white px-6 py-8 text-center shadow-sm"
+                className="flex flex-col items-center rounded-2xl border border-border bg-white px-6 py-8 text-center shadow-[0_2px_8px_rgba(31,29,34,0.06)]"
               >
-                <div className="h-[72px] w-[72px] overflow-hidden rounded-full bg-bg-light">
+                <div className="h-[80px] w-[80px] overflow-hidden rounded-full border-2 border-primary-light">
                   <img src={designer.avatar} alt={designer.name} className="h-full w-full object-cover" />
                 </div>
                 <h3 className="mt-4 font-heading text-lg font-semibold text-text-primary">
@@ -350,7 +350,7 @@ export default async function HomePage() {
                 </p>
                 <Link
                   href="/kontakt"
-                  className="mt-5 inline-flex items-center gap-2 rounded-full border border-text-primary px-5 py-2 text-sm font-medium text-text-primary transition-colors hover:bg-text-primary hover:text-white"
+                  className="mt-auto pt-5 inline-flex items-center gap-2 rounded-full border border-text-primary px-5 py-2.5 text-sm font-medium text-text-primary transition-colors hover:bg-text-primary hover:text-white"
                 >
                   Zamów projekt
                 </Link>
@@ -367,7 +367,7 @@ export default async function HomePage() {
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-6 lg:flex-row">
             {/* Left - dark CTA */}
-            <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-bg-dark px-7 py-10 lg:w-[220px] lg:shrink-0 lg:px-8 lg:py-14">
+            <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-[#312E29] px-7 py-10 lg:w-[220px] lg:shrink-0 lg:px-8 lg:py-14">
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
                 alt=""
@@ -430,7 +430,7 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 7. FEATURED PRODUCT SECTION                                        */}
       {/* ================================================================== */}
-      <section className="bg-bg-dark py-10 lg:py-14">
+      <section className="bg-[#312E29] py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
             <div className="lg:w-[35%]">
@@ -500,7 +500,7 @@ export default async function HomePage() {
       {/* ================================================================== */}
       <section className="py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-          <h2 className="mb-8 font-heading text-2xl font-semibold text-text-primary md:text-[26px]">
+          <h2 className="mb-8 font-heading text-2xl font-bold text-text-primary md:text-[26px]">
             Porady od TeoHome
           </h2>
 
@@ -573,19 +573,19 @@ export default async function HomePage() {
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {testimonials.map((t) => (
-              <div key={t.name} className="rounded-xl border border-border-light bg-white p-4 shadow-sm">
+              <div key={t.name} className="rounded-2xl border border-border bg-white p-5 shadow-[0_2px_8px_rgba(31,29,34,0.06)]">
                 <div className="flex items-center gap-3">
-                  <div className="h-9 w-9 overflow-hidden rounded-full bg-bg-light">
+                  <div className="h-10 w-10 overflow-hidden rounded-full">
                     <img src={t.avatar} alt={t.name} className="h-full w-full object-cover" />
                   </div>
                   <span className="text-sm font-semibold text-text-primary">{t.name}</span>
                 </div>
-                <div className="mt-2.5 flex gap-0.5">
+                <div className="mt-3 flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={15} className="fill-accent text-accent" />
+                    <Star key={i} size={15} className="fill-accent-gold text-accent-gold" />
                   ))}
                 </div>
-                <p className="mt-2.5 text-sm leading-relaxed text-text-secondary">{t.text}</p>
+                <p className="mt-3 text-sm leading-relaxed text-text-secondary">{t.text}</p>
               </div>
             ))}
           </div>
@@ -598,7 +598,7 @@ export default async function HomePage() {
       <section className="py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-5 lg:flex-row">
-            <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-bg-dark px-7 py-10 lg:w-[45%] lg:px-10 lg:py-14">
+            <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-[#312E29] px-7 py-10 lg:w-[45%] lg:px-10 lg:py-14">
               <img
                 src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80"
                 alt=""
