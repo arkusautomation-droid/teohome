@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>TeoHome — Pixel-Perfect Overlay Tool</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1a1a; font-family: system-ui, sans-serif; color: #fff; }
+
+  #controls {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+    background: rgba(0,0,0,0.92); backdrop-filter: blur(8px);
+    padding: 10px 20px; display: flex; align-items: center; gap: 16px;
+    font-size: 13px; border-bottom: 1px solid #333;
+  }
+  #controls label { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+  #controls input[type=range] { width: 140px; accent-color: #CCB8B1; }
+  #controls select, #controls button {
+    background: #333; color: #fff; border: 1px solid #555;
+    padding: 4px 10px; border-radius: 4px; font-size: 12px; cursor: pointer;
+  }
+  #controls button:hover { background: #555; }
+  #controls .sep { width: 1px; height: 24px; background: #444; }
+  #value { color: #CCB8B1; font-weight: 600; min-width: 32px; }
+  #offset-value { color: #CCB8B1; font-weight: 600; min-width: 44px; }
+
+  #canvas {
+    margin-top: 52px; position: relative; width: 1920px;
+    margin-left: auto; margin-right: auto;
+  }
+
+  #iframe-wrap {
+    position: relative; width: 1920px; z-index: 1;
+  }
+  #iframe-wrap iframe {
+    width: 1920px; border: none; display: block;
+    transform-origin: top left;
+  }
+
+  #figma-overlay {
+    position: absolute; top: 0; left: 0; z-index: 10;
+    pointer-events: none; width: 1920px;
+    image-rendering: auto;
+  }
+  #figma-overlay img {
+    width: 1920px; display: block;
+    /* Figma screenshot is 960px wide = 0.5x of 1920 frame, so scale 2x */
+  }
+
+  /* Blend modes */
+  .blend-normal { mix-blend-mode: normal; }
+  .blend-difference { mix-blend-mode: difference; }
+  .blend-multiply { mix-blend-mode: multiply; }
+  .blend-overlay { mix-blend-mode: overlay; }
+
+  /* Grid overlay */
+  #grid-overlay {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 20; pointer-events: none; display: none;
+  }
+  #grid-overlay.visible {
+    display: block;
+    background:
+      repeating-linear-gradient(90deg, rgba(255,0,0,0.08) 0px, rgba(255,0,0,0.08) 1px, transparent 1px, transparent 64px),
+      repeating-linear-gradient(0deg, rgba(0,120,255,0.06) 0px, rgba(0,120,255,0.06) 1px, transparent 1px, transparent 64px);
+  }
+</style>
+</head>
+<body>
+
+<div id="controls">
+  <label>
+    Opacity:
+    <input type="range" id="opacity" min="0" max="100" value="50">
+    <span id="value">50%</span>
+  </label>
+
+  <div class="sep"></div>
+
+  <label>
+    Y Offset:
+    <input type="range" id="offset-y" min="-500" max="500" value="0">
+    <span id="offset-value">0px</span>
+  </label>
+
+  <div class="sep"></div>
+
+  <label>
+    Blend:
+    <select id="blend">
+      <option value="normal">Normal</option>
+      <option value="difference">Difference</option>
+      <option value="multiply">Multiply</option>
+      <option value="overlay">Overlay</option>
+    </select>
+  </label>
+
+  <div class="sep"></div>
+
+  <button id="toggle-figma">Toggle Figma (F)</button>
+  <button id="toggle-grid">Grid (G)</button>
+  <button id="btn-lock">Lock scroll</button>
+
+  <div class="sep"></div>
+  <span style="color:#888; font-size:11px;">
+    Keys: F=toggle, D=difference, G=grid, ←→=offset, ↑↓=opacity
+  </span>
+</div>
+
+<div id="canvas">
+  <div id="iframe-wrap">
+    <iframe id="site" src="/" scrolling="no"></iframe>
+  </div>
+
+  <div id="figma-overlay" class="blend-normal">
+    <img src="/images/figma-overlay.png" alt="Figma Design">
+  </div>
+
+  <div id="grid-overlay"></div>
+</div>
+
+<script>
+  const iframe = document.getElementById('site');
+  const overlay = document.getElementById('figma-overlay');
+  const opacitySlider = document.getElementById('opacity');
+  const offsetSlider = document.getElementById('offset-y');
+  const blendSelect = document.getElementById('blend');
+  const valueLabel = document.getElementById('value');
+  const offsetLabel = document.getElementById('offset-value');
+  const gridOverlay = document.getElementById('grid-overlay');
+
+  let figmaVisible = true;
+  let scrollLocked = false;
+
+  // Wait for iframe to load, then set height
+  iframe.addEventListener('load', () => {
+    try {
+      const h = iframe.contentDocument.documentElement.scrollHeight;
+      iframe.style.height = h + 'px';
+    } catch(e) {
+      iframe.style.height = '8000px';
+    }
+  });
+  iframe.style.height = '8000px'; // fallback
+
+  // Opacity
+  opacitySlider.addEventListener('input', () => {
+    const v = opacitySlider.value;
+    overlay.style.opacity = v / 100;
+    valueLabel.textContent = v + '%';
+  });
+
+  // Y offset
+  offsetSlider.addEventListener('input', () => {
+    const v = offsetSlider.value;
+    overlay.style.transform = `translateY(${v}px)`;
+    offsetLabel.textContent = v + 'px';
+  });
+
+  // Blend mode
+  blendSelect.addEventListener('change', () => {
+    overlay.className = 'blend-' + blendSelect.value;
+  });
+
+  // Toggle Figma
+  document.getElementById('toggle-figma').addEventListener('click', () => {
+    figmaVisible = !figmaVisible;
+    overlay.style.display = figmaVisible ? 'block' : 'none';
+  });
+
+  // Toggle Grid
+  document.getElementById('toggle-grid').addEventListener('click', () => {
+    gridOverlay.classList.toggle('visible');
+  });
+
+  // Lock scroll
+  document.getElementById('btn-lock').addEventListener('click', () => {
+    scrollLocked = !scrollLocked;
+    document.getElementById('btn-lock').textContent =
+      scrollLocked ? 'Unlock scroll' : 'Lock scroll';
+  });
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+
+    switch(e.key.toLowerCase()) {
+      case 'f':
+        figmaVisible = !figmaVisible;
+        overlay.style.display = figmaVisible ? 'block' : 'none';
+        break;
+      case 'd':
+        blendSelect.value = blendSelect.value === 'difference' ? 'normal' : 'difference';
+        overlay.className = 'blend-' + blendSelect.value;
+        break;
+      case 'g':
+        gridOverlay.classList.toggle('visible');
+        break;
+      case 'arrowup':
+        e.preventDefault();
+        opacitySlider.value = Math.min(100, +opacitySlider.value + 5);
+        opacitySlider.dispatchEvent(new Event('input'));
+        break;
+      case 'arrowdown':
+        e.preventDefault();
+        opacitySlider.value = Math.max(0, +opacitySlider.value - 5);
+        opacitySlider.dispatchEvent(new Event('input'));
+        break;
+      case 'arrowleft':
+        e.preventDefault();
+        offsetSlider.value = +offsetSlider.value - 10;
+        offsetSlider.dispatchEvent(new Event('input'));
+        break;
+      case 'arrowright':
+        e.preventDefault();
+        offsetSlider.value = +offsetSlider.value + 10;
+        offsetSlider.dispatchEvent(new Event('input'));
+        break;
+    }
+  });
+</script>
+</body>
+</html>
