@@ -123,7 +123,7 @@ export default async function HomePage() {
       <section className="relative w-full overflow-hidden">
         <div className="flex flex-col lg:flex-row">
           {/* Main hero — left ~60% */}
-          <div className="relative h-[480px] w-full lg:h-[560px] lg:w-[60%]">
+          <div className="relative h-[500px] w-full lg:h-[620px] lg:w-[60%]">
             <img
               src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=80"
               alt="Nowoczesna kuchnia na wymiar TeoHome"
@@ -150,7 +150,7 @@ export default async function HomePage() {
             </div>
 
             {/* Dot pagination — bottom center */}
-            <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+            <div className="absolute bottom-5 left-6 z-10 flex gap-2 lg:left-16">
               {[0, 1, 2, 3].map((i) => (
                 <button
                   key={i}
@@ -182,11 +182,11 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 2. BENEFITS BAR                                                    */}
       {/* ================================================================== */}
-      <section className="bg-bg-light py-4 lg:py-5">
+      <section className="bg-bg-light py-5 lg:py-6">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="grid gap-6 sm:grid-cols-3">
             <div className="flex items-center gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
                 <Shield size={22} strokeWidth={1.8} />
               </div>
               <div>
@@ -195,7 +195,7 @@ export default async function HomePage() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
                 <CheckCircle size={22} strokeWidth={1.8} />
               </div>
               <div>
@@ -204,7 +204,7 @@ export default async function HomePage() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
                 <Heart size={22} strokeWidth={1.8} />
               </div>
               <div>
@@ -367,7 +367,7 @@ export default async function HomePage() {
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-6 lg:flex-row">
             {/* Left - dark CTA */}
-            <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-bg-dark px-7 py-10 lg:w-[260px] lg:shrink-0 lg:px-8 lg:py-14">
+            <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-bg-dark px-7 py-10 lg:w-[220px] lg:shrink-0 lg:px-8 lg:py-14">
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
                 alt=""
@@ -534,7 +534,7 @@ export default async function HomePage() {
                   href={post.href}
                   className="group flex flex-col gap-3 sm:flex-col lg:flex-row lg:gap-4"
                 >
-                  <div className="aspect-[16/10] overflow-hidden rounded-xl bg-bg-light sm:aspect-[4/3] lg:aspect-[4/3] lg:w-[200px] lg:shrink-0">
+                  <div className="aspect-[16/10] overflow-hidden rounded-xl bg-bg-light sm:aspect-[4/3] lg:aspect-[4/3] lg:w-[170px] lg:shrink-0">
                     <img
                       src={post.image}
                       alt={post.title}
