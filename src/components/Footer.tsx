@@ -16,12 +16,12 @@ function NewsletterSection() {
       aria-label="Newsletter"
       className="bg-bg-light overflow-hidden"
     >
-      <div className="mx-auto max-w-[1440px] px-6 py-16 lg:px-16">
-        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-stretch lg:gap-16">
+      <div className="mx-auto max-w-[1440px] px-6 py-12 lg:px-16">
+        <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-stretch lg:gap-12">
           {/* Decorative image */}
           <div
             aria-hidden="true"
-            className="relative hidden w-[320px] shrink-0 overflow-hidden rounded-2xl lg:block"
+            className="relative hidden w-[270px] shrink-0 overflow-hidden rounded-2xl lg:block"
           >
             <img
               src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&q=80"
@@ -32,14 +32,14 @@ function NewsletterSection() {
 
           {/* Content */}
           <div className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
-            <h2 className="font-heading text-xl font-medium text-text-primary md:text-2xl">
+            <h2 className="font-heading text-lg font-medium text-text-primary md:text-xl">
               Zapisz si&#281; do newslettera i zyskaj
             </h2>
 
-            <p className="mt-2 font-heading text-4xl font-bold text-accent md:text-5xl lg:text-[3.25rem]">
+            <p className="mt-2 font-heading text-3xl font-bold text-accent md:text-4xl lg:text-[2.75rem]">
               10% rabatu
               <br />
-              <span className="text-3xl font-semibold md:text-4xl lg:text-[2.5rem]">
+              <span className="text-2xl font-semibold md:text-3xl lg:text-[2rem]">
                 na pierwsze zakupy!
               </span>
             </p>
@@ -139,14 +139,14 @@ export default function Footer() {
 
       {/* ---- Dark footer ---- */}
       <div className="bg-bg-dark">
-        <div className="mx-auto max-w-[1440px] px-6 py-14 lg:px-16">
+        <div className="mx-auto max-w-[1440px] px-6 py-10 lg:px-16">
           {/* Logo row */}
           <div className="mb-12">
             <TeoHomeLogo />
           </div>
 
           {/* Link columns */}
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             {/* Column 1 - Company info + Contact */}
             <div>
               <FooterHeading>Dane Firmy</FooterHeading>

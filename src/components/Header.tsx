@@ -47,9 +47,9 @@ export default function Header() {
         scrolled ? "shadow-md" : ""
       }`}
     >
-      {/* ROW 1: Logo + Action Icons */}
+      {/* Single-row header: Logo | Nav | Icons+CTA */}
       <div className="border-b border-border">
-        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-3 lg:px-8">
+        <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-2.5 lg:px-16">
           {/* Logo */}
           <Link
             href="/"
@@ -92,41 +92,65 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Right side actions */}
+          {/* Desktop Navigation — center */}
+          <nav aria-label="Nawigacja główna" className="hidden xl:block">
+            <ul className="flex items-center gap-0.5">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="relative px-3 py-2 text-[13px] font-normal text-text-secondary transition-colors hover:text-text-primary"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Right side: icons + CTA */}
           <div className="flex items-center gap-1">
             <button
               type="button"
-              className="flex h-10 w-10 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-bg-light hover:text-text-primary"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-bg-light hover:text-text-primary"
               aria-label="Szukaj"
             >
-              <Search size={20} strokeWidth={1.8} />
+              <Search size={18} strokeWidth={1.8} />
             </button>
 
             <Link
               href="/konto"
-              className="flex h-10 w-10 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-bg-light hover:text-text-primary"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-bg-light hover:text-text-primary"
               aria-label="Moje konto"
             >
-              <User size={20} strokeWidth={1.8} />
+              <User size={18} strokeWidth={1.8} />
             </Link>
 
             <Link
               href="/koszyk"
-              className="relative flex h-10 w-10 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-bg-light hover:text-text-primary"
+              className="relative flex h-9 w-9 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-bg-light hover:text-text-primary"
               aria-label="Koszyk"
             >
-              <ShoppingCart size={20} strokeWidth={1.8} />
+              <ShoppingCart size={18} strokeWidth={1.8} />
               {totalItems > 0 && (
-                <span className="absolute right-0.5 top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-medium leading-none text-white">
+                <span className="absolute right-0 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-medium leading-none text-white">
                   {totalItems}
                 </span>
               )}
             </Link>
 
+            {/* CTA button — desktop only */}
+            <Link
+              href="/kontakt"
+              className="ml-3 hidden rounded-full bg-primary px-5 py-2 text-xs font-medium text-white transition-colors hover:bg-primary-dark xl:inline-flex"
+            >
+              Umów wizytę w salonie
+            </Link>
+
             {/* Mobile menu toggle */}
             <button
               type="button"
-              className="ml-1 flex h-10 w-10 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-bg-light hover:text-text-primary xl:hidden"
+              className="ml-1 flex h-9 w-9 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-bg-light hover:text-text-primary xl:hidden"
               aria-label={mobileMenuOpen ? "Zamknij menu" : "Otwórz menu"}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
@@ -142,29 +166,9 @@ export default function Header() {
         </div>
       </div>
 
-      {/* ROW 2: Desktop Navigation */}
-      <div className="hidden border-b border-border-light xl:block">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
-          <nav aria-label="Nawigacja główna">
-            <ul className="flex items-center justify-center gap-1">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="relative px-4 py-3 text-sm font-normal text-text-secondary transition-colors hover:text-text-primary after:absolute after:bottom-0 after:left-4 after:right-4 after:h-[2px] after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </div>
-
       {/* Mobile Navigation Overlay */}
       <div
-        className={`fixed inset-0 top-[57px] z-40 bg-black/30 transition-opacity duration-300 xl:hidden ${
+        className={`fixed inset-0 top-[53px] z-40 bg-black/30 transition-opacity duration-300 xl:hidden ${
           mobileMenuOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
@@ -176,7 +180,7 @@ export default function Header() {
       {/* Mobile Navigation Panel */}
       <nav
         id="mobile-menu"
-        className={`fixed right-0 top-[57px] z-50 h-[calc(100dvh-57px)] w-full max-w-sm overflow-y-auto bg-white shadow-xl transition-transform duration-300 ease-out xl:hidden ${
+        className={`fixed right-0 top-[53px] z-50 h-[calc(100dvh-53px)] w-full max-w-sm overflow-y-auto bg-white shadow-xl transition-transform duration-300 ease-out xl:hidden ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-label="Menu mobilne"
