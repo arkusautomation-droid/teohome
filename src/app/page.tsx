@@ -3,9 +3,6 @@ import Image from "next/image";
 import {
   ArrowRight,
   Star,
-  Shield,
-  CheckCircle,
-  Heart,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
@@ -123,7 +120,7 @@ export default async function HomePage() {
       <section className="relative w-full overflow-hidden">
         <div className="flex flex-col lg:flex-row">
           {/* Main hero — left ~60% */}
-          <div className="relative h-[500px] w-full lg:h-[620px] lg:w-[60%]">
+          <div className="relative h-[500px] w-full lg:h-[800px] lg:w-[60%]">
             <img
               src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=80"
               alt="Nowoczesna kuchnia na wymiar TeoHome"
@@ -180,49 +177,12 @@ export default async function HomePage() {
       </section>
 
       {/* ================================================================== */}
-      {/* 2. BENEFITS BAR                                                    */}
-      {/* ================================================================== */}
-      <section className="bg-bg-light py-5 lg:py-6">
-        <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-          <div className="grid gap-6 sm:grid-cols-3">
-            <div className="flex items-center gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-light/30 text-primary">
-                <Shield size={20} strokeWidth={1.8} />
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-text-primary">Bezpieczne zakupy</h3>
-                <p className="mt-0.5 text-xs text-text-light">Gwarancja zwrotu i ochrona płatności</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-light/30 text-primary">
-                <CheckCircle size={20} strokeWidth={1.8} />
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-text-primary">Gwarancja najwyższej jakości</h3>
-                <p className="mt-0.5 text-xs text-text-light">Starannie wybrane materiały i wykonanie</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-light/30 text-primary">
-                <Heart size={20} strokeWidth={1.8} />
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-text-primary">Z miłością tworzone w TeoHome</h3>
-                <p className="mt-0.5 text-xs text-text-light">Polska marka z pasją do meblarstwa</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ================================================================== */}
-      {/* 3. CATEGORIES SECTION                                              */}
+      {/* 2. CATEGORIES SECTION                                              */}
       {/* ================================================================== */}
       <section className="py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="mb-6 flex items-end justify-between">
-            <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[26px]">
+            <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[32px]">
               Wybierz coś dla siebie
             </h2>
             <Link
@@ -268,7 +228,7 @@ export default async function HomePage() {
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-14">
             <div className="lg:w-[55%]">
-              <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[26px]">
+              <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[32px]">
                 Witaj w TeoHome!
               </h2>
               <p className="mt-5 text-[15px] leading-relaxed text-text-secondary">
@@ -315,18 +275,18 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 5. DESIGNERS SECTION                                               */}
       {/* ================================================================== */}
-      <section className="bg-bg-light py-10 lg:py-14">
+      <section className="bg-[#635552] py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[26px]">
+            <h2 className="font-heading text-2xl font-semibold text-white md:text-[32px]">
               Zaprojektuj wnętrze z pomocą naszych projektantów!
             </h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
+            <p className="mt-3 text-[15px] leading-relaxed text-white/70">
               Nasi doświadczeni projektanci pomogą Ci stworzyć wnętrze marzeń. Od pierwszego szkicu po finalny projekt &mdash; jesteś w dobrych rękach.
             </p>
             <Link
               href="/kontakt"
-              className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary-dark"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary-light transition-colors hover:text-white"
             >
               Skontaktuj się ze specjalistą od aranżacji
               <ArrowRight size={14} strokeWidth={2} />
@@ -434,7 +394,7 @@ export default async function HomePage() {
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
             <div className="lg:w-[35%]">
-              <h2 className="font-heading text-2xl font-semibold text-white md:text-[26px]">
+              <h2 className="font-heading text-2xl font-semibold text-white md:text-[32px]">
                 Polecane produkty
               </h2>
               <p className="mt-4 text-[15px] leading-relaxed text-white/60">
@@ -500,7 +460,7 @@ export default async function HomePage() {
       {/* ================================================================== */}
       <section className="py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-          <h2 className="mb-8 font-heading text-2xl font-bold text-text-primary md:text-[26px]">
+          <h2 className="mb-8 font-heading text-2xl font-bold text-text-primary md:text-[32px]">
             Porady od TeoHome
           </h2>
 
@@ -555,13 +515,18 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
+        <hr className="border-border" />
+      </div>
+
       {/* ================================================================== */}
       {/* 9. TESTIMONIALS SECTION                                            */}
       {/* ================================================================== */}
       <section className="bg-white py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="mb-8 flex items-end justify-between">
-            <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[26px]">
+            <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[32px]">
               Zobacz, co mówią nasi klienci
             </h2>
             <div className="hidden items-center gap-2 sm:flex">
