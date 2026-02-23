@@ -120,10 +120,14 @@ function SocialIcon({
 /* ------------------------------------------------------------------ */
 function TeoHomeLogo() {
   return (
-    <Link href="/" aria-label="TeoHome - strona g&#322;&oacute;wna">
-      <span className="font-heading text-2xl font-bold tracking-wide text-white">
-        Teo<span className="text-accent">Home</span>
-      </span>
+    <Link href="/" aria-label="TeoHome - strona główna">
+      <img
+        src="/images/logo-teohome.svg"
+        alt="TeoHome"
+        width={196}
+        height={50}
+        className="h-[36px] w-auto brightness-0 invert"
+      />
     </Link>
   );
 }

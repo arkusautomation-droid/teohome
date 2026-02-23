@@ -122,7 +122,7 @@ export default async function HomePage() {
           {/* Main hero — left ~60% */}
           <div className="relative h-[500px] w-full lg:h-[800px] lg:w-[60%]">
             <img
-              src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=80"
+              src="/images/hero/hero-bg.jpg"
               alt="Nowoczesna kuchnia na wymiar TeoHome"
               className="absolute inset-0 h-full w-full object-cover"
             />

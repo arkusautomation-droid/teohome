@@ -56,40 +56,13 @@ export default function Header() {
             className="group flex shrink-0 items-center gap-1.5"
             aria-label="TeoHome - strona główna"
           >
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 28 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-primary transition-colors group-hover:text-primary-dark"
-              aria-hidden="true"
-            >
-              <path
-                d="M14 3C14 3 6 9 6 15C6 19.4183 9.58172 23 14 23C18.4183 23 22 19.4183 22 15C22 9 14 3 14 3Z"
-                fill="currentColor"
-                opacity="0.15"
-              />
-              <path
-                d="M14 4L7 11V22C7 23.1046 7.89543 24 9 24H12V18C12 16.8954 12.8954 16 14 16C15.1046 16 16 16.8954 16 18V24H19C20.1046 24 21 23.1046 21 22V11L14 4Z"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-              />
-              <path
-                d="M10 8C12 6 14 5 14 5C14 5 18 8 20 12"
-                stroke="currentColor"
-                strokeWidth="1.4"
-                strokeLinecap="round"
-                opacity="0.5"
-              />
-            </svg>
-            <span className="font-heading text-2xl font-semibold tracking-tight text-text-primary">
-              Teo
-              <span className="text-primary">Home</span>
-            </span>
+            <img
+              src="/images/logo-teohome.svg"
+              alt="TeoHome"
+              width={196}
+              height={50}
+              className="h-[36px] w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation — center */}
