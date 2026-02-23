@@ -45,7 +45,7 @@ const featuredPost: BlogPost = {
     "Planowanie kuchni na wymiar to proces, który wymaga przemyślenia wielu aspektów — od układu roboczego, przez dobór materiałów, aż po detale, które sprawiają, że codzienna praca w kuchni staje się przyjemnością. W tym artykule podpowiemy, na co zwrócić szczególną uwagę.",
   date: "15 stycznia 2025",
   category: "PORADY",
-  image: "/images/blog/featured-kitchen.jpg",
+  image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80",
 };
 
 const blogPosts: BlogPost[] = [
@@ -56,7 +56,7 @@ const blogPosts: BlogPost[] = [
       "Praktyczny przewodnik po planowaniu kuchni — od trójkąta roboczego po wybór frontów i blatów.",
     date: "15 stycznia 2025",
     category: "PORADY",
-    image: "/images/blog/kitchen-planning.jpg",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
   },
   {
     slug: "5-trendow-aranzacji-kuchni-2025",
@@ -65,7 +65,7 @@ const blogPosts: BlogPost[] = [
       "Naturalne materiały, ciemne fronty i inteligentne rozwiązania — poznaj najgorętsze trendy nadchodzącego roku.",
     date: "10 stycznia 2025",
     category: "TRENDY",
-    image: "/images/blog/kitchen-trends.jpg",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
   },
   {
     slug: "materialy-na-blat-kuchenny",
@@ -74,7 +74,7 @@ const blogPosts: BlogPost[] = [
       "Porównanie najpopularniejszych materiałów na blaty: kwarc, granit, drewno, laminat i konglomerat.",
     date: "5 stycznia 2025",
     category: "PORADY",
-    image: "/images/blog/countertop-materials.jpg",
+    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
   },
   {
     slug: "szafy-na-wymiar-jak-zmierzyc-przestrzen",
@@ -83,7 +83,7 @@ const blogPosts: BlogPost[] = [
       "Dokładny pomiar to klucz do idealnie dopasowanej szafy. Sprawdź, jak uniknąć najczęstszych błędów.",
     date: "28 grudnia 2024",
     category: "PORADY",
-    image: "/images/blog/wardrobe-measure.jpg",
+    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
   },
   {
     slug: "kolory-w-kuchni-jak-dobrac-palete",
@@ -92,7 +92,7 @@ const blogPosts: BlogPost[] = [
       "Harmonia kolorów wpływa na nastrój wnętrza. Podpowiadamy, jak łączyć barwy, by kuchnia zachwycała.",
     date: "20 grudnia 2024",
     category: "INSPIRACJE",
-    image: "/images/blog/kitchen-colors.jpg",
+    image: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80",
   },
   {
     slug: "organizacja-przestrzeni-w-malej-kuchni",
@@ -101,7 +101,7 @@ const blogPosts: BlogPost[] = [
       "Mała kuchnia nie musi oznaczać kompromisów. Sprytne rozwiązania, które pomogą Ci zyskać miejsce.",
     date: "15 grudnia 2024",
     category: "INSPIRACJE",
-    image: "/images/blog/small-kitchen.jpg",
+    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80",
   },
 ];
 
@@ -229,7 +229,7 @@ export default function BlogPage() {
       <section className="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-bg-dark sm:min-h-[340px]">
         {/* Background image */}
         <Image
-          src="/images/blog/hero-blog.jpg"
+          src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=80"
           alt=""
           fill
           priority

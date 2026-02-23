@@ -15,9 +15,9 @@ import {
 /*  Metadata                                                           */
 /* ------------------------------------------------------------------ */
 export const metadata: Metadata = {
-  title: "O nas - TeoHome | Meble na wymiar z pasja",
+  title: "O nas - TeoHome | Meble na wymiar z pasją",
   description:
-    "Poznaj historie TeoHome - od malego warsztatu stolarskiego do wiodacego producenta mebli na wymiar w Polsce. Jakosc, indywidualne podejscie i zrownowazony rozwoj.",
+    "Poznaj historię TeoHome - od małego warsztatu stolarskiego do wiodącego producenta mebli na wymiar w Polsce. Jakość, indywidualne podejście i zrównoważony rozwój.",
 };
 
 /* ------------------------------------------------------------------ */
@@ -26,50 +26,50 @@ export const metadata: Metadata = {
 const values = [
   {
     icon: Heart,
-    title: "Jakosc",
+    title: "Jakość",
     description:
-      "Kazdy mebel wykonujemy z najwyzszej jakosci materialow, dbajac o kazdy detal wykonczenia.",
+      "Każdy mebel wykonujemy z najwyższej jakości materiałów, dbając o każdy detal wykończenia.",
   },
   {
     icon: Users,
-    title: "Indywidualne podejscie",
+    title: "Indywidualne podejście",
     description:
-      "Projektujemy meble dopasowane do Twojej przestrzeni i stylu zycia.",
+      "Projektujemy meble dopasowane do Twojej przestrzeni i stylu życia.",
   },
   {
     icon: Leaf,
-    title: "Zrownowazony rozwoj",
+    title: "Zrównoważony rozwój",
     description:
-      "Dbamy o srodowisko, stosujac ekologiczne materialy i procesy produkcyjne.",
+      "Dbamy o środowisko, stosując ekologiczne materiały i procesy produkcyjne.",
   },
 ] as const;
 
 const team = [
   {
     name: "Anna Kowalska",
-    role: "Projektant wnetrz",
-    bio: "Z ponad 8-letnim doswiadczeniem w projektowaniu wnetrz, Anna tworzy przestrzenie, ktore lacza funkcjonalnosc z estetyka.",
+    role: "Projektant wnętrz",
+    bio: "Z ponad 8-letnim doświadczeniem w projektowaniu wnętrz, Anna tworzy przestrzenie, które łączą funkcjonalność z estetyką.",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face&q=80",
   },
   {
     name: "Tomasz Nowak",
     role: "Stolarz",
-    bio: "Mistrz rzemiosla z 15-letnim doswiadczeniem. Kazdy mebel traktuje jak dzielo sztuki, dbajac o najdrobniejsze detale.",
+    bio: "Mistrz rzemiosła z 15-letnim doświadczeniem. Każdy mebel traktuje jak dzieło sztuki, dbając o najdrobniejsze detale.",
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&q=80",
   },
   {
-    name: "Maria Wisniewska",
+    name: "Maria Wiśniewska",
     role: "Doradca klienta",
-    bio: "Pasjonatka designu, ktora pomoze Ci wybrac idealne rozwiazanie dla Twojego domu. Zawsze z usmiechnieciem.",
+    bio: "Pasjonatka designu, która pomoże Ci wybrać idealne rozwiązanie dla Twojego domu. Zawsze z uśmiechem.",
     image:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face&q=80",
   },
   {
-    name: "Piotr Zielinski",
+    name: "Piotr Zieliński",
     role: "Kierownik produkcji",
-    bio: "Odpowiada za to, by kazde zamowienie zostalo zrealizowane na czas i z najwyzsza precyzja wykonania.",
+    bio: "Odpowiada za to, by każde zamówienie zostało zrealizowane na czas i z najwyższą precyzją wykonania.",
     image:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&q=80",
   },
@@ -78,19 +78,19 @@ const team = [
 const reasons = [
   {
     icon: Clock,
-    text: "Ponad 10 lat doswiadczenia",
+    text: "Ponad 10 lat doświadczenia",
   },
   {
     icon: Smile,
-    text: "Tysiace zadowolonych klientow",
+    text: "Tysiące zadowolonych klientów",
   },
   {
     icon: Shield,
-    text: "Gwarancja jakosci na kazdy produkt",
+    text: "Gwarancja jakości na każdy produkt",
   },
   {
     icon: Paintbrush,
-    text: "Indywidualny projekt bez dodatkowych kosztow",
+    text: "Indywidualny projekt bez dodatkowych kosztów",
   },
 ] as const;
 
@@ -106,7 +106,7 @@ export default function AboutPage() {
       <section className="relative h-[320px] w-full sm:h-[380px] lg:h-[440px]">
         <Image
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
-          alt="Nowoczesne wnetrze z meblami TeoHome"
+          alt="Nowoczesne wnętrze z meblami TeoHome"
           fill
           className="object-cover"
           priority
@@ -127,11 +127,11 @@ export default function AboutPage() {
                   href="/"
                   className="transition-colors hover:text-white"
                 >
-                  Strona glowna
+                  Strona główna
                 </Link>
               </li>
               <li aria-hidden="true" className="text-white/50">
-                &gt;
+                /
               </li>
               <li aria-current="page" className="text-white">
                 O nas
@@ -150,7 +150,7 @@ export default function AboutPage() {
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl lg:aspect-[3/4]">
             <Image
               src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?w=960&q=80"
-              alt="Warsztat stolarski TeoHome - reczna produkcja mebli"
+              alt="Warsztat stolarski TeoHome - ręczna produkcja mebli"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -168,17 +168,17 @@ export default function AboutPage() {
 
             <div className="mt-8 space-y-5 text-base leading-relaxed text-text-secondary sm:text-lg">
               <p>
-                TeoHome to marka mebli na wymiar, ktora powstala z pasji do
-                tworzenia pieknych i funkcjonalnych przestrzeni. Od poczatku
-                nasza misja bylo dostarczanie klientom mebli najwyzszej
-                jakosci, dopasowanych do ich indywidualnych potrzeb.
+                TeoHome to marka mebli na wymiar, która powstała z pasji do
+                tworzenia pięknych i funkcjonalnych przestrzeni. Od początku
+                naszą misją było dostarczanie klientom mebli najwyższej
+                jakości, dopasowanych do ich indywidualnych potrzeb.
               </p>
               <p>
-                Zaczynalismy jako maly warsztat stolarski, a dzis jestesmy
-                jednym z wiodacych producentow mebli na wymiar w Polsce.
-                Nasza droga od malego warsztatu do nowoczesnej manufaktury
-                to historia pasji, ciezkiej pracy i nieustannego dazenia do
-                doskonalosci.
+                Zaczynaliśmy jako mały warsztat stolarski, a dziś jesteśmy
+                jednym z wiodących producentów mebli na wymiar w Polsce.
+                Nasza droga od małego warsztatu do nowoczesnej manufaktury
+                to historia pasji, ciężkiej pracy i nieustannego dążenia do
+                doskonałości.
               </p>
             </div>
 
@@ -189,7 +189,7 @@ export default function AboutPage() {
                   10+
                 </p>
                 <p className="mt-1 text-sm text-text-secondary">
-                  lat doswiadczenia
+                  lat doświadczenia
                 </p>
               </div>
               <div>
@@ -197,7 +197,7 @@ export default function AboutPage() {
                   2k+
                 </p>
                 <p className="mt-1 text-sm text-text-secondary">
-                  zadowolonych klientow
+                  zadowolonych klientów
                 </p>
               </div>
               <div>
@@ -205,7 +205,7 @@ export default function AboutPage() {
                   5k+
                 </p>
                 <p className="mt-1 text-sm text-text-secondary">
-                  zrealizowanych projektow
+                  zrealizowanych projektów
                 </p>
               </div>
             </div>
@@ -224,7 +224,7 @@ export default function AboutPage() {
               To, w co wierzymy
             </p>
             <h2 className="mt-3 font-heading text-3xl font-bold text-text-primary sm:text-4xl">
-              Nasze wartosci
+              Nasze wartości
             </h2>
           </div>
 
@@ -260,14 +260,14 @@ export default function AboutPage() {
           {/* Section header */}
           <div className="text-center">
             <p className="text-sm font-medium uppercase tracking-widest text-primary">
-              Poznaj nas blizej
+              Poznaj nas bliżej
             </p>
             <h2 className="mt-3 font-heading text-3xl font-bold text-text-primary sm:text-4xl">
-              Nasz zespol
+              Nasz zespół
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-text-secondary sm:text-lg">
-              Kazdy z nas wnosi unikalne umiejetnosci i pasje, dzieki czemu
-              tworzymy meble, ktore zachwycaja.
+              Każdy z nas wnosi unikalne umiejętności i pasję, dzięki czemu
+              tworzymy meble, które zachwycają.
             </p>
           </div>
 
@@ -315,8 +315,8 @@ export default function AboutPage() {
               Dlaczego TeoHome?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-text-secondary sm:text-lg">
-              Wybierajac nas, wybierasz jakosc, doswiadczenie i indywidualne
-              podejscie do kazdego projektu.
+              Wybierając nas, wybierasz jakość, doświadczenie i indywidualne
+              podejście do każdego projektu.
             </p>
           </div>
 
@@ -347,17 +347,17 @@ export default function AboutPage() {
       <section className="bg-bg-dark py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-[1440px] px-6 text-center lg:px-16">
           <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-            Zacznij swoja przygode z TeoHome
+            Zacznij swoją przygodę z TeoHome
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-neutral-400 sm:text-lg">
-            Opowiedz nam o swoim pomysle, a my stworzymy meble idealnie
+            Opowiedz nam o swoim pomyśle, a my stworzymy meble idealnie
             dopasowane do Twojej przestrzeni.
           </p>
           <Link
             href="/kontakt"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-accent px-8 py-3.5 text-base font-medium text-white transition-colors duration-300 hover:bg-accent/90 sm:text-lg"
           >
-            Skontaktuj sie z nami
+            Skontaktuj się z nami
           </Link>
         </div>
       </section>

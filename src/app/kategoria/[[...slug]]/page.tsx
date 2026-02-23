@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps) {
     return {
       title: "Wszystkie produkty | TeoHome",
       description:
-        "Przegladaj cala oferte mebli TeoHome - kuchnie, szafy, sofy i projekty wnetrz.",
+        "Przeglądaj całą ofertę mebli TeoHome - kuchnie, szafy, sofy i projekty wnętrz.",
     };
   }
 
@@ -146,7 +146,7 @@ export default async function KategoriaPage({ params }: PageProps) {
                   href="/"
                   className="transition-colors hover:text-white"
                 >
-                  Strona glowna
+                  Strona główna
                 </Link>
               </li>
               <li aria-hidden="true">

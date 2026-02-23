@@ -14,7 +14,7 @@ const filterTabs = [
   { id: "kuchnie", label: "Kuchnie" },
   { id: "salony", label: "Salony" },
   { id: "sypialnie", label: "Sypialnie" },
-  { id: "lazienki", label: "Lazienki" },
+  { id: "lazienki", label: "Łazienki" },
   { id: "biura", label: "Biura" },
 ] as const;
 
@@ -64,7 +64,7 @@ const galleryItems: GalleryItem[] = [
     src: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80",
     category: "sypialnie",
     categoryLabel: "Sypialnia",
-    title: "Przytulna sypialnia w cieplych tonach",
+    title: "Przytulna sypialnia w ciepłych tonach",
     href: "/inspiracje/4",
     variant: "tall",
   },
@@ -73,7 +73,7 @@ const galleryItems: GalleryItem[] = [
     src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80",
     category: "kuchnie",
     categoryLabel: "Kuchnia",
-    title: "Kuchnia z wyspa i marmurowymi blatami",
+    title: "Kuchnia z wyspą i marmurowymi blatami",
     href: "/inspiracje/5",
     variant: "normal",
   },
@@ -81,8 +81,8 @@ const galleryItems: GalleryItem[] = [
     id: 6,
     src: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80",
     category: "lazienki",
-    categoryLabel: "Lazienka",
-    title: "Elegancka lazienka z wolnostojaca wanna",
+    categoryLabel: "Łazienka",
+    title: "Elegancka łazienka z wolnostojącą wanną",
     href: "/inspiracje/6",
     variant: "tall",
   },
@@ -91,7 +91,7 @@ const galleryItems: GalleryItem[] = [
     src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80",
     category: "biura",
     categoryLabel: "Biuro",
-    title: "Domowe biuro z widokiem na ogrod",
+    title: "Domowe biuro z widokiem na ogród",
     href: "/inspiracje/7",
     variant: "normal",
   },
@@ -109,7 +109,7 @@ const galleryItems: GalleryItem[] = [
     src: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=600&q=80",
     category: "sypialnie",
     categoryLabel: "Sypialnia",
-    title: "Sypialnia w stylu boho z naturalnymi materialami",
+    title: "Sypialnia w stylu boho z naturalnymi materiałami",
     href: "/inspiracje/9",
     variant: "tall",
   },
@@ -150,7 +150,7 @@ function GalleryCard({ item }: { item: GalleryItem }) {
 
             {/* CTA link */}
             <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white/90 transition-colors group-hover:text-white">
-              Zobacz realizacje
+              Zobacz realizację
               <ArrowRight size={16} strokeWidth={2} />
             </span>
           </div>
@@ -186,7 +186,7 @@ export default function InspiracjePage() {
         {/* Background image */}
         <Image
           src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=80"
-          alt="Nowoczesne wnetrze kuchni"
+          alt="Nowoczesne wnętrze kuchni"
           fill
           priority
           sizes="100vw"
@@ -205,7 +205,7 @@ export default function InspiracjePage() {
                   href="/"
                   className="transition-colors hover:text-white"
                 >
-                  Strona glowna
+                  Strona główna
                 </Link>
               </li>
               <li aria-hidden="true">
@@ -231,7 +231,7 @@ export default function InspiracjePage() {
           <div
             className="flex flex-wrap items-center justify-center gap-3"
             role="tablist"
-            aria-label="Filtruj galerie wg kategorii"
+            aria-label="Filtruj galerię wg kategorii"
           >
             {filterTabs.map((tab) => (
               <button
@@ -269,8 +269,8 @@ export default function InspiracjePage() {
           {filteredItems.length === 0 && (
             <div className="py-20 text-center">
               <p className="text-lg text-text-secondary">
-                Brak inspiracji w tej kategorii. Sprawdz inne kategorie lub
-                wrocisz pozniej.
+                Brak inspiracji w tej kategorii. Sprawdź inne kategorie lub
+                wróć później.
               </p>
             </div>
           )}
@@ -282,7 +282,7 @@ export default function InspiracjePage() {
                 type="button"
                 className="inline-flex items-center gap-2 rounded-full border border-text-primary px-8 py-3 text-sm font-medium text-text-primary transition-all duration-200 hover:bg-text-primary hover:text-white"
               >
-                Zaladuj wiecej
+                Załaduj więcej
               </button>
             </div>
           )}
@@ -295,17 +295,17 @@ export default function InspiracjePage() {
       <section className="bg-bg-warm">
         <div className="mx-auto max-w-[1440px] px-6 py-16 text-center lg:px-16 lg:py-24">
           <h2 className="font-heading text-3xl font-bold text-text-primary sm:text-4xl">
-            Chcesz takie wnetrze?
+            Chcesz takie wnętrze?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg">
-            Skontaktuj sie z naszym projektantem i stworz swoja wymarzona
-            przestrzen.
+            Skontaktuj się z naszym projektantem i stwórz swoją wymarzoną
+            przestrzeń.
           </p>
           <Link
             href="/kontakt"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-text-primary px-8 py-3.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-primary-dark"
           >
-            Umow konsultacje
+            Umów konsultację
             <ArrowRight size={16} strokeWidth={2} />
           </Link>
         </div>

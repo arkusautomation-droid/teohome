@@ -6,44 +6,44 @@ import { ChevronDown, MessageCircle } from "lucide-react";
 
 const faqItems = [
   {
-    question: "Jak zamowic meble na wymiar?",
+    question: "Jak zamówić meble na wymiar?",
     answer:
-      "Aby zamowic meble na wymiar, skontaktuj sie z naszym projektantem poprzez formularz kontaktowy lub telefonicznie. Umowimy bezplatna konsultacje, podczas ktorej omowimy Twoje potrzeby i preferencje.",
+      "Aby zamówić meble na wymiar, skontaktuj się z naszym projektantem poprzez formularz kontaktowy lub telefonicznie. Umówimy bezpłatną konsultację, podczas której omówimy Twoje potrzeby i preferencje.",
   },
   {
-    question: "Jaki jest czas realizacji zamowienia?",
+    question: "Jaki jest czas realizacji zamówienia?",
     answer:
-      "Standardowy czas realizacji to 4-6 tygodni od zatwierdzenia projektu. Czas moze sie roznic w zaleznosci od zlozonosci projektu.",
+      "Standardowy czas realizacji to 4-6 tygodni od zatwierdzenia projektu. Czas może się różnić w zależności od złożoności projektu.",
   },
   {
-    question: "Czy oferujecie bezplatny pomiar?",
+    question: "Czy oferujecie bezpłatny pomiar?",
     answer:
-      "Tak, oferujemy bezplatny pomiar w promieniu 50 km od naszej siedziby. Dla dalszych lokalizacji ustalamy indywidualnie.",
+      "Tak, oferujemy bezpłatny pomiar w promieniu 50 km od naszej siedziby. Dla dalszych lokalizacji ustalamy indywidualnie.",
   },
   {
-    question: "Jakie materialy stosujecie?",
+    question: "Jakie materiały stosujecie?",
     answer:
-      "Stosujemy materialy najwyzszej jakosci od renomowanych dostawcow europejskich - plyty MDF, laminowane, drewno lite, blaty kwarcowe i granitowe.",
+      "Stosujemy materiały najwyższej jakości od renomowanych dostawców europejskich - płyty MDF, laminowane, drewno lite, blaty kwarcowe i granitowe.",
   },
   {
-    question: "Czy moge zobaczyc probki materialow?",
+    question: "Czy mogę zobaczyć próbki materiałów?",
     answer:
-      "Oczywiscie! Zapraszamy do naszego showroomu lub mozemy wyslac probki materialow poczta.",
+      "Oczywiście! Zapraszamy do naszego showroomu lub możemy wysłać próbki materiałów pocztą.",
   },
   {
     question: "Jaka jest gwarancja na meble?",
     answer:
-      "Udzielamy 24-miesiecznej gwarancji na wszystkie nasze produkty. Gwarancja obejmuje wady materialowe i produkcyjne.",
+      "Udzielamy 24-miesięcznej gwarancji na wszystkie nasze produkty. Gwarancja obejmuje wady materiałowe i produkcyjne.",
   },
   {
-    question: "Czy montaz jest w cenie?",
+    question: "Czy montaż jest w cenie?",
     answer:
-      "Tak, montaz jest wliczony w cene zamowienia. Nasi doswiadczeni monterzy zadbaja o profesjonalny montaz.",
+      "Tak, montaż jest wliczony w cenę zamówienia. Nasi doświadczeni monterzy zadbają o profesjonalny montaż.",
   },
   {
-    question: "Jakie formy platnosci akceptujecie?",
+    question: "Jakie formy płatności akceptujecie?",
     answer:
-      "Akceptujemy przelewy bankowe, platnosci karta, BLIK oraz raty 0%. Szczegoly ustalimy przy skladaniu zamowienia.",
+      "Akceptujemy przelewy bankowe, płatności kartą, BLIK oraz raty 0%. Szczegóły ustalimy przy składaniu zamówienia.",
   },
 ] as const;
 
@@ -67,7 +67,7 @@ export default function FaqPage() {
                   href="/"
                   className="transition-colors hover:text-primary"
                 >
-                  Strona glowna
+                  Strona główna
                 </Link>
               </li>
               <li aria-hidden="true" className="text-border">
@@ -80,11 +80,11 @@ export default function FaqPage() {
           </nav>
 
           <h1 className="font-heading text-3xl font-semibold text-text-primary sm:text-4xl lg:text-5xl">
-            Najczesciej zadawane pytania
+            Najczęściej zadawane pytania
           </h1>
           <p className="mt-4 max-w-2xl text-base text-text-secondary lg:text-lg">
-            Znajdz odpowiedzi na najczestsze pytania dotyczace naszych uslug,
-            procesu realizacji i warunkow wspolpracy.
+            Znajdź odpowiedzi na najczęstsze pytania dotyczące naszych usług,
+            procesu realizacji i warunków współpracy.
           </p>
         </div>
       </section>
@@ -154,17 +154,17 @@ export default function FaqPage() {
           </div>
 
           <h2 className="mt-6 font-heading text-2xl font-semibold text-text-primary sm:text-3xl">
-            Nie znalazles odpowiedzi?
+            Nie znalazłeś odpowiedzi?
           </h2>
           <p className="mt-3 text-text-secondary">
-            Skontaktuj sie z nami — chetnie odpowiemy na wszystkie Twoje pytania.
+            Skontaktuj się z nami — chętnie odpowiemy na wszystkie Twoje pytania.
           </p>
 
           <Link
             href="/kontakt"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-accent px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-accent/90"
           >
-            Skontaktuj sie z nami
+            Skontaktuj się z nami
           </Link>
         </div>
       </section>

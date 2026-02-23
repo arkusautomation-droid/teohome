@@ -171,7 +171,7 @@ export default function KasaPage() {
             <nav aria-label="Breadcrumb">
               <ol className="flex items-center gap-2 text-sm text-text-light">
                 <li><Link href="/" className="transition-colors hover:text-text-primary">Strona główna</Link></li>
-                <li aria-hidden="true">&gt;</li>
+                <li aria-hidden="true">/</li>
                 <li><span className="text-text-primary font-medium">Kasa</span></li>
               </ol>
             </nav>
@@ -197,9 +197,9 @@ export default function KasaPage() {
           <nav aria-label="Breadcrumb">
             <ol className="flex items-center gap-2 text-sm text-text-light">
               <li><Link href="/" className="transition-colors hover:text-text-primary">Strona główna</Link></li>
-              <li aria-hidden="true">&gt;</li>
+              <li aria-hidden="true">/</li>
               <li><Link href="/koszyk" className="transition-colors hover:text-text-primary">Koszyk</Link></li>
-              <li aria-hidden="true">&gt;</li>
+              <li aria-hidden="true">/</li>
               <li><span className="text-text-primary font-medium">Kasa</span></li>
             </ol>
           </nav>

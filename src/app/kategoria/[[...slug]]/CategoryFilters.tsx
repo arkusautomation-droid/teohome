@@ -193,8 +193,8 @@ function PriceFilter() {
 
       {/* Labels */}
       <div className="mt-1 flex justify-between text-xs text-text-light">
-        <span>{minPrice} zl</span>
-        <span>{maxPrice} zl</span>
+        <span>{minPrice} zł</span>
+        <span>{maxPrice} zł</span>
       </div>
     </div>
   );
@@ -271,7 +271,7 @@ function ProductCardGrid({ product }: { product: WooProduct }) {
         </p>
         {hasLowestPrice && (
           <p className="mt-0.5 text-xs text-text-light">
-            Najnizsza cena z 30 dni:{" "}
+            Najniższa cena z 30 dni:{" "}
             <span className="line-through">{formatPrice(product.regular_price)}</span>
           </p>
         )}
@@ -322,7 +322,7 @@ function ProductCardList({ product }: { product: WooProduct }) {
         </p>
         {hasLowestPrice && (
           <p className="mt-0.5 text-xs text-text-light">
-            Najnizsza cena z 30 dni:{" "}
+            Najniższa cena z 30 dni:{" "}
             <span className="line-through">{formatPrice(product.regular_price)}</span>
           </p>
         )}
@@ -451,7 +451,7 @@ export default function CategoryContent({
           className={`w-full shrink-0 lg:w-[280px] ${
             mobileSidebarOpen ? "block" : "hidden lg:block"
           }`}
-          aria-label="Filtry produktow"
+          aria-label="Filtry produktów"
         >
           {/* --- KATEGORIE --- */}
           <div className="mb-8">
@@ -529,11 +529,11 @@ export default function CategoryContent({
           {/* --- Toolbar: view toggle & sorting --- */}
           <div className="mb-6 flex items-center justify-between border-b border-border-light pb-4">
             <p className="text-sm text-text-light">
-              Wyswietlanie{" "}
+              Wyświetlanie{" "}
               <span className="font-medium text-text-primary">
                 {products.length}
               </span>{" "}
-              produktow
+              produktów
             </p>
 
             <div className="flex items-center gap-2">
@@ -585,10 +585,10 @@ export default function CategoryContent({
           ) : (
             <div className="flex flex-col items-center justify-center py-20 text-center">
               <p className="text-lg font-medium text-text-primary">
-                Brak produktow w tej kategorii
+                Brak produktów w tej kategorii
               </p>
               <p className="mt-2 text-sm text-text-secondary">
-                Sprawdz inne kategorie lub wrocz do wszystkich produktow.
+                Sprawdź inne kategorie lub wróć do wszystkich produktów.
               </p>
               <Link
                 href="/kategoria"
