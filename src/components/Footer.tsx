@@ -4,8 +4,35 @@ import {
   Twitter,
   Facebook,
   Instagram,
+  ShoppingCart,
+  Diamond,
+  Factory,
 } from "lucide-react";
 import NewsletterForm from "@/components/NewsletterForm";
+
+/* ------------------------------------------------------------------ */
+/*  Benefits Bar (Figma: bg #9e8984, 3 icons with white text)          */
+/* ------------------------------------------------------------------ */
+function BenefitsBar() {
+  return (
+    <div className="bg-accent">
+      <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-8 px-6 py-5 lg:justify-between lg:px-16">
+        <div className="flex items-center gap-5">
+          <ShoppingCart size={32} strokeWidth={1.5} className="shrink-0 text-white" />
+          <span className="text-base text-white">Bezpieczne zakupy</span>
+        </div>
+        <div className="flex items-center gap-5">
+          <Diamond size={32} strokeWidth={1.5} className="shrink-0 text-white" />
+          <span className="text-base text-white">Gwarancja najwyższej jakości</span>
+        </div>
+        <div className="flex items-center gap-5">
+          <Factory size={32} strokeWidth={1.5} className="shrink-0 text-white" />
+          <span className="text-base text-white">Meble produkowane w Polsce</span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 /* ------------------------------------------------------------------ */
 /*  Newsletter Section                                                 */
@@ -14,44 +41,39 @@ function NewsletterSection() {
   return (
     <section
       aria-label="Newsletter"
-      className="bg-bg-light overflow-hidden"
+      className="overflow-hidden"
     >
-      <div className="mx-auto max-w-[1440px] px-6 py-12 lg:px-16">
-        <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-stretch lg:gap-12">
-          {/* Decorative image */}
-          <div
-            aria-hidden="true"
-            className="relative hidden w-[250px] shrink-0 overflow-hidden rounded-2xl lg:block"
-          >
-            <img
-              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&q=80"
-              alt=""
-              className="h-full w-full object-cover"
-            />
-          </div>
+      <div className="flex flex-col lg:flex-row">
+        {/* Left — decorative image (Figma: 860x630, full half) */}
+        <div
+          aria-hidden="true"
+          className="relative hidden h-auto min-h-[400px] overflow-hidden lg:block lg:w-1/2"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80"
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </div>
 
-          {/* Content */}
-          <div className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
-            <h2 className="font-heading text-lg font-medium text-text-primary md:text-xl">
-              Zapisz si&#281; do newslettera i zyskaj
-            </h2>
+        {/* Right — content (Figma: 860px, vertical layout, gap 60) */}
+        <div className="flex flex-col justify-center bg-bg-light px-6 py-12 lg:w-1/2 lg:px-16 lg:py-16">
+          <h2 className="font-heading text-lg font-bold text-text-primary md:text-[24px]">
+            Zapisz si&#281; do newslettera i zyskaj
+          </h2>
 
-            <p className="mt-2 font-heading text-3xl font-bold text-accent md:text-4xl lg:text-[2.75rem]">
-              10% rabatu
-              <br />
-              <span className="text-2xl font-semibold md:text-3xl lg:text-[1.875rem]">
-                na pierwsze zakupy!
-              </span>
-            </p>
+          <p className="mt-1 font-heading text-[40px] font-bold leading-tight text-accent">
+            10% rabatu
+          </p>
 
-            {/* Form */}
+          <div className="mt-10">
             <NewsletterForm />
-
-            <p className="mt-4 max-w-lg text-xs leading-relaxed text-text-light">
-              Zapisuj&#261;c si&#281; potwierdzam zapoznanie si&#281; z regulaminem
-              rabat&oacute;w ByBrands zakupionych przez firm&#281; TeoHome.
-            </p>
           </div>
+
+          <p className="mt-5 max-w-lg text-xs leading-relaxed text-text-light">
+            Zapisuj&#261;c si&#281; potwierdzam zapoznanie si&#281; z regulaminem
+            rabat&oacute;w ByBrands zakupionych przez firm&#281; TeoHome.
+          </p>
         </div>
       </div>
     </section>
@@ -138,6 +160,9 @@ function TeoHomeLogo() {
 export default function Footer() {
   return (
     <footer>
+      {/* ---- Benefits Bar ---- */}
+      <BenefitsBar />
+
       {/* ---- Newsletter ---- */}
       <NewsletterSection />
 

@@ -441,57 +441,59 @@ export default async function HomePage() {
       {/* ================================================================== */}
       <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-          <h2 className="mb-8 font-heading text-2xl font-bold text-text-primary md:text-[32px]">
+          <h2 className="mb-8 font-heading text-2xl font-bold text-text-primary md:text-[24px]">
             Porady od TeoHome
           </h2>
 
-          <div className="flex flex-col gap-6 lg:flex-row">
-            {/* Featured post */}
-            <Link href={blogPosts[0].href} className="group lg:w-1/2">
-              <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-bg-light">
-                <img
-                  src={blogPosts[0].image}
-                  alt={blogPosts[0].title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5 lg:p-7">
-                  <h3 className="font-heading text-lg font-semibold leading-snug text-white md:text-xl">
-                    {blogPosts[0].title}
-                  </h3>
-                  <p className="mt-2 text-sm text-white/70">{blogPosts[0].excerpt}</p>
-                  <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors group-hover:text-primary-light">
+          {/* Featured post — image + content side-by-side (Figma: 842+678, rounded-xl, bg #f4f4f4) */}
+          <Link href={blogPosts[0].href} className="group mb-8 flex flex-col overflow-hidden rounded-xl lg:flex-row">
+            <div className="aspect-[3/2] overflow-hidden lg:aspect-auto lg:w-[55%] lg:shrink-0">
+              <img
+                src={blogPosts[0].image}
+                alt={blogPosts[0].title}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div className="flex flex-col justify-between bg-[#f4f4f4] p-8 lg:p-[80px]">
+              <div>
+                <h3 className="font-heading text-lg font-bold leading-snug text-text-primary md:text-[24px] md:leading-[1.2]">
+                  {blogPosts[0].title}
+                </h3>
+                <p className="mt-5 text-base leading-relaxed text-text-primary font-medium">
+                  {blogPosts[0].excerpt}
+                </p>
+              </div>
+              <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-bold text-text-primary transition-colors group-hover:text-primary">
+                Przejdź do artykułu
+                <ArrowRight size={15} strokeWidth={2} />
+              </span>
+            </div>
+          </Link>
+
+          {/* Smaller posts — 3-column grid (Figma: 490x360, image 200px + content 160px, bg #f4f4f4) */}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {blogPosts.slice(1).map((post, i) => (
+              <Link
+                key={i}
+                href={post.href}
+                className="group flex flex-col overflow-hidden rounded-xl"
+              >
+                <div className="aspect-[5/2] overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col justify-between bg-[#f4f4f4] px-8 py-6">
+                  <h3 className="text-base font-bold leading-snug text-text-primary line-clamp-2">{post.title}</h3>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-text-primary transition-colors group-hover:text-primary">
                     Przejdź do artykułu
-                    <ArrowRight size={14} strokeWidth={2} />
+                    <ArrowRight size={15} strokeWidth={2} />
                   </span>
                 </div>
-              </div>
-            </Link>
-
-            {/* Smaller posts */}
-            <div className="grid flex-1 gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              {blogPosts.slice(1).map((post, i) => (
-                <Link
-                  key={i}
-                  href={post.href}
-                  className="group flex flex-col gap-3 sm:flex-col lg:flex-row lg:gap-4"
-                >
-                  <div className="aspect-[16/10] overflow-hidden rounded-xl bg-bg-light sm:aspect-[4/3] lg:aspect-[4/3] lg:w-[170px] lg:shrink-0">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="flex flex-col justify-center">
-                    <h3 className="text-sm font-medium leading-snug text-text-primary line-clamp-2">{post.title}</h3>
-                    <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-primary transition-colors group-hover:text-primary-dark">
-                      Czytaj
-                      <ArrowRight size={12} strokeWidth={2} />
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -512,26 +514,28 @@ export default async function HomePage() {
             </h2>
             <div className="hidden items-center gap-2 sm:flex">
               {[0, 1, 2, 3].map((i) => (
-                <span key={i} className={`h-2 w-2 rounded-full ${i === 0 ? "bg-primary" : "bg-border"}`} />
+                <span key={i} className={`h-3 w-3 rounded-full ${i === 0 ? "bg-accent" : "bg-[#eaeaea]"}`} />
               ))}
             </div>
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-4">
             {testimonials.map((t) => (
-              <div key={t.name} className="rounded-2xl border border-border bg-white p-5 shadow-[0_2px_8px_rgba(31,29,34,0.06)]">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 overflow-hidden rounded-full">
+              <div key={t.name} className="rounded-xl bg-[#f4f4f4] p-8">
+                <div className="flex items-center gap-5">
+                  <div className="h-[77px] w-[77px] shrink-0 overflow-hidden rounded-full bg-accent">
                     <img src={t.avatar} alt={t.name} className="h-full w-full object-cover" />
                   </div>
-                  <span className="text-sm font-semibold text-text-primary">{t.name}</span>
+                  <div>
+                    <span className="text-base font-bold text-text-primary">{t.name}</span>
+                    <div className="mt-1.5 flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={16} className="fill-accent-gold text-accent-gold" />
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <div className="mt-3 flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={15} className="fill-accent-gold text-accent-gold" />
-                  ))}
-                </div>
-                <p className="mt-3 text-sm leading-relaxed text-text-secondary">{t.text}</p>
+                <p className="mt-4 text-sm leading-relaxed font-medium text-text-primary">{t.text}</p>
               </div>
             ))}
           </div>
