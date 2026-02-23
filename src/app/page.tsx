@@ -93,11 +93,6 @@ const inspirationImages = [
   "https://images.unsplash.com/photo-1616137466211-f939a420be84?w=500&q=80",
 ];
 
-const heroThumbs = [
-  { src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=80", alt: "Kuchnia nowoczesna" },
-  { src: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&q=80", alt: "Salon z kuchnią" },
-  { src: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&q=80", alt: "Wnętrze domu" },
-];
 
 /* -------------------------------------------------------------------------- */
 /*  PAGE                                                                      */
@@ -115,62 +110,46 @@ export default async function HomePage() {
   return (
     <>
       {/* ================================================================== */}
-      {/* 1. HERO SECTION — 60/40 split with thumbnails                     */}
+      {/* 1. HERO SECTION — full-width (Figma pixel-perfect)                */}
       {/* ================================================================== */}
       <section className="relative w-full overflow-hidden">
-        <div className="flex flex-col lg:flex-row">
-          {/* Main hero — left ~60% */}
-          <div className="relative h-[500px] w-full lg:h-[800px] lg:w-[60%]">
-            <img
-              src="/images/hero/hero-bg.jpg"
-              alt="Nowoczesna kuchnia na wymiar TeoHome"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+        <div className="relative h-[500px] w-full lg:h-[800px]">
+          <img
+            src="/images/hero/hero-bg.jpg"
+            alt="Nowoczesna kuchnia na wymiar TeoHome"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
 
-            <div className="relative flex h-full items-center px-6 lg:px-16">
-              <div className="max-w-lg">
-                <h1 className="font-heading text-3xl leading-tight font-semibold text-white md:text-4xl lg:text-[46px] lg:leading-[1.08]">
-                  Kuchnie dopasowane do Twojego stylu
-                </h1>
-                <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/80 md:text-base">
-                  Tworzymy funkcjonalne i estetyczne kuchnie na zamówienie, które łączą design oraz jakość.
-                </p>
-                <Link
-                  href="/kuchnie"
-                  className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-text-primary transition-colors hover:bg-white/90"
-                >
-                  Zobacz więcej
-                  <ArrowRight size={15} strokeWidth={2} />
-                </Link>
-              </div>
-            </div>
-
-            {/* Dot pagination — bottom center */}
-            <div className="absolute bottom-5 left-6 z-10 flex gap-2 lg:left-16">
-              {[0, 1, 2, 3].map((i) => (
-                <button
-                  key={i}
-                  type="button"
-                  className={`h-2.5 w-2.5 rounded-full border border-white/60 transition-colors ${
-                    i === 0 ? "bg-white" : "bg-transparent hover:bg-white/40"
-                  }`}
-                  aria-label={`Slajd ${i + 1}`}
-                />
-              ))}
+          <div className="relative flex h-full items-center px-6 lg:px-16">
+            <div className="max-w-lg">
+              <h1 className="font-heading text-3xl leading-tight font-semibold text-white md:text-4xl lg:text-[46px] lg:leading-[1.08]">
+                Kuchnie dopasowane do Twojego stylu
+              </h1>
+              <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/80 md:text-base">
+                Tworzymy funkcjonalne i estetyczne kuchnie na zamówienie, które łączą design oraz jakość.
+              </p>
+              <Link
+                href="/kuchnie"
+                className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-text-primary transition-colors hover:bg-white/90"
+              >
+                Zobacz więcej
+                <ArrowRight size={15} strokeWidth={2} />
+              </Link>
             </div>
           </div>
 
-          {/* Thumbnails — right ~40% */}
-          <div className="hidden flex-col gap-[2px] lg:flex lg:w-[40%]">
-            {heroThumbs.map((thumb, i) => (
-              <div key={i} className="relative flex-1 overflow-hidden">
-                <img
-                  src={thumb.src}
-                  alt={thumb.alt}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
+          {/* Dot pagination */}
+          <div className="absolute bottom-5 left-6 z-10 flex gap-2 lg:left-16">
+            {[0, 1, 2, 3].map((i) => (
+              <button
+                key={i}
+                type="button"
+                className={`h-2.5 w-2.5 rounded-full border border-white/60 transition-colors ${
+                  i === 0 ? "bg-white" : "bg-transparent hover:bg-white/40"
+                }`}
+                aria-label={`Slajd ${i + 1}`}
+              />
             ))}
           </div>
         </div>
