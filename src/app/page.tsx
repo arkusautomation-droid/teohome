@@ -168,10 +168,9 @@ export default async function HomePage() {
             </h2>
             <Link
               href="/kategoria"
-              className="group flex items-center gap-1.5 text-sm font-medium text-text-secondary transition-colors hover:text-primary"
+              className="inline-flex items-center rounded-full border border-border px-5 py-2 text-sm font-medium text-text-primary transition-colors hover:border-primary hover:text-primary"
             >
               Zobacz wszystkie
-              <ArrowRight size={15} strokeWidth={2} className="transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
 
@@ -331,7 +330,7 @@ export default async function HomePage() {
                 <h2 className="font-heading text-xl leading-snug font-semibold text-white md:text-2xl">
                   Nowe rozwiązania do Twojej przestrzeni
                 </h2>
-                <p className="mt-2 text-sm text-white/70">Rozpocznij podróż</p>
+                <p className="mt-2 text-sm text-white/70">Najnowsze meble w ofercie TeoHome</p>
                 <Link
                   href="/nowosci"
                   className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-text-primary transition-colors hover:bg-white/90"
@@ -359,9 +358,6 @@ export default async function HomePage() {
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 1024px) 50vw, 200px"
                       />
-                      <span className="absolute left-2.5 top-2.5 rounded-full bg-badge-new px-3 py-0.5 text-[11px] font-semibold tracking-wide text-white uppercase">
-                        Nowość
-                      </span>
                     </div>
                     <div className="mt-2.5">
                       <h3 className="text-base font-bold text-text-primary">{product.name}</h3>
@@ -371,8 +367,19 @@ export default async function HomePage() {
                       <p className="mt-1.5 text-xl font-bold text-text-primary">
                         {formatPrice(product.price)}
                       </p>
+                      {product.on_sale && product.regular_price && (
+                        <p className="mt-0.5 text-xs text-text-light">
+                          Najniższa cena z 30 dni: {formatPrice(product.regular_price)}
+                        </p>
+                      )}
                     </div>
                   </Link>
+                ))}
+              </div>
+              {/* Pagination dots */}
+              <div className="mt-5 flex justify-center gap-2">
+                {[0, 1, 2, 3].map((i) => (
+                  <span key={i} className={`h-2.5 w-2.5 rounded-full ${i === 0 ? "bg-text-primary" : "bg-[#eaeaea]"}`} />
                 ))}
               </div>
             </div>
@@ -385,26 +392,30 @@ export default async function HomePage() {
       {/* ================================================================== */}
       <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-          <h2 className="mb-8 font-heading text-2xl font-semibold text-text-primary md:text-[32px]">
-            Polecane produkty
-          </h2>
-          <p className="mb-8 max-w-2xl text-[15px] leading-relaxed text-text-secondary">
-            Poznaj nasze najczęściej wybierane meble. Każdy produkt łączy w sobie staranność wykonania, nowoczesny design i trwałość na lata. Przekonaj się, dlaczego nasi klienci do nas wracają.
-          </p>
-
           {bestsellerProduct ? (
             <div className="flex flex-col overflow-hidden rounded-2xl lg:flex-row">
-              {/* Left — lifestyle image */}
+              {/* Left — lifestyle image with overlaid title */}
               <div className="relative aspect-[4/3] lg:aspect-auto lg:w-[50%]">
                 <img
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80"
                   alt="Wnętrze TeoHome"
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute bottom-4 left-4 flex gap-2">
-                  {featuredProducts.slice(0, 4).map((_, i) => (
-                    <span key={i} className={`h-2 w-2 rounded-full ${i === 0 ? "bg-white" : "bg-white/40"}`} />
-                  ))}
+                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 flex flex-col justify-between p-8 lg:p-10">
+                  <div>
+                    <h2 className="font-heading text-2xl font-semibold text-white md:text-[32px]">
+                      Polecane produkty
+                    </h2>
+                    <p className="mt-3 max-w-sm text-[15px] leading-relaxed text-white/80">
+                      Meble, które najlepiej łączą najwyższą funkcjonalność, design i dopasowanie do przestrzeni. Sprawdź rozwiązania, które możesz łatwo dostosować do swoich potrzeb.
+                    </p>
+                  </div>
+                  <div className="flex gap-2">
+                    {featuredProducts.slice(0, 4).map((_, i) => (
+                      <span key={i} className={`h-2.5 w-2.5 rounded-full ${i === 0 ? "bg-white" : "bg-white/40"}`} />
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -419,20 +430,24 @@ export default async function HomePage() {
                 <p className="mt-2 text-sm text-text-secondary line-clamp-2">
                   {bestsellerProduct.short_description.replace(/<[^>]*>/g, "")}
                 </p>
-                <p className="mt-3 text-[22px] font-bold text-text-primary">
-                  {formatPrice(bestsellerProduct.price)}
-                </p>
-                {bestsellerProduct.on_sale && bestsellerProduct.regular_price && (
-                  <p className="mt-1 text-xs text-text-light">
-                    Najniższa cena z 30 dni: {formatPrice(bestsellerProduct.regular_price)}
+                <div className="mt-3 flex items-baseline gap-3">
+                  <p className="text-[22px] font-bold text-text-primary">
+                    {formatPrice(bestsellerProduct.price)}
                   </p>
-                )}
+                  {bestsellerProduct.on_sale && bestsellerProduct.regular_price && (
+                    <p className="text-xs text-text-light">
+                      Najniższa cena z 30 dni: {formatPrice(bestsellerProduct.regular_price)}
+                    </p>
+                  )}
+                </div>
                 <Link
                   href={`/produkt/${bestsellerProduct.slug}`}
-                  className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-text-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-text-primary/90"
+                  className="mt-6 inline-flex w-fit items-center gap-0 rounded-full border border-border py-1.5 pl-5 pr-1.5 text-sm font-medium text-text-primary transition-colors hover:border-primary hover:text-primary"
                 >
-                  Zobacz produkt
-                  <ArrowRight size={14} strokeWidth={2} />
+                  <span>Zobacz produkt</span>
+                  <span className="ml-3 flex h-[36px] w-[36px] items-center justify-center rounded-full bg-primary/10">
+                    <ArrowRight size={14} strokeWidth={2} />
+                  </span>
                 </Link>
               </div>
             </div>
@@ -486,7 +501,7 @@ export default async function HomePage() {
                 href={post.href}
                 className="group flex flex-col overflow-hidden rounded-xl"
               >
-                <div className="aspect-[5/2] overflow-hidden">
+                <div className="aspect-[3/2] overflow-hidden">
                   <img
                     src={post.image}
                     alt={post.title}
@@ -530,17 +545,15 @@ export default async function HomePage() {
           <div className="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-4">
             {testimonials.map((t) => (
               <div key={t.name} className="rounded-2xl bg-[#f4f4f4] p-8">
-                <div className="flex items-center gap-5">
+                <div className="flex flex-col items-center text-center">
                   <div className="h-[77px] w-[77px] shrink-0 overflow-hidden rounded-full bg-accent">
                     <img src={t.avatar} alt={t.name} className="h-full w-full object-cover" />
                   </div>
-                  <div>
-                    <span className="text-base font-bold text-text-primary">{t.name}</span>
-                    <div className="mt-1.5 flex gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={16} className="fill-accent-gold text-accent-gold" />
-                      ))}
-                    </div>
+                  <span className="mt-3 text-base font-bold text-text-primary">{t.name}</span>
+                  <div className="mt-1.5 flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={16} className="fill-accent-gold text-accent-gold" />
+                    ))}
                   </div>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed font-medium text-text-primary">{t.text}</p>

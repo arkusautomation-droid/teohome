@@ -1,7 +1,5 @@
 import Link from "next/link";
 import {
-  Linkedin,
-  Twitter,
   Facebook,
   Instagram,
   ShoppingCart,
@@ -15,7 +13,7 @@ import NewsletterForm from "@/components/NewsletterForm";
 /* ------------------------------------------------------------------ */
 function BenefitsBar() {
   return (
-    <div className="bg-bg-dark">
+    <div className="bg-primary">
       <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-8 px-6 py-5 lg:justify-between lg:px-16">
         <div className="flex items-center gap-5">
           <ShoppingCart size={32} strokeWidth={1.5} className="shrink-0 text-white" />
@@ -62,21 +60,23 @@ function NewsletterSection() {
             Zapisz si&#281; do newslettera i zyskaj
           </h2>
 
-          <p className="mt-2 font-heading text-[48px] font-bold leading-tight text-accent md:text-[56px]">
-            10% rabatu
-          </p>
-          <p className="text-lg font-medium text-text-primary md:text-xl">
-            na pierwsze zakupy!
+          <p className="mt-1 font-heading text-[48px] font-bold leading-tight text-text-primary md:text-[56px]">
+            10% rabatu na pierwsze zakupy!
           </p>
 
           <div className="mt-10">
             <NewsletterForm />
           </div>
 
-          <p className="mt-5 max-w-lg text-xs leading-relaxed text-text-light">
-            Zapisuj&#261;c si&#281; potwierdzam zapoznanie si&#281; z regulaminem
-            rabat&oacute;w ByBrands zakupionych przez firm&#281; TeoHome.
-          </p>
+          <label className="mt-4 flex cursor-pointer items-start gap-2.5">
+            <input
+              type="checkbox"
+              className="mt-0.5 h-4 w-4 shrink-0 rounded border-border text-primary accent-primary"
+            />
+            <span className="text-xs leading-relaxed text-text-light">
+              Wyrażam zgodę na przetwarzanie moich danych osobowych przez firmę Teo Home
+            </span>
+          </label>
         </div>
       </div>
     </section>
@@ -187,6 +187,7 @@ export default function Footer() {
                 <p>ul. Przyk&#322;adowa 1</p>
                 <p>12-345 Miasto</p>
                 <p>Polska</p>
+                <p>NIP: 123 456 789</p>
                 <p className="pt-1">
                   tel:{" "}
                   <a
@@ -228,8 +229,8 @@ export default function Footer() {
               <FooterHeading>Na skr&oacute;ty</FooterHeading>
               <ul className="space-y-2">
                 <FooterLink href="/o-nas">O nas</FooterLink>
-                <FooterLink href="/kategoria?promo=true">Promocje</FooterLink>
-                <FooterLink href="/kategoria?nowe=true">Nowo&#347;ci</FooterLink>
+                <FooterLink href="/kategoria">Produkty</FooterLink>
+                <FooterLink href="/inspiracje">Inspiracje</FooterLink>
                 <FooterLink href="/blog">Blog</FooterLink>
                 <FooterLink href="/kontakt">Kontakt</FooterLink>
               </ul>
@@ -248,12 +249,11 @@ export default function Footer() {
               <FooterHeading>Kategorie produktowe</FooterHeading>
               <ul className="space-y-2">
                 <FooterLink href="/kategoria/kuchnie">Kuchnie</FooterLink>
-                <FooterLink href="/kategoria/szafy-diy">Szafy DIY</FooterLink>
-                <FooterLink href="/kategoria/sofy">Sofy</FooterLink>
-                <FooterLink href="/kategoria/oswietlenie">O&#347;wietlenie</FooterLink>
-                <FooterLink href="/kategoria/meble">Meble</FooterLink>
+                <FooterLink href="/kategoria/sciany-rtv">&#346;ciany RTV</FooterLink>
+                <FooterLink href="/kategoria/szafy">Szafy</FooterLink>
                 <FooterLink href="/kategoria/projekty">Projekty</FooterLink>
-                <FooterLink href="/kategoria/dekoracje">Dekoracje</FooterLink>
+                <FooterLink href="/kategoria/nowosci">Nowo&#347;ci</FooterLink>
+                <FooterLink href="/kategoria/promocje">Promocje</FooterLink>
                 <FooterLink href="/kategoria/bestsellery">Bestsellery</FooterLink>
               </ul>
             </div>
@@ -267,17 +267,17 @@ export default function Footer() {
                 <FooterLink href="/polityka-prywatnosci">
                   Polityka prywatno&#347;ci
                 </FooterLink>
-                <FooterLink href="/dla-mediow">Dla medi&oacute;w</FooterLink>
+                <FooterLink href="/pliki-cookies">Pliki cookies</FooterLink>
               </ul>
 
               <div className="mt-8">
                 <FooterHeading>Media spo&#322;eczno&#347;ciowe</FooterHeading>
                 <div className="flex gap-3">
-                  <SocialIcon href="https://linkedin.com" label="LinkedIn">
-                    <Linkedin className="h-4 w-4" />
+                  <SocialIcon href="https://youtube.com" label="YouTube">
+                    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                   </SocialIcon>
-                  <SocialIcon href="https://twitter.com" label="X (Twitter)">
-                    <Twitter className="h-4 w-4" />
+                  <SocialIcon href="https://tiktok.com" label="TikTok">
+                    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
                   </SocialIcon>
                   <SocialIcon href="https://facebook.com" label="Facebook">
                     <Facebook className="h-4 w-4" />
@@ -305,11 +305,12 @@ export default function Footer() {
         <div className="border-t border-neutral-700">
           <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-2 px-6 py-4 lg:flex-row lg:px-16">
             <p className="text-xs text-neutral-500">
-              Copyright &copy; 2025 All Rights Reserved
+              Copyright &copy; 2025. All Rights Reserved
             </p>
             <p className="text-xs uppercase tracking-widest text-neutral-600">
-              Designed and crafted by{" "}
-              <span className="text-neutral-500">MG eCommerce</span>
+              Created with{" "}
+              <span className="text-red-400">&hearts;</span>{" "}
+              by <span className="text-neutral-500">AG ADAWARDS</span>
             </p>
           </div>
         </div>
