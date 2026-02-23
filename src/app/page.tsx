@@ -119,7 +119,7 @@ export default async function HomePage() {
             alt="Nowoczesna kuchnia na wymiar TeoHome"
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
           <div className="relative flex h-full items-center px-6 lg:px-16">
             <div className="max-w-lg">
@@ -131,10 +131,12 @@ export default async function HomePage() {
               </p>
               <Link
                 href="/kuchnie"
-                className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-text-primary transition-colors hover:bg-white/90"
+                className="mt-7 inline-flex items-center gap-4"
               >
-                Zobacz więcej
-                <ArrowRight size={15} strokeWidth={2} />
+                <span className="text-sm font-semibold text-text-primary">Zobacz więcej</span>
+                <span className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-accent transition-colors hover:bg-accent/80">
+                  <ArrowRight size={20} strokeWidth={2} className="text-white" />
+                </span>
               </Link>
             </div>
           </div>
@@ -158,7 +160,7 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 2. CATEGORIES SECTION                                              */}
       {/* ================================================================== */}
-      <section className="py-10 lg:py-14">
+      <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="mb-6 flex items-end justify-between">
             <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[32px]">
@@ -203,7 +205,7 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 4. ABOUT SECTION                                                   */}
       {/* ================================================================== */}
-      <section className="py-10 lg:py-14">
+      <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-14">
             <div className="lg:w-[55%]">
@@ -254,7 +256,7 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 5. DESIGNERS SECTION                                               */}
       {/* ================================================================== */}
-      <section className="bg-[#635552] py-10 lg:py-14">
+      <section className="bg-[#635552] py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-heading text-2xl font-semibold text-white md:text-[32px]">
@@ -302,7 +304,7 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 6. NEW PRODUCTS SECTION                                            */}
       {/* ================================================================== */}
-      <section className="py-10 lg:py-14">
+      <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-6 lg:flex-row">
             {/* Left - dark CTA */}
@@ -369,7 +371,7 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 7. FEATURED PRODUCT SECTION                                        */}
       {/* ================================================================== */}
-      <section className="bg-[#312E29] py-10 lg:py-14">
+      <section className="bg-[#312E29] py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
             <div className="lg:w-[35%]">
@@ -437,7 +439,7 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 8. BLOG SECTION                                                    */}
       {/* ================================================================== */}
-      <section className="py-10 lg:py-14">
+      <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <h2 className="mb-8 font-heading text-2xl font-bold text-text-primary md:text-[32px]">
             Porady od TeoHome
@@ -502,7 +504,7 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 9. TESTIMONIALS SECTION                                            */}
       {/* ================================================================== */}
-      <section className="bg-white py-10 lg:py-14">
+      <section className="bg-white py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="mb-8 flex items-end justify-between">
             <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[32px]">
@@ -539,7 +541,7 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 10. INSPIRATION GALLERY                                            */}
       {/* ================================================================== */}
-      <section className="py-10 lg:py-14">
+      <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-5 lg:flex-row">
             <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-[#312E29] px-7 py-10 lg:w-[45%] lg:px-10 lg:py-14">
