@@ -66,7 +66,7 @@ const blogPosts = [
   {
     title: "Jak zaplanować kuchnię na wymiar, żeby była funkcjonalna na lata?",
     image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
-    excerpt: "Dowiedz się, jak zaplanować wymarzoną kuchnię krok po kroku, by służyła Ci przez lata.",
+    excerpt: "Projektowanie kuchni to coś więcej niż wybór frontów i kolorów. Dobrze zaplanowana kuchnia na wymiar powinna odpowiadać na codzienne potrzeby, styl życia i realną przestrzeń, którą mamy do dyspozycji. W Teo Home wychodzimy z założenia, że funkcjonalność zaczyna się już na etapie projektu.",
     href: "/blog/planowanie-kuchni",
   },
   {
@@ -327,6 +327,9 @@ export default async function HomePage() {
                 className="absolute inset-0 h-full w-full object-cover opacity-20"
               />
               <div className="relative z-10">
+                <span className="mb-4 inline-block rounded-full bg-accent px-4 py-1 text-[11px] font-semibold tracking-wide text-white uppercase">
+                  Nowości
+                </span>
                 <h2 className="font-heading text-xl leading-snug font-semibold text-white md:text-2xl">
                   Nowe rozwiązania do Twojej przestrzeni
                 </h2>
@@ -358,6 +361,9 @@ export default async function HomePage() {
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 1024px) 50vw, 200px"
                       />
+                      <span className="absolute left-2.5 top-2.5 rounded-full bg-badge-new px-3 py-0.5 text-[11px] font-semibold tracking-wide text-white uppercase">
+                        Nowość
+                      </span>
                     </div>
                     <div className="mt-2.5">
                       <h3 className="text-base font-bold text-text-primary">{product.name}</h3>
@@ -440,15 +446,17 @@ export default async function HomePage() {
                     </p>
                   )}
                 </div>
-                <Link
-                  href={`/produkt/${bestsellerProduct.slug}`}
-                  className="mt-6 inline-flex w-fit items-center gap-0 rounded-full border border-border py-1.5 pl-5 pr-1.5 text-sm font-medium text-text-primary transition-colors hover:border-primary hover:text-primary"
-                >
-                  <span>Zobacz produkt</span>
-                  <span className="ml-3 flex h-[36px] w-[36px] items-center justify-center rounded-full bg-primary/10">
-                    <ArrowRight size={14} strokeWidth={2} />
-                  </span>
-                </Link>
+                <div className="mt-6 flex justify-end">
+                  <Link
+                    href={`/produkt/${bestsellerProduct.slug}`}
+                    className="inline-flex items-center gap-0 rounded-full border border-border py-1.5 pl-5 pr-1.5 text-sm font-medium text-text-primary transition-colors hover:border-primary hover:text-primary"
+                  >
+                    <span>Zobacz produkt</span>
+                    <span className="ml-3 flex h-[36px] w-[36px] items-center justify-center rounded-full bg-primary/10">
+                      <ArrowRight size={14} strokeWidth={2} />
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
           ) : (

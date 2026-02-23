@@ -8,8 +8,8 @@ import { useCart } from "@/context/CartContext";
 const navLinks = [
   { href: "/o-nas", label: "O nas" },
   { href: "/kuchnie", label: "Kuchnie" },
-  { href: "/szafy-diy", label: "Szafy DIY" },
-  { href: "/sofy", label: "Sofy" },
+  { href: "/kategoria/sciany-rtv", label: "Ściany RTV" },
+  { href: "/kategoria/szafy", label: "Szafy" },
   { href: "/nowosci", label: "Nowości" },
   { href: "/strefa-projektowa", label: "Strefa projektowa" },
   { href: "/realizacje", label: "Realizacje" },
@@ -81,11 +81,21 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* Right side: icons + CTA */}
-          <div className="flex items-center gap-1">
+          {/* Right side: search + icons */}
+          <div className="flex items-center gap-2">
+            {/* Search input — desktop */}
+            <div className="hidden items-center rounded-full border border-border px-3 py-1.5 xl:flex">
+              <input
+                type="text"
+                placeholder="Szukaj..."
+                className="w-[120px] bg-transparent text-sm text-text-primary placeholder:text-text-light outline-none"
+              />
+              <Search size={16} strokeWidth={1.8} className="ml-1 text-text-secondary" />
+            </div>
+            {/* Search icon — mobile */}
             <button
               type="button"
-              className="flex h-9 w-9 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-bg-light hover:text-text-primary"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-bg-light hover:text-text-primary xl:hidden"
               aria-label="Szukaj"
             >
               <Search size={18} strokeWidth={1.8} />
@@ -101,23 +111,15 @@ export default function Header() {
 
             <Link
               href="/koszyk"
-              className="relative flex h-9 w-9 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-bg-light hover:text-text-primary"
+              className="relative flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-primary-dark"
               aria-label="Koszyk"
             >
-              <ShoppingCart size={18} strokeWidth={1.8} />
+              <ShoppingCart size={16} strokeWidth={1.8} />
               {totalItems > 0 && (
-                <span className="absolute right-0 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-medium leading-none text-white">
+                <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[10px] font-medium leading-none text-white">
                   {totalItems}
                 </span>
               )}
-            </Link>
-
-            {/* CTA button — desktop only */}
-            <Link
-              href="/kontakt"
-              className="ml-3 hidden rounded-full bg-primary px-7 py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-primary-dark xl:inline-flex"
-            >
-              Umów wizytę w salonie
             </Link>
 
             {/* Mobile menu toggle */}
@@ -182,7 +184,7 @@ export default function Header() {
             className="flex w-full items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Umów wizytę w salonie
+            Kontakt
           </Link>
         </div>
       </nav>

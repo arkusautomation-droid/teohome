@@ -42,16 +42,40 @@ function NewsletterSection() {
       className="overflow-hidden"
     >
       <div className="flex flex-col lg:flex-row">
-        {/* Left — decorative image (Figma: 860x630, full half) */}
+        {/* Left — decorative diagonal stripes (Figma: 860x630) */}
         <div
           aria-hidden="true"
-          className="relative hidden h-auto min-h-[400px] overflow-hidden lg:block lg:w-1/2"
+          className="relative hidden min-h-[400px] overflow-hidden bg-[#f0ece8] lg:block lg:w-1/2"
         >
-          <img
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80"
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover"
-          />
+          {/* Diagonal stripe 1 */}
+          <div
+            className="absolute inset-0 origin-center -rotate-[25deg] scale-[1.6]"
+            style={{ top: "-10%", left: "-15%" }}
+          >
+            <div className="flex h-full gap-4">
+              <div className="w-[30%] overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80"
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="w-[25%] overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="w-[30%] overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80"
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Right — content (Figma: 860px, vertical layout, gap 60) */}
