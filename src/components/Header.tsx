@@ -99,7 +99,7 @@ export default function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="relative px-3 py-2 text-[13px] font-normal text-text-secondary transition-colors hover:text-text-primary"
+                    className="relative px-3 py-2 text-[13px] font-medium text-text-secondary transition-colors hover:text-text-primary"
                   >
                     {link.label}
                   </Link>
@@ -142,7 +142,7 @@ export default function Header() {
             {/* CTA button — desktop only */}
             <Link
               href="/kontakt"
-              className="ml-3 hidden rounded-full bg-primary px-5 py-2 text-xs font-medium text-white transition-colors hover:bg-primary-dark xl:inline-flex"
+              className="ml-3 hidden rounded-full bg-primary px-6 py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-primary-dark xl:inline-flex"
             >
               Umów wizytę w salonie
             </Link>

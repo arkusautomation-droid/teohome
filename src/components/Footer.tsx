@@ -21,7 +21,7 @@ function NewsletterSection() {
           {/* Decorative image */}
           <div
             aria-hidden="true"
-            className="relative hidden w-[270px] shrink-0 overflow-hidden rounded-2xl lg:block"
+            className="relative hidden w-[250px] shrink-0 overflow-hidden rounded-2xl lg:block"
           >
             <img
               src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&q=80"
@@ -39,7 +39,7 @@ function NewsletterSection() {
             <p className="mt-2 font-heading text-3xl font-bold text-accent md:text-4xl lg:text-[2.75rem]">
               10% rabatu
               <br />
-              <span className="text-2xl font-semibold md:text-3xl lg:text-[2rem]">
+              <span className="text-2xl font-semibold md:text-3xl lg:text-[1.875rem]">
                 na pierwsze zakupy!
               </span>
             </p>
@@ -63,7 +63,7 @@ function NewsletterSection() {
 /* ------------------------------------------------------------------ */
 function FooterHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="mb-4 font-heading text-sm font-semibold uppercase tracking-wider text-white">
+    <h3 className="mb-4 font-heading text-xs font-semibold uppercase tracking-wider text-white">
       {children}
     </h3>
   );
@@ -83,7 +83,7 @@ function FooterLink({
     <li>
       <Link
         href={href}
-        className="text-sm text-neutral-400 transition-colors hover:text-white"
+        className="text-[13px] text-neutral-400 transition-colors hover:text-white"
       >
         {children}
       </Link>
@@ -139,9 +139,9 @@ export default function Footer() {
 
       {/* ---- Dark footer ---- */}
       <div className="bg-bg-dark">
-        <div className="mx-auto max-w-[1440px] px-6 py-10 lg:px-16">
+        <div className="mx-auto max-w-[1440px] px-6 py-8 lg:px-16">
           {/* Logo row */}
-          <div className="mb-12">
+          <div className="mb-10">
             <TeoHomeLogo />
           </div>
 
@@ -271,7 +271,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-neutral-700">
-          <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-2 px-6 py-5 lg:flex-row lg:px-16">
+          <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-2 px-6 py-4 lg:flex-row lg:px-16">
             <p className="text-xs text-neutral-500">
               Copyright &copy; 2025 All Rights Reserved
             </p>

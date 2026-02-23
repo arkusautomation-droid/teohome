@@ -129,11 +129,11 @@ export default async function HomePage() {
               alt="Nowoczesna kuchnia na wymiar TeoHome"
               className="absolute inset-0 h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
             <div className="relative flex h-full items-center px-6 lg:px-16">
               <div className="max-w-lg">
-                <h1 className="font-heading text-3xl leading-tight font-semibold text-white md:text-4xl lg:text-[46px] lg:leading-[1.12]">
+                <h1 className="font-heading text-3xl leading-tight font-semibold text-white md:text-4xl lg:text-[46px] lg:leading-[1.08]">
                   Kuchnie dopasowane do Twojego stylu
                 </h1>
                 <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/80 md:text-base">
@@ -165,7 +165,7 @@ export default async function HomePage() {
           </div>
 
           {/* Thumbnails — right ~40% */}
-          <div className="hidden flex-col gap-[3px] lg:flex lg:w-[40%]">
+          <div className="hidden flex-col gap-[2px] lg:flex lg:w-[40%]">
             {heroThumbs.map((thumb, i) => (
               <div key={i} className="relative flex-1 overflow-hidden">
                 <img
@@ -182,11 +182,11 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 2. BENEFITS BAR                                                    */}
       {/* ================================================================== */}
-      <section className="border-b border-border-light bg-bg-light py-6 lg:py-7">
+      <section className="bg-bg-light py-4 lg:py-5">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="grid gap-6 sm:grid-cols-3">
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <Shield size={22} strokeWidth={1.8} />
               </div>
               <div>
@@ -195,7 +195,7 @@ export default async function HomePage() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <CheckCircle size={22} strokeWidth={1.8} />
               </div>
               <div>
@@ -204,7 +204,7 @@ export default async function HomePage() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <Heart size={22} strokeWidth={1.8} />
               </div>
               <div>
@@ -219,10 +219,10 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 3. CATEGORIES SECTION                                              */}
       {/* ================================================================== */}
-      <section className="py-12 lg:py-16">
+      <section className="py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-          <div className="mb-8 flex items-end justify-between">
-            <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[28px]">
+          <div className="mb-6 flex items-end justify-between">
+            <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[26px]">
               Wybierz coś dla siebie
             </h2>
             <Link
@@ -264,11 +264,11 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 4. ABOUT SECTION                                                   */}
       {/* ================================================================== */}
-      <section className="py-12 lg:py-16">
+      <section className="py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-14">
-            <div className="lg:w-1/2">
-              <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[28px]">
+            <div className="lg:w-[55%]">
+              <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[26px]">
                 Witaj w TeoHome!
               </h2>
               <p className="mt-5 text-[15px] leading-relaxed text-text-secondary">
@@ -299,8 +299,8 @@ export default async function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/2">
-              <div className="aspect-[4/3] overflow-hidden rounded-2xl">
+            <div className="lg:w-[45%]">
+              <div className="aspect-[4/3] overflow-hidden rounded-xl">
                 <img
                   src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
                   alt="Nowoczesne wnętrze zaprojektowane przez TeoHome"
@@ -315,10 +315,10 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 5. DESIGNERS SECTION                                               */}
       {/* ================================================================== */}
-      <section className="bg-bg-warm py-12 lg:py-16">
+      <section className="bg-bg-warm py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[28px]">
+            <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[26px]">
               Zaprojektuj wnętrze z pomocą naszych projektantów!
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
@@ -333,13 +333,13 @@ export default async function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {designers.map((designer) => (
               <div
                 key={designer.name}
-                className="flex flex-col items-center rounded-2xl border border-border-light bg-white px-6 py-8 text-center shadow-sm"
+                className="flex flex-col items-center rounded-2xl border border-border bg-white px-6 py-8 text-center shadow-sm"
               >
-                <div className="h-20 w-20 overflow-hidden rounded-full bg-bg-light">
+                <div className="h-[72px] w-[72px] overflow-hidden rounded-full bg-bg-light">
                   <img src={designer.avatar} alt={designer.name} className="h-full w-full object-cover" />
                 </div>
                 <h3 className="mt-4 font-heading text-lg font-semibold text-text-primary">
@@ -363,11 +363,11 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 6. NEW PRODUCTS SECTION                                            */}
       {/* ================================================================== */}
-      <section className="py-12 lg:py-16">
+      <section className="py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-6 lg:flex-row">
             {/* Left - dark CTA */}
-            <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-bg-dark px-7 py-10 lg:w-[290px] lg:shrink-0 lg:px-8 lg:py-14">
+            <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-bg-dark px-7 py-10 lg:w-[260px] lg:shrink-0 lg:px-8 lg:py-14">
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
                 alt=""
@@ -411,7 +411,7 @@ export default async function HomePage() {
                       </span>
                     </div>
                     <div className="mt-2.5">
-                      <h3 className="text-sm font-medium text-text-primary">{product.name}</h3>
+                      <h3 className="text-sm font-semibold text-text-primary">{product.name}</h3>
                       <p className="mt-0.5 text-xs text-text-secondary line-clamp-1">
                         {product.short_description.replace(/<[^>]*>/g, "")}
                       </p>
@@ -430,11 +430,11 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 7. FEATURED PRODUCT SECTION                                        */}
       {/* ================================================================== */}
-      <section className="bg-bg-dark py-12 lg:py-16">
+      <section className="bg-bg-dark py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
             <div className="lg:w-[35%]">
-              <h2 className="font-heading text-2xl font-semibold text-white md:text-[28px]">
+              <h2 className="font-heading text-2xl font-semibold text-white md:text-[26px]">
                 Polecane produkty
               </h2>
               <p className="mt-4 text-[15px] leading-relaxed text-white/60">
@@ -498,9 +498,9 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 8. BLOG SECTION                                                    */}
       {/* ================================================================== */}
-      <section className="py-12 lg:py-16">
+      <section className="py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-          <h2 className="mb-8 font-heading text-2xl font-semibold text-text-primary md:text-[28px]">
+          <h2 className="mb-8 font-heading text-2xl font-semibold text-text-primary md:text-[26px]">
             Porady od TeoHome
           </h2>
 
@@ -527,14 +527,14 @@ export default async function HomePage() {
             </Link>
 
             {/* Smaller posts */}
-            <div className="grid flex-1 gap-4 sm:grid-cols-3 lg:grid-cols-1">
+            <div className="grid flex-1 gap-3 sm:grid-cols-3 lg:grid-cols-1">
               {blogPosts.slice(1).map((post, i) => (
                 <Link
                   key={i}
                   href={post.href}
                   className="group flex flex-col gap-3 sm:flex-col lg:flex-row lg:gap-4"
                 >
-                  <div className="aspect-[16/10] overflow-hidden rounded-xl bg-bg-light sm:aspect-[4/3] lg:aspect-[4/3] lg:w-[220px] lg:shrink-0">
+                  <div className="aspect-[16/10] overflow-hidden rounded-xl bg-bg-light sm:aspect-[4/3] lg:aspect-[4/3] lg:w-[200px] lg:shrink-0">
                     <img
                       src={post.image}
                       alt={post.title}
@@ -558,10 +558,10 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 9. TESTIMONIALS SECTION                                            */}
       {/* ================================================================== */}
-      <section className="bg-white py-12 lg:py-16">
+      <section className="bg-white py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="mb-8 flex items-end justify-between">
-            <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[28px]">
+            <h2 className="font-heading text-2xl font-semibold text-text-primary md:text-[26px]">
               Zobacz, co mówią nasi klienci
             </h2>
             <div className="hidden items-center gap-2 sm:flex">
@@ -573,9 +573,9 @@ export default async function HomePage() {
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {testimonials.map((t) => (
-              <div key={t.name} className="rounded-2xl border border-border-light bg-white p-5 shadow-sm">
+              <div key={t.name} className="rounded-xl border border-border-light bg-white p-4 shadow-sm">
                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 overflow-hidden rounded-full bg-bg-light">
+                  <div className="h-9 w-9 overflow-hidden rounded-full bg-bg-light">
                     <img src={t.avatar} alt={t.name} className="h-full w-full object-cover" />
                   </div>
                   <span className="text-sm font-semibold text-text-primary">{t.name}</span>
@@ -595,7 +595,7 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 10. INSPIRATION GALLERY                                            */}
       {/* ================================================================== */}
-      <section className="py-12 lg:py-16">
+      <section className="py-10 lg:py-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-5 lg:flex-row">
             <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-bg-dark px-7 py-10 lg:w-[45%] lg:px-10 lg:py-14">
@@ -623,14 +623,14 @@ export default async function HomePage() {
                   <div className="flex gap-2">
                     <button
                       type="button"
-                      className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white transition-colors hover:bg-white/10"
+                      className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white/10"
                       aria-label="Poprzednia realizacja"
                     >
                       <ChevronLeft size={16} strokeWidth={2} />
                     </button>
                     <button
                       type="button"
-                      className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white transition-colors hover:bg-white/10"
+                      className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white/10"
                       aria-label="Następna realizacja"
                     >
                       <ChevronRight size={16} strokeWidth={2} />
