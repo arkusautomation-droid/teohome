@@ -284,7 +284,7 @@ export default async function HomePage() {
               {designers.map((designer) => (
                 <div
                   key={designer.name}
-                  className="flex flex-col items-center px-4 py-6 text-center"
+                  className="flex flex-col items-center rounded-2xl border border-border-light bg-white px-6 py-8 text-center shadow-sm"
                 >
                   <div className="h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-primary-light">
                     <img src={designer.avatar} alt={designer.name} className="h-full w-full object-cover" />
@@ -323,7 +323,7 @@ export default async function HomePage() {
                 className="absolute inset-0 h-full w-full object-cover opacity-20"
               />
               <div className="relative z-10">
-                <span className="mb-4 inline-block rounded-full bg-accent px-4 py-1 text-[11px] font-semibold tracking-wide text-white uppercase">
+                <span className="mb-4 inline-block rounded-full border border-white/50 px-4 py-1 text-[11px] font-semibold tracking-wide text-white uppercase">
                   Nowości
                 </span>
                 <h2 className="font-heading text-xl leading-snug font-semibold text-white md:text-2xl">
@@ -589,9 +589,9 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-black/30" />
 
           {/* Content overlay */}
-          <div className="relative mx-auto flex h-full max-w-[1440px] items-center px-6 lg:px-16">
+          <div className="relative mx-auto flex h-full max-w-[1440px] items-end px-6 pb-12 lg:px-16 lg:pb-16">
             <div className="max-w-md rounded-2xl bg-white/95 p-8 shadow-lg backdrop-blur-sm lg:p-10">
-              <h2 className="font-heading text-2xl leading-snug font-semibold text-text-primary md:text-[28px]">
+              <h2 className="font-heading text-2xl leading-snug font-bold text-text-primary md:text-[28px]">
                 Zainspiruj się realizacjami TeoHome
               </h2>
               <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
