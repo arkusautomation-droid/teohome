@@ -113,46 +113,81 @@ export default async function HomePage() {
       {/* 1. HERO SECTION — Figma: main image left + 2x2 thumbnails right  */}
       {/* ================================================================== */}
       <section className="relative w-full overflow-hidden">
-        <div className="relative h-[500px] lg:h-[560px]">
-          <img
-            src="/images/hero/hero-bg.jpg"
-            alt="Nowoczesna kuchnia na wymiar TeoHome"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+        <div className="relative flex h-[500px] lg:h-[520px]">
+          {/* Main hero image — left side with diagonal clip */}
+          <div className="relative w-full lg:w-[65%]" style={{ clipPath: "polygon(0 0, 100% 0, 85% 100%, 0 100%)" }}>
+            <img
+              src="/images/hero/hero-bg.jpg"
+              alt="Nowoczesna kuchnia na wymiar TeoHome"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
 
-          <div className="relative mx-auto flex h-full max-w-[1440px] items-center px-6 lg:px-16">
-            <div className="max-w-lg">
-              <h1 className="font-heading text-3xl leading-tight font-bold text-white md:text-4xl lg:text-[48px] lg:leading-[1.08]">
-                Kuchnie dopasowane do Twojego stylu
-              </h1>
-              <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/80 md:text-base">
-                Tworzymy funkcjonalne i estetyczne kuchnie na zamówienie, które łączą design oraz jakość.
-              </p>
-              <Link
-                href="/kuchnie"
-                className="mt-7 inline-flex items-center gap-0 rounded-full border border-white/40 py-1.5 pl-6 pr-1.5 transition-colors hover:border-white/70"
-              >
-                <span className="text-sm font-semibold text-white">Zobacz więcej</span>
-                <span className="ml-4 flex h-[44px] w-[44px] items-center justify-center rounded-full bg-accent">
-                  <ArrowRight size={18} strokeWidth={2} className="text-white" />
-                </span>
-              </Link>
+            <div className="relative mx-auto flex h-full max-w-[1440px] items-center px-6 lg:px-16">
+              <div className="max-w-lg">
+                <h1 className="font-heading text-3xl leading-tight font-bold text-white md:text-4xl lg:text-[48px] lg:leading-[1.08]">
+                  Kuchnie dopasowane do Twojego stylu
+                </h1>
+                <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/80 md:text-base">
+                  Tworzymy funkcjonalne i estetyczne kuchnie na zamówienie, które łączą design oraz jakość.
+                </p>
+                <Link
+                  href="/kuchnie"
+                  className="mt-7 inline-flex items-center gap-0 rounded-full border border-white/40 py-1.5 pl-6 pr-1.5 transition-colors hover:border-white/70"
+                >
+                  <span className="text-sm font-semibold text-white">Zobacz więcej</span>
+                  <span className="ml-4 flex h-[44px] w-[44px] items-center justify-center rounded-full bg-accent">
+                    <ArrowRight size={18} strokeWidth={2} className="text-white" />
+                  </span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Dot pagination */}
+            <div className="absolute bottom-8 left-6 z-10 flex gap-2 lg:left-16">
+              {[0, 1, 2, 3].map((i) => (
+                <button
+                  key={i}
+                  type="button"
+                  className={`h-2.5 w-2.5 rounded-full border border-white/60 transition-colors ${
+                    i === 0 ? "bg-white" : "bg-transparent hover:bg-white/40"
+                  }`}
+                  aria-label={`Slajd ${i + 1}`}
+                />
+              ))}
             </div>
           </div>
 
-          {/* Dot pagination */}
-          <div className="absolute bottom-8 left-6 z-10 flex gap-2 lg:left-[calc((100%-1440px)/2+64px)]">
-            {[0, 1, 2, 3].map((i) => (
-              <button
-                key={i}
-                type="button"
-                className={`h-2.5 w-2.5 rounded-full border border-white/60 transition-colors ${
-                  i === 0 ? "bg-white" : "bg-transparent hover:bg-white/40"
-                }`}
-                aria-label={`Slajd ${i + 1}`}
+          {/* Right side — 2x2 thumbnail grid */}
+          <div className="absolute right-0 top-0 hidden h-full w-[38%] grid-cols-2 grid-rows-2 gap-1.5 p-1.5 lg:grid">
+            <div className="overflow-hidden rounded-lg">
+              <img
+                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=80"
+                alt="Kuchnia nowoczesna"
+                className="h-full w-full object-cover"
               />
-            ))}
+            </div>
+            <div className="overflow-hidden rounded-lg">
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80"
+                alt="Salon z kuchnią"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="overflow-hidden rounded-lg">
+              <img
+                src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=400&q=80"
+                alt="Kuchnia na wymiar"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="overflow-hidden rounded-lg">
+              <img
+                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&q=80"
+                alt="Wnętrze TeoHome"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
