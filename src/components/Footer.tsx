@@ -13,19 +13,25 @@ import NewsletterForm from "@/components/NewsletterForm";
 /* ------------------------------------------------------------------ */
 function BenefitsBar() {
   return (
-    <div className="bg-primary">
+    <div className="bg-bg-dark">
       <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-8 px-6 py-5 lg:justify-between lg:px-16">
-        <div className="flex items-center gap-5">
-          <ShoppingCart size={32} strokeWidth={1.5} className="shrink-0 text-white" />
-          <span className="text-base text-white">Bezpieczne zakupy</span>
+        <div className="flex items-center gap-4">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10">
+            <ShoppingCart size={20} strokeWidth={1.5} className="text-white" />
+          </span>
+          <span className="text-sm text-white">Bezpieczne zakupy</span>
         </div>
-        <div className="flex items-center gap-5">
-          <Diamond size={32} strokeWidth={1.5} className="shrink-0 text-white" />
-          <span className="text-base text-white">Gwarancja najwyższej jakości</span>
+        <div className="flex items-center gap-4">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10">
+            <Diamond size={20} strokeWidth={1.5} className="text-white" />
+          </span>
+          <span className="text-sm text-white">Gwarancja najwyższej jakości</span>
         </div>
-        <div className="flex items-center gap-5">
-          <Factory size={32} strokeWidth={1.5} className="shrink-0 text-white" />
-          <span className="text-base text-white">Meble produkowane w Polsce</span>
+        <div className="flex items-center gap-4">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10">
+            <Factory size={20} strokeWidth={1.5} className="text-white" />
+          </span>
+          <span className="text-sm text-white">Meble produkowane w Polsce</span>
         </div>
       </div>
     </div>
@@ -49,10 +55,10 @@ function NewsletterSection() {
         >
           {/* Diagonal stripe 1 */}
           <div
-            className="absolute inset-0 origin-center -rotate-[25deg] scale-[1.6]"
+            className="absolute inset-0 origin-center -rotate-[30deg] scale-[1.6]"
             style={{ top: "-10%", left: "-15%" }}
           >
-            <div className="flex h-full gap-4">
+            <div className="flex h-full gap-6">
               <div className="w-[30%] overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80"
@@ -84,7 +90,7 @@ function NewsletterSection() {
             Zapisz si&#281; do newslettera i zyskaj
           </h2>
 
-          <p className="mt-1 font-heading text-[48px] font-bold leading-tight text-text-primary md:text-[56px]">
+          <p className="mt-1 font-heading text-[36px] font-bold leading-tight text-text-primary md:text-[42px]">
             10% rabatu na pierwsze zakupy!
           </p>
 
@@ -156,8 +162,8 @@ function SocialIcon({
     <Link
       href={href}
       aria-label={label}
-      className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-600
-        text-neutral-400 transition-colors hover:border-accent hover:text-accent"
+      className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-700
+        text-neutral-300 transition-colors hover:bg-accent hover:text-white"
     >
       {children}
     </Link>

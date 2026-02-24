@@ -113,9 +113,9 @@ export default async function HomePage() {
       {/* 1. HERO SECTION — Figma: main image left + 2x2 thumbnails right  */}
       {/* ================================================================== */}
       <section className="relative w-full overflow-hidden">
-        <div className="relative flex h-[500px] lg:h-[520px]">
+        <div className="relative flex h-[540px] lg:h-[580px]">
           {/* Main hero image — left side with diagonal clip */}
-          <div className="relative w-full lg:w-[65%]" style={{ clipPath: "polygon(0 0, 100% 0, 85% 100%, 0 100%)" }}>
+          <div className="relative w-full lg:w-[65%]" style={{ clipPath: "polygon(0 0, 95% 0, 80% 100%, 0 100%)" }}>
             <img
               src="/images/hero/hero-bg.jpg"
               alt="Nowoczesna kuchnia na wymiar TeoHome"
@@ -125,7 +125,7 @@ export default async function HomePage() {
 
             <div className="relative mx-auto flex h-full max-w-[1440px] items-center px-6 lg:px-16">
               <div className="max-w-lg">
-                <h1 className="font-heading text-3xl leading-tight font-bold text-white md:text-4xl lg:text-[48px] lg:leading-[1.08]">
+                <h1 className="font-heading text-3xl leading-tight font-bold text-white md:text-4xl lg:text-[52px] lg:leading-[1.08]">
                   Kuchnie dopasowane do Twojego stylu
                 </h1>
                 <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/80 md:text-base">
@@ -144,7 +144,7 @@ export default async function HomePage() {
             </div>
 
             {/* Dot pagination */}
-            <div className="absolute bottom-8 left-6 z-10 flex gap-2 lg:left-16">
+            <div className="absolute bottom-6 left-6 z-10 flex gap-2 lg:left-16">
               {[0, 1, 2, 3].map((i) => (
                 <button
                   key={i}
@@ -159,29 +159,29 @@ export default async function HomePage() {
           </div>
 
           {/* Right side — 2x2 thumbnail grid */}
-          <div className="absolute right-0 top-0 hidden h-full w-[38%] grid-cols-2 grid-rows-2 gap-1.5 p-1.5 lg:grid">
-            <div className="overflow-hidden rounded-lg">
+          <div className="absolute right-0 top-0 hidden h-full w-[36%] grid-cols-2 grid-rows-2 gap-1 p-1 lg:grid">
+            <div className="overflow-hidden rounded-xl">
               <img
                 src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=80"
                 alt="Kuchnia nowoczesna"
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="overflow-hidden rounded-lg">
+            <div className="overflow-hidden rounded-xl">
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80"
                 alt="Salon z kuchnią"
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="overflow-hidden rounded-lg">
+            <div className="overflow-hidden rounded-xl">
               <img
                 src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=400&q=80"
                 alt="Kuchnia na wymiar"
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="overflow-hidden rounded-lg">
+            <div className="overflow-hidden rounded-xl">
               <img
                 src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&q=80"
                 alt="Wnętrze TeoHome"
@@ -195,10 +195,10 @@ export default async function HomePage() {
       {/* ================================================================== */}
       {/* 2. CATEGORIES SECTION                                              */}
       {/* ================================================================== */}
-      <section className="py-14 lg:py-20">
+      <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-          <div className="mb-6 flex items-end justify-between">
-            <h2 className="font-heading text-2xl font-bold text-text-primary md:text-[32px]">
+          <div className="mb-10 flex items-end justify-between">
+            <h2 className="font-heading text-2xl font-bold text-text-primary md:text-[28px]">
               Wybierz coś dla siebie
             </h2>
             <Link
@@ -274,7 +274,7 @@ export default async function HomePage() {
                 </div>
               </div>
               <div className="lg:w-[45%]">
-                <div className="aspect-[3/2] overflow-hidden rounded-xl">
+                <div className="aspect-[4/3] overflow-hidden rounded-xl shadow-lg">
                   <img
                     src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
                     alt="Nowoczesne wnętrze zaprojektowane przez TeoHome"
@@ -298,11 +298,11 @@ export default async function HomePage() {
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/50" />
 
         <div className="relative mx-auto max-w-[1440px] px-6 lg:px-16">
           {/* White overlay card */}
-          <div className="mx-auto max-w-5xl rounded-3xl bg-white px-6 py-10 lg:px-16 lg:py-14">
+          <div className="mx-auto max-w-[1100px] rounded-3xl bg-white px-6 py-10 lg:px-16 lg:py-14">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="font-heading text-2xl font-bold text-text-primary md:text-[32px]">
                 Zaprojektuj wnętrze z pomocą naszych projektantów!
@@ -319,9 +319,9 @@ export default async function HomePage() {
               {designers.map((designer) => (
                 <div
                   key={designer.name}
-                  className="flex flex-col items-center rounded-2xl border border-border-light bg-white px-6 py-8 text-center shadow-sm"
+                  className="flex flex-col items-center rounded-2xl border border-[#eee] bg-white px-6 py-8 text-center"
                 >
-                  <div className="h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-primary-light">
+                  <div className="h-[90px] w-[90px] overflow-hidden rounded-full border-2 border-primary-light">
                     <img src={designer.avatar} alt={designer.name} className="h-full w-full object-cover" />
                   </div>
                   <h3 className="mt-4 font-heading text-lg font-semibold text-text-primary">
@@ -350,7 +350,7 @@ export default async function HomePage() {
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="flex flex-col gap-6 lg:flex-row">
             {/* Left - dark CTA */}
-            <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-[#312E29] px-7 py-10 lg:w-[260px] lg:shrink-0 lg:px-8 lg:py-14">
+            <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-[#312E29] px-7 py-10 lg:w-[280px] lg:shrink-0 lg:px-8 lg:py-14">
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
                 alt=""
@@ -384,7 +384,7 @@ export default async function HomePage() {
                     href={`/produkt/${product.slug}`}
                     className="group"
                   >
-                    <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-bg-light">
+                    <div className="relative aspect-[5/6] overflow-hidden rounded-xl bg-bg-light">
                       <Image
                         src={getProductImage(product)}
                         alt={product.name}
@@ -436,7 +436,7 @@ export default async function HomePage() {
                   alt="Wnętrze TeoHome"
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-0 flex flex-col justify-between p-8 lg:p-10">
                   <div>
                     <h2 className="font-heading text-2xl font-bold text-white md:text-[32px]">
@@ -455,15 +455,15 @@ export default async function HomePage() {
               </div>
 
               {/* Right — product info on light bg */}
-              <div className="flex flex-col justify-center bg-bg-light p-8 lg:w-[50%] lg:p-12">
+              <div className="flex flex-col justify-center bg-white p-8 lg:w-[50%] lg:p-12">
                 {/* Product image */}
                 <div className="mb-4 flex justify-center">
                   <Image
                     src={getProductImage(bestsellerProduct)}
                     alt={bestsellerProduct.name}
-                    width={280}
-                    height={350}
-                    className="max-h-[240px] w-auto object-contain"
+                    width={320}
+                    height={400}
+                    className="max-h-[280px] w-auto object-contain"
                   />
                 </div>
                 <span className="inline-block w-fit rounded-full bg-badge-bestseller px-3 py-1 text-[11px] font-semibold tracking-wide text-white uppercase">
@@ -524,7 +524,7 @@ export default async function HomePage() {
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
-            <div className="flex flex-col justify-between bg-[#f4f4f4] p-8 lg:p-[80px]">
+            <div className="flex flex-col justify-between bg-[#f4f4f4] p-8 lg:p-[56px]">
               <div>
                 <h3 className="font-heading text-lg font-bold leading-snug text-text-primary md:text-[24px] md:leading-[1.2]">
                   {blogPosts[0].title}
@@ -579,7 +579,7 @@ export default async function HomePage() {
       <section className="bg-white py-14 lg:py-20">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <div className="mb-8 flex items-end justify-between">
-            <h2 className="font-heading text-2xl font-bold text-text-primary md:text-[32px]">
+            <h2 className="font-heading text-2xl font-bold text-text-primary md:text-[24px]">
               Zobacz, co mówią nasi klienci
             </h2>
             <div className="hidden items-center gap-2 sm:flex">
@@ -591,9 +591,9 @@ export default async function HomePage() {
 
           <div className="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-4">
             {testimonials.map((t) => (
-              <div key={t.name} className="rounded-2xl bg-[#f4f4f4] p-8">
+              <div key={t.name} className="rounded-2xl bg-[#f4f4f4] p-6">
                 <div className="flex flex-col items-center text-center">
-                  <div className="h-[77px] w-[77px] shrink-0 overflow-hidden rounded-full bg-accent">
+                  <div className="h-[72px] w-[72px] shrink-0 overflow-hidden rounded-full bg-accent">
                     <img src={t.avatar} alt={t.name} className="h-full w-full object-cover" />
                   </div>
                   <span className="mt-3 text-base font-bold text-text-primary">{t.name}</span>
@@ -614,18 +614,29 @@ export default async function HomePage() {
       {/* 10. INSPIRATION GALLERY                                            */}
       {/* ================================================================== */}
       <section className="relative">
-        {/* Full-width background image */}
-        <div className="relative h-[500px] lg:h-[600px]">
-          <img
-            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&q=80"
-            alt="Realizacje TeoHome"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
+        {/* Split background images */}
+        <div className="relative h-[420px] lg:h-[480px]">
+          <div className="absolute inset-0 grid grid-cols-1 lg:grid-cols-2">
+            <div className="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&q=80"
+                alt="Realizacje TeoHome"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="relative hidden overflow-hidden lg:block">
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80"
+                alt="Realizacje TeoHome"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
           <div className="absolute inset-0 bg-black/30" />
 
           {/* Content overlay */}
-          <div className="relative mx-auto flex h-full max-w-[1440px] items-end px-6 pb-12 lg:px-16 lg:pb-16">
-            <div className="max-w-md rounded-2xl bg-white/95 p-8 shadow-lg backdrop-blur-sm lg:p-10">
+          <div className="relative mx-auto flex h-full max-w-[1440px] items-center px-6 lg:px-16">
+            <div className="max-w-md rounded-2xl bg-white/90 p-8 shadow-lg backdrop-blur-md lg:p-10">
               <h2 className="font-heading text-2xl leading-snug font-bold text-text-primary md:text-[28px]">
                 Zainspiruj się realizacjami TeoHome
               </h2>
