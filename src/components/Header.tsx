@@ -7,12 +7,11 @@ import { useCart } from "@/context/CartContext";
 
 const navLinks = [
   { href: "/o-nas", label: "O nas" },
-  { href: "/kuchnie", label: "Kuchnie" },
+  { href: "/kategoria/kuchnie", label: "Kuchnie" },
   { href: "/kategoria/sciany-rtv", label: "Ściany RTV" },
   { href: "/kategoria/szafy", label: "Szafy" },
-  { href: "/nowosci", label: "Nowości" },
-  { href: "/strefa-projektowa", label: "Strefa projektowa" },
-  { href: "/realizacje", label: "Realizacje" },
+  { href: "/kategoria/nowosci", label: "Nowości" },
+  { href: "/inspiracje", label: "Realizacje" },
   { href: "/blog", label: "Blog" },
   { href: "/kontakt", label: "Kontakt" },
 ] as const;

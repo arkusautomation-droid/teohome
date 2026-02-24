@@ -132,7 +132,7 @@ export default async function HomePage() {
                   Tworzymy funkcjonalne i estetyczne kuchnie na zamówienie, które łączą design oraz jakość.
                 </p>
                 <Link
-                  href="/kuchnie"
+                  href="/kategoria/kuchnie"
                   className="mt-7 inline-flex items-center gap-0 rounded-full border border-white/40 py-1.5 pl-6 pr-1.5 transition-colors hover:border-white/70"
                 >
                   <span className="text-sm font-semibold text-white">Zobacz więcej</span>
@@ -249,7 +249,7 @@ export default async function HomePage() {
                       </span>
                     </Link>
                     <Link
-                      href="/strefa-projektowa"
+                      href="/kontakt"
                       className="inline-flex items-center rounded-full border border-border px-5 py-2.5 text-sm font-medium text-text-primary transition-colors hover:border-primary hover:text-primary"
                     >
                       Strefa projektowania
@@ -350,7 +350,7 @@ export default async function HomePage() {
                 </h2>
                 <p className="mt-2 text-sm text-white/70">Najnowsze meble w ofercie TeoHome</p>
                 <Link
-                  href="/nowosci"
+                  href="/kategoria"
                   className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-text-primary transition-colors hover:bg-white/90"
                 >
                   Zobacz wszystkie produkty
@@ -629,7 +629,7 @@ export default async function HomePage() {
               </p>
               <div className="mt-6">
                 <Link
-                  href="/realizacje"
+                  href="/inspiracje"
                   className="inline-flex items-center gap-0 rounded-full bg-accent py-1.5 pl-5 pr-1.5 text-sm font-medium text-white transition-colors hover:bg-accent/90"
                 >
                   <span>Zobacz galerię realizacji</span>
