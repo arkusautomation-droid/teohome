@@ -162,7 +162,7 @@ function SocialIcon({
     <Link
       href={href}
       aria-label={label}
-      className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-700
+      className="flex h-11 w-11 items-center justify-center rounded-full bg-neutral-700
         text-neutral-300 transition-colors hover:bg-accent hover:text-white"
     >
       {children}
@@ -202,15 +202,13 @@ export default function Footer() {
       {/* ---- Dark footer ---- */}
       <div className="bg-bg-dark">
         <div className="mx-auto max-w-[1440px] px-6 py-8 lg:px-16">
-          {/* Logo row */}
-          <div className="mb-10">
-            <TeoHomeLogo />
-          </div>
-
           {/* Link columns */}
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-            {/* Column 1 - Company info + Contact */}
+            {/* Column 1 - Logo + Company info + Contact */}
             <div>
+              <div className="mb-6">
+                <TeoHomeLogo />
+              </div>
               <FooterHeading>Dane Firmy</FooterHeading>
               <address className="space-y-1 text-sm not-italic leading-relaxed text-neutral-400">
                 <p className="font-medium text-neutral-300">Teo Home</p>

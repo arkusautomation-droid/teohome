@@ -115,18 +115,18 @@ export default async function HomePage() {
       <section className="relative w-full overflow-hidden">
         <div className="relative flex h-[540px] lg:h-[580px]">
           {/* Main hero image — left side with diagonal clip */}
-          <div className="relative w-full lg:w-[65%]" style={{ clipPath: "polygon(0 0, 95% 0, 80% 100%, 0 100%)" }}>
+          <div className="relative w-full lg:w-[78%]" style={{ clipPath: "polygon(0 0, 95% 0, 82% 100%, 0 100%)" }}>
             <img
               src="/images/hero/hero-bg.jpg"
               alt="Nowoczesna kuchnia na wymiar TeoHome"
               className="absolute inset-0 h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
 
             <div className="relative mx-auto flex h-full max-w-[1440px] items-center px-6 lg:px-16">
               <div className="max-w-lg">
-                <h1 className="font-heading text-3xl leading-tight font-bold text-white md:text-4xl lg:text-[52px] lg:leading-[1.08]">
-                  Kuchnie dopasowane do Twojego stylu
+                <h1 className="font-heading text-3xl leading-tight font-bold text-white md:text-4xl lg:text-[48px] lg:leading-[1.1]">
+                  Kuchnie dopasowane<br />do Twojego stylu
                 </h1>
                 <p className="mt-4 max-w-md text-[15px] leading-relaxed text-white/80 md:text-base">
                   Tworzymy funkcjonalne i estetyczne kuchnie na zamówienie, które łączą design oraz jakość.
@@ -158,36 +158,17 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* Right side — 2x2 thumbnail grid */}
-          <div className="absolute right-0 top-0 hidden h-full w-[36%] grid-cols-2 grid-rows-2 gap-1 p-1 lg:grid">
-            <div className="overflow-hidden rounded-xl">
-              <img
-                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=80"
-                alt="Kuchnia nowoczesna"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="overflow-hidden rounded-xl">
-              <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80"
-                alt="Salon z kuchnią"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="overflow-hidden rounded-xl">
-              <img
-                src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=400&q=80"
-                alt="Kuchnia na wymiar"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="overflow-hidden rounded-xl">
-              <img
-                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&q=80"
-                alt="Wnętrze TeoHome"
-                className="h-full w-full object-cover"
-              />
-            </div>
+          {/* Right side — 2x2 thumbnail grid (same hero image repeated as slide previews) */}
+          <div className="absolute right-0 top-0 hidden h-full w-[25%] grid-cols-2 grid-rows-2 gap-[3px] lg:grid">
+            {[0, 1, 2, 3].map((i) => (
+              <div key={i} className="overflow-hidden rounded-lg">
+                <img
+                  src="/images/hero/hero-bg.jpg"
+                  alt={`Slajd ${i + 1}`}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -203,7 +184,7 @@ export default async function HomePage() {
             </h2>
             <Link
               href="/kategoria"
-              className="inline-flex items-center rounded-full border border-border px-5 py-2 text-sm font-medium text-text-primary transition-colors hover:border-primary hover:text-primary"
+              className="inline-flex items-center rounded-full border border-text-primary px-5 py-2 text-sm font-medium text-text-primary transition-colors hover:border-primary hover:text-primary"
             >
               Zobacz wszystkie
             </Link>
@@ -212,7 +193,7 @@ export default async function HomePage() {
           <div className="grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-6">
             {categories.slice(0, 4).map((cat) => (
               <Link key={cat.id} href={`/kategoria/${cat.slug}`} className="group">
-                <div className="aspect-[4/3] overflow-hidden rounded-[24px] bg-bg-light">
+                <div className="aspect-[5/4] overflow-hidden rounded-[32px] bg-bg-light">
                   {cat.image?.src ? (
                     <Image
                       src={cat.image.src}
@@ -248,10 +229,13 @@ export default async function HomePage() {
                   Witaj w TeoHome!
                 </h2>
                 <p className="mt-5 text-[15px] leading-relaxed text-text-secondary">
-                  Teo Home to marka mebli na wymiar dostępnych online. Projektujemy i realizujemy rozwiązania dopasowane do konkretnych przestrzeni, typów szafek, funkcjonalności i indywidualnych potrzeb.
+                  Teo Home to marka mebli na wymiar dostępnych online. Projektujemy i realizujemy zabudowy dopasowane do konkretnej przestrzeni, łącząc estetykę, funkcjonalność i konkurencyjne ceny.
                 </p>
                 <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
-                  Wiemy, że wybór mebli na wymiar to decyzja, która wymaga wsparcia. Dlatego zapewniamy pomoc doświadczonych projektantów na każdym etapie od pierwszej konsultacji, przez dobór szafek i materiałów, aż po finalny projekt.
+                  Wiemy, że wybór mebli na wymiar to decyzja, która wymaga wsparcia. Dlatego zapewniamy pomoc doświadczonych projektantów na każdym etapie: od pierwszej koncepcji, przez dobór układu i materiałów, aż po finalny projekt.
+                </p>
+                <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
+                  Pomagamy przełożyć potrzeby i pomysły na spójne, przemyślane wnętrze, które naprawdę pasuje do stylu życia.
                 </p>
                 <div className="mt-7">
                   <div className="flex flex-wrap gap-3">
@@ -274,7 +258,7 @@ export default async function HomePage() {
                 </div>
               </div>
               <div className="lg:w-[45%]">
-                <div className="aspect-[4/3] overflow-hidden rounded-xl shadow-lg">
+                <div className="aspect-[3/4] overflow-hidden rounded-xl shadow-lg">
                   <img
                     src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
                     alt="Nowoczesne wnętrze zaprojektowane przez TeoHome"
@@ -308,7 +292,7 @@ export default async function HomePage() {
                 Zaprojektuj wnętrze z pomocą naszych projektantów!
               </h2>
               <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
-                Nasi doświadczeni projektanci pomogą Ci stworzyć wnętrze marzeń. Od pierwszego szkicu po finalny projekt &mdash; jesteś w dobrych rękach.
+                Nasi projektanci z doświadczeniem w aranżacji wnętrz pomagają dopasować meble do konkretnej przestrzeni i realnych potrzeb użytkowania. Wspieramy na każdym etapie: od pierwszej koncepcji, przez dobór układu i materiałów, aż po finalny projekt.
               </p>
               <p className="mt-4 text-sm font-medium text-text-secondary">
                 Skontaktuj się ze specjalistą od aranżacji:
@@ -430,7 +414,7 @@ export default async function HomePage() {
           {bestsellerProduct ? (
             <div className="flex flex-col overflow-hidden rounded-2xl lg:flex-row">
               {/* Left — lifestyle image with overlaid title */}
-              <div className="relative aspect-[4/3] lg:aspect-auto lg:w-[50%]">
+              <div className="relative aspect-[4/3] lg:aspect-auto lg:w-[45%]">
                 <img
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80"
                   alt="Wnętrze TeoHome"
@@ -455,7 +439,7 @@ export default async function HomePage() {
               </div>
 
               {/* Right — product info on light bg */}
-              <div className="flex flex-col justify-center bg-white p-8 lg:w-[50%] lg:p-12">
+              <div className="flex flex-col justify-center border-l border-border bg-white p-8 lg:w-[55%] lg:p-12">
                 {/* Product image */}
                 <div className="mb-4 flex justify-center">
                   <Image
@@ -517,7 +501,7 @@ export default async function HomePage() {
 
           {/* Featured post — image + content side-by-side (Figma: 842+678, rounded-xl, bg #f4f4f4) */}
           <Link href={blogPosts[0].href} className="group mb-8 flex flex-col overflow-hidden rounded-xl lg:flex-row">
-            <div className="aspect-[3/2] overflow-hidden lg:aspect-auto lg:w-[50%] lg:shrink-0">
+            <div className="aspect-[3/2] overflow-hidden lg:aspect-auto lg:w-[55%] lg:shrink-0">
               <img
                 src={blogPosts[0].image}
                 alt={blogPosts[0].title}
@@ -548,7 +532,7 @@ export default async function HomePage() {
                 href={post.href}
                 className="group flex flex-col overflow-hidden rounded-xl"
               >
-                <div className="aspect-[3/2] overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={post.image}
                     alt={post.title}
@@ -635,7 +619,7 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-black/30" />
 
           {/* Content overlay */}
-          <div className="relative mx-auto flex h-full max-w-[1440px] items-center px-6 lg:px-16">
+          <div className="relative mx-auto flex h-full max-w-[1440px] items-end px-6 pb-10 lg:px-16 lg:pb-12">
             <div className="max-w-md rounded-2xl bg-white/90 p-8 shadow-lg backdrop-blur-md lg:p-10">
               <h2 className="font-heading text-2xl leading-snug font-bold text-text-primary md:text-[28px]">
                 Zainspiruj się realizacjami TeoHome
